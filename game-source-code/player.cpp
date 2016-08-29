@@ -141,7 +141,7 @@ void Player::move(float changeInTime)
 	}
 	if(_right)
 	{
-		if(getPosition()._x + distance._x < getMapBounds()._x)
+		if(getPosition()._x + distance._x + _playerWidth < getMapBounds()._x)
 		{
 			setPosition(distance._x, 0.f);
 		}

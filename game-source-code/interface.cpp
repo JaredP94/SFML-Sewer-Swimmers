@@ -5,7 +5,7 @@ Interface::Interface():
 	_assets(),
 	_ground()
 {
-	_assets.loadAsset(EntityList::Player,"img.png");
+	_assets.loadAsset(EntityList::Player,"img1.png");
 	_assets.loadAsset(EntityList::Ground,"dirt.png");
 	_game_text.loadFromFile("sansation.ttf");
 	
