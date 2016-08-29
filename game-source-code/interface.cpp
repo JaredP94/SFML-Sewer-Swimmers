@@ -21,17 +21,17 @@ void Interface::renderGame(list<CharacterEntity>& list_of_characters)
 	loadTextures(list_of_characters);
 	if(_paused)
 	{
-		drawText("Game Paused", 100.f, Vector2f(400, 300));
+		drawText("Game Paused", 50.f, Vector2f(200, 150));
 	}
 	if(_win)
 	{
-		drawText("You win!", 100.f, Vector2f(400, 300));
-		drawText("Press Esc to exit", 100.f, Vector2f(400, 300));
+		drawText("You win!", 50.f, Vector2f(200, 150));
+		drawText("Press Esc to exit", 100.f, Vector2f(200, 150));
 	}
 	if(_lose)
 	{
-		drawText("You lose!", 100.f, Vector2f(400, 300));
-		drawText("Press Esc to exit", 100.f, Vector2f(400, 300));
+		drawText("You lose!", 50.f, Vector2f(200, 150));
+		drawText("Press Esc to exit", 100.f, Vector2f(200, 150));
 	}
 	_game_window.display();
 }
@@ -68,6 +68,12 @@ void Interface::processEvents()
 						break;
 					case sf::Keyboard::D:
 						_events.push_back(GameEvent::Press_D);
+						break;
+					case sf::Keyboard::P:
+						_events.push_back(GameEvent::Press_P);
+						break;
+					case sf::Keyboard::Escape:
+						_events.push_back(GameEvent::Press_Esc);
 						break;
 					default:
 						break;

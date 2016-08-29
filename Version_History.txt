@@ -1,5 +1,12 @@
 =======================================================
 
+Date: 29/08/2016 - 12:55
+Commit Tag: Pause/Esc functionality
+User: JaredP94
+Details: Fixed ability to pause game + Fixed exit game ability using Esc + fixed text display area
+
+=======================================================
+
 Date: 29/08/2016 - 12:35
 Commit Tag: Initial Commit
 User: JaredP94
