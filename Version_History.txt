@@ -1,5 +1,12 @@
 =======================================================
 
+Date: 29/08/2016 - 20:20
+Commit Tag: DLL commit
+User: JaredP94
+Details: Edited .gitignore to include dll files for exe to run + committed SFML dll files
+
+=======================================================
+
 Date: 29/08/2016 - 19:25
 Commit Tag: Exe Commit + AssetManager Refactor
 User: JaredP94
