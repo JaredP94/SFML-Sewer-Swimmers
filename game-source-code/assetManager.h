@@ -19,10 +19,7 @@ class AssetManager
 {
 public:
 	void loadAsset(Identity id, const string& filePath);
-	template<typename Parameter>
-	void loadAsset(Identity id, const string& filePath, const Parameter& optionalParameter);
 	Asset& get(Identity id);
-	const Asset& get(Identity id) const;
 	
 private:
 	void addAsset(Identity id, unique_ptr<Asset>& asset_ptr);

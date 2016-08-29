@@ -1,5 +1,12 @@
 =======================================================
 
+Date: 29/08/2016 - 19:25
+Commit Tag: Exe Commit + AssetManager Refactor
+User: JaredP94
+Details: Edited .gitignore to include main .exe for commits + Refactored AssetManager templates
+
+=======================================================
+
 Date: 29/08/2016 - 17:40
 Commit Tag: Player Bounds Functionality + Image Changed
 User: JaredP94
