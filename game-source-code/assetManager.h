@@ -1,29 +1,21 @@
 #ifndef ASSET_MANAGER_H
 #define ASSET_MANAGER_H
 
-#include <iostream>
 #include <map>
 #include <memory>
 
-using std::string;
 using std::map;
-using std::make_pair;
-using std::move;
-using std::unique_ptr;
-using std::make_unique;
-using std::runtime_error;
-using std::logic_error;
 
 template<typename Asset, typename Identity> 
 class AssetManager
 {
 public:
-	void loadAsset(Identity id, const string& filePath);
-	Asset& get(Identity id);
+	void loadAsset(Identity id, const std::string& filePath);
+	Asset& getAsset(Identity id);
 	
 private:
-	void addAsset(Identity id, unique_ptr<Asset>& asset_ptr);
-	map<Identity, unique_ptr<Asset>> _assets;
+	void addAsset(Identity id, std::unique_ptr<Asset>& asset_ptr);
+	map<Identity, std::unique_ptr<Asset>> _assets;
 };
 #include "assetManager.tpp"
 #endif

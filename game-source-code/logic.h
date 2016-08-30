@@ -11,7 +11,8 @@
 #include <list>
 #include <memory>
 #include <ctime>
-#include <iostream>
+
+using std::list;
 
 class Logic
 {

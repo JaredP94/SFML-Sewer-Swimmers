@@ -76,8 +76,8 @@ void Logic::createObjects()
 void Logic::gameInput()
 {
 	_interface.processEvents();
-	std::list<GameEvent> events_since_last_poll = _interface.convertEvents();
-	for(auto event : events_since_last_poll)
+	list<GameEvent> new_instructions = _interface.interfaceInstructions();
+	for(auto event : new_instructions)
 	{
 		switch(event)
 		{

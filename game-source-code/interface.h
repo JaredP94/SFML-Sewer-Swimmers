@@ -7,7 +7,6 @@
 #include "entityList.h"
 #include "gameEvent.h"
 #include "vector2f.h"
-#include <iostream>
 #include <list>
 
 using std::list;
@@ -17,10 +16,10 @@ class Interface
 public:
 	Interface();
 	void renderGame(list<CharacterEntity>& list_of_characters);
-	list<GameEvent> convertEvents();
+	list<GameEvent> interfaceInstructions();
 	void closeWindow();
 	void processEvents();
-	sf::Vector2f convertVectorType(Vector2f orig_vec);
+	sf::Vector2f createSFMLVector(Vector2f orig_vec);
 	void pauseGame();
 	void winGame();
 	void loseGame();
@@ -30,12 +29,12 @@ private:
 	void drawSprite(const sf::Sprite& texture);
 	void drawText(std::string displayText, float textSize, const Vector2f& textPos);
 	
-	list<GameEvent> _events;
-	sf::RenderWindow _game_window;
+	list<GameEvent> _game_instructions;
+	sf::RenderWindow _window;
 	sf::View _player_lives;
 	AssetManager<sf::Texture, EntityList> _assets;
 	sf::Sprite _ground;
-	sf::Font _game_text;
+	sf::Font _text;
 	
 	bool _paused = false;
 	bool _win = false;
