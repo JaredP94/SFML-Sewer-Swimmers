@@ -1,5 +1,12 @@
 =======================================================
 
+Date: 31/08/2016 - 08:00
+Commit Tag: Removed MoveableEntity.h + Cleaned Player.h code
+User: JaredP94
+Details: Removed MoveableEntity to simply inheritance structure + deleted commented old from Player.h that is no longer used
+
+=======================================================
+
 Date: 30/08/2016 - 10:25
 Commit Tag: Code Readability + Additional Refactor
 User: JaredP94

@@ -9,11 +9,9 @@
 #include "vector2f.h"
 #include <list>
 #include <memory>
-//#include <limits>
 
 using std::list;
 using std::shared_ptr;
-//using std::numeric_limits;
 
 class Player: public MovingEntity
 {
