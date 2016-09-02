@@ -1,10 +1,15 @@
 =======================================================
-
 Date: 02/09/2016 - 10:30
 Commit Tag: Enemy + Collision + Ground Additions
 User: JaredP94
 Details: Added Enemy + Ground objects + collisions
 Issues: Glitch in ground rendering currently
+
+=======================================================
+Date: 02/09/2016 - 10:20
+Commit Tag: AssetManager Test
+User: Matty-Westside
+Details: Added AssetManager Test + Test .exe + Updated gitignore + Added test image
 
 =======================================================
 
