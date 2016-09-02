@@ -1,5 +1,12 @@
 =======================================================
 
+Date: 02/09/2016 - 10:20
+Commit Tag: AssetManager Test
+User: Matty-Westside
+Details: Added AssetManager Test + Test .exe + Updated gitignore + Added test image
+
+=======================================================
+
 Date: 31/08/2016 - 08:00
 Commit Tag: Removed MoveableEntity.h + Cleaned Player.h code
 User: JaredP94
