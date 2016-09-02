@@ -10,6 +10,7 @@ enum class GameEvent
 	Press_A,
 	Press_S,
 	Press_D,
+	Press_Space,
 	Release_W,
 	Release_A,
 	Release_S,

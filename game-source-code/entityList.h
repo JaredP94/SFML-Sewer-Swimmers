@@ -4,8 +4,9 @@
 enum class EntityList
 {
 	Player,
-	Enemy,
 	Ground,
+	Enemy,
+	Splash,
 	Num_Lives,
 };
 

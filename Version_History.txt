@@ -1,4 +1,11 @@
 =======================================================
+Date: 02/09/2016 - 13:55
+Commit Tag: Splash Screen Addition
+User: Matty-Westside
+Details: Added splash screen + control instructions
+Issues: Glitch in ground rendering currently
+
+=======================================================
 Date: 02/09/2016 - 10:30
 Commit Tag: Enemy + Collision + Ground Additions
 User: JaredP94

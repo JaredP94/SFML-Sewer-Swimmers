@@ -8,6 +8,7 @@ Interface::Interface():
 	_assets.loadAsset(EntityList::Player,"img1.png");
 	_assets.loadAsset(EntityList::Enemy,"img1.png");
 	_assets.loadAsset(EntityList::Ground,"dirt.png");
+	_assets.loadAsset(EntityList::Splash, "img1.png");
 	_text.loadFromFile("sansation.ttf");
 	
 //	_assets.getAsset(EntityList::Ground).setRepeated(true);
@@ -74,6 +75,9 @@ void Interface::processEvents()
 						break;
 					case sf::Keyboard::Escape:
 						_game_instructions.push_back(GameEvent::Press_Esc);
+						break;
+					case sf::Keyboard::Space:
+						_game_instructions.push_back(GameEvent::Press_Space);
 						break;
 					default:
 						break;
@@ -153,4 +157,16 @@ void Interface::drawText(std::string displayText, float textSize, const Vector2f
 	text.setStyle(sf::Text::Bold);
 	text.setPosition(createSFMLVector(textPos));
 	_window.draw(text);
+}
+
+void Interface::renderSplash()
+{
+	sf::Texture _splashscreen;
+	_splashscreen.loadFromFile("start.png", sf::IntRect(0,0,800,600));
+	sf::Sprite _splashy;
+	_splashy.setTexture(_splashscreen);
+	_window.draw(_splashy);
+	drawText("Dig Dug Version 1.0", 30, Vector2f(50, 20));
+	drawText("Press Space Bar to Play", 30, Vector2f(50, 55));
+	_window.display();
 }

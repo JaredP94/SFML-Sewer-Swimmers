@@ -27,7 +27,12 @@ void Logic::startGame()
 	
 	while(_running)
 	{
-		if(_paused)
+		if(_splashscreen)
+		{
+			gameInput();
+			splashscreen();
+		}
+		else if(_paused)
 		{
 			clock.resetTimer();
 			gameInput();
@@ -75,7 +80,7 @@ void Logic::renderGame()
 
 void Logic::createObjects()
 {
-	for(auto i = 0; i < 16; i++)
+	for(auto i = 0; i < 12; i++)
 	{
 		for(auto j = 8; j < 14; j++)
 		{
@@ -113,6 +118,8 @@ void Logic::gameInput()
 			case GameEvent::Closed_Window:
 				endGame();
 				break;
+			case GameEvent::Press_Space:
+				_splashscreen = false;
 			default:
 				break;
 		}
@@ -170,4 +177,9 @@ void Logic::endGame()
 {
 	_interface.closeWindow();
 	_running = false;
+}
+
+void Logic::splashscreen()
+{
+	_interface.renderSplash();
 }

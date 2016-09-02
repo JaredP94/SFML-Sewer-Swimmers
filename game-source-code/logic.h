@@ -25,6 +25,7 @@ public:
 private:
 	void startGame();
 	void updateGame(float changeInTime);
+	void splashscreen();
 	void renderGame();
 	void createObjects();
 	void gameInput();
@@ -42,6 +43,7 @@ private:
 	
 	bool _running = true;
 	bool _paused = false;
+	bool _splashscreen = true;
 	static constexpr const auto _fps = 60.f;
 };
 

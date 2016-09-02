@@ -23,6 +23,7 @@ public:
 	void pauseGame();
 	void winGame();
 	void loseGame();
+	void renderSplash();
 	
 private:
 	void loadTextures(list<CharacterEntity>& list_of_characters);
