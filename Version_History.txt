@@ -1,5 +1,13 @@
 =======================================================
 
+Date: 02/09/2016 - 10:30
+Commit Tag: Enemy + Collision + Ground Additions
+User: JaredP94
+Details: Added Enemy + Ground objects + collisions
+Issues: Glitch in ground rendering currently
+
+=======================================================
+
 Date: 31/08/2016 - 08:00
 Commit Tag: Removed MoveableEntity.h + Cleaned Player.h code
 User: JaredP94

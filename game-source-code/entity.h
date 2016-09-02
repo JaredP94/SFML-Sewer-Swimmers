@@ -23,10 +23,11 @@ public:
 	void destroy();
 	virtual list<Vector2f> hitboxPoints() = 0;
 	virtual void collide(const shared_ptr<Entity>& collider) = 0;
+	void setPosition(float x, float y);
 	
 protected:
 	void setPosition(const Vector2f& positionChange);
-	void setPosition(float x, float y);
+	
 	
 private:
 	EntityList _entityKey;

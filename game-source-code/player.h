@@ -9,6 +9,7 @@
 #include "vector2f.h"
 #include <list>
 #include <memory>
+#include <iostream>
 
 using std::list;
 using std::shared_ptr;

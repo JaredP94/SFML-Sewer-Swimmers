@@ -1,5 +1,5 @@
 #ifndef MOVING_ENTITY_H
-#define MOVING ENTITY_H
+#define MOVING_ENTITY_H
 
 #include "entity.h"
 #include "entityList.h"

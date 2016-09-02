@@ -3,11 +3,15 @@
 Logic::Logic():
 	_interface(),
 	_entities(),
-	_player(std::make_shared<Player>())
+	_player(std::make_shared<Player>()),
+	_enemy(std::make_shared<Enemy>())
 	{
 		Entity::setMapBounds(Vector2f(800, 600));
 		_entities.addEntity(_player);
 		_moving_entities.push_back(_player);
+		_entities.addEntity(_enemy);
+		_moving_entities.push_back(_enemy);
+		createObjects();
 		
 		srand(time(0));
 		
@@ -49,12 +53,13 @@ void Logic::updateGame(float changeInTime)
 {
 	gameInput();
 	
-	createObjects();
 	
 	for(auto moving_entity : _moving_entities)
 	{
 		moving_entity->move(changeInTime);
 	}
+	
+	collisions();
 	
 	if(_player->checkIfDestroyed())
 	{
@@ -70,7 +75,16 @@ void Logic::renderGame()
 
 void Logic::createObjects()
 {
-	
+	for(auto i = 0; i < 16; i++)
+	{
+		for(auto j = 8; j < 14; j++)
+		{
+			shared_ptr<Ground> ground_ptr = make_shared<Ground>();
+			ground_ptr->setPosition(i * 36, j * 36);
+			_entities.addEntity(ground_ptr);
+			_moving_entities.push_back(ground_ptr);
+		}
+	}
 }
 
 void Logic::gameInput()
@@ -101,6 +115,36 @@ void Logic::gameInput()
 				break;
 			default:
 				break;
+		}
+	}
+}
+
+void Logic::collisions()
+{
+	CollisionManager collision(_entities.start_pos(), _entities.end_pos());
+	collision.collisionHandler();
+	
+	for(auto iterator = _entities.start_pos(); iterator != _entities.end_pos();)
+	{
+		if((*iterator)->checkIfDestroyed())
+		{
+			iterator = _entities.removeEntity(iterator);
+		}
+		else
+		{
+			iterator++;
+		}
+	}
+	
+	for(auto iterator = std::begin(_moving_entities); iterator != std::end(_moving_entities);)
+	{
+		if((*iterator)->checkIfDestroyed())
+		{
+			iterator = _moving_entities.erase(iterator);
+		}
+		else
+		{
+			iterator++;
 		}
 	}
 }

@@ -33,7 +33,7 @@ private:
 	sf::RenderWindow _window;
 	sf::View _player_lives;
 	AssetManager<sf::Texture, EntityList> _assets;
-	sf::Sprite _ground;
+//	sf::Sprite _ground;
 	sf::Font _text;
 	
 	bool _paused = false;

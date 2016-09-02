@@ -2,22 +2,24 @@
 	
 Interface::Interface():
 	_window(sf::VideoMode(800, 600), "Dig Dug"),
-	_assets(),
-	_ground()
+	_assets()//,
+//	_ground()
 {
 	_assets.loadAsset(EntityList::Player,"img1.png");
+	_assets.loadAsset(EntityList::Enemy,"img1.png");
 	_assets.loadAsset(EntityList::Ground,"dirt.png");
 	_text.loadFromFile("sansation.ttf");
 	
-	_assets.getAsset(EntityList::Ground).setRepeated(true);
-	_ground.setTexture(_assets.getAsset(EntityList::Ground));
-	_ground.setTextureRect(sf::IntRect(0, 200, 800, 600));
+//	_assets.getAsset(EntityList::Ground).setRepeated(true);
+//	_ground.setTexture(_assets.getAsset(EntityList::Ground));
+//	_ground.setTextureRect(sf::IntRect(0, 0, 800, 400));
+//	_ground.move(0,200);
 }
 
 void Interface::renderGame(list<CharacterEntity>& list_of_characters)
 {
-	_window.clear();
-	_window.draw(_ground);
+	_window.clear(sf::Color::Blue);
+	//_window.draw(_ground);
 	loadTextures(list_of_characters);
 	if(_paused)
 	{
@@ -147,7 +149,7 @@ void Interface::drawText(std::string displayText, float textSize, const Vector2f
 	text.setFont(_text);
 	text.setString(displayText);
 	text.setCharacterSize(textSize);
-	text.setColor(sf::Color::Blue);
+	text.setColor(sf::Color::Red);
 	text.setStyle(sf::Text::Bold);
 	text.setPosition(createSFMLVector(textPos));
 	_window.draw(text);

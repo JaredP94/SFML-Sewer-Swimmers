@@ -1,9 +1,12 @@
 #ifndef LOGIC_H
 #define LOGIC_H
 
+#include "collisionManager.h"
+#include "enemy.h"
 #include "entityContainer.h"
 #include "entityList.h"
 #include "gameEvent.h"
+#include "ground.h"
 #include "Interface.h"
 #include "player.h"
 #include "timer.h"
@@ -25,6 +28,7 @@ private:
 	void renderGame();
 	void createObjects();
 	void gameInput();
+	void collisions();
 	void pause();
 	void win();
 	void lose();
@@ -34,6 +38,7 @@ private:
 	EntityContainer _entities;
 	list<shared_ptr<MovingEntity>> _moving_entities;
 	shared_ptr<Player> _player;
+	shared_ptr<Enemy> _enemy;
 	
 	bool _running = true;
 	bool _paused = false;

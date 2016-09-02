@@ -3,7 +3,7 @@
 Player::Player():
 	MovingEntity{EntityList::Player, Vector2f(getMapBounds()._x/2 - _playerWidth/2, getMapBounds()._y/2 - _playerHeight/2), Vector2f(_playerSpeed, _playerSpeed)},
 	_positionChange{0, 0}
-	{};
+	{}
 
 void Player::movement(GameEvent event)
 {
@@ -171,6 +171,7 @@ void Player::collide(const shared_ptr<Entity>& collider)
 	{
 		case EntityList::Enemy:
 			_lives--;
+			std::cout << _lives << std::endl;
 			if(_lives == 0)
 			{
 				destroy();
