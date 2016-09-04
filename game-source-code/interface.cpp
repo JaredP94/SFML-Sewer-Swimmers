@@ -2,19 +2,12 @@
 	
 Interface::Interface():
 	_window(sf::VideoMode(800, 600), "Dig Dug"),
-	_assets()//,
-//	_ground()
+	_assets()
 {
 	_assets.loadAsset(EntityList::Player,"img1.png");
 	_assets.loadAsset(EntityList::Enemy,"img1.png");
 	_assets.loadAsset(EntityList::Ground,"dirt.png");
-	_assets.loadAsset(EntityList::Splash, "img.png");
 	_text.loadFromFile("sansation.ttf");
-	
-//	_assets.getAsset(EntityList::Ground).setRepeated(true);
-//	_ground.setTexture(_assets.getAsset(EntityList::Ground));
-//	_ground.setTextureRect(sf::IntRect(0, 0, 800, 400));
-//	_ground.move(0,200);
 }
 
 void Interface::renderGame(vector<CharacterEntity>& list_of_characters)
@@ -162,7 +155,7 @@ void Interface::drawText(std::string displayText, float textSize, const Vector2f
 void Interface::renderSplash()
 {
 	sf::Texture _splashscreen;
-	_splashscreen.loadFromFile("img1.png", sf::IntRect(0,0,800,600));
+	_splashscreen.loadFromFile("start.png", sf::IntRect(0,0,800,600));
 	sf::Sprite _splashy;
 	_splashy.setTexture(_splashscreen);
 	_window.draw(_splashy);

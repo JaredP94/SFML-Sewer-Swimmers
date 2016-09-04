@@ -1,4 +1,10 @@
 =======================================================
+Date: 04/09/2016 - 21:45
+Commit Tag: Fixed Splashscreen
+User: Matty-Westside
+Details: Corrected splashscreen to render correct image
+
+=======================================================
 Date: 04/09/2016 - 21:10
 Commit Tag: Collision Fix + Minor Fixes
 User: Matty-Westside

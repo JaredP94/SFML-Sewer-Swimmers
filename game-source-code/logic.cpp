@@ -127,7 +127,7 @@ void Logic::gameInput()
 void Logic::collisions()
 {
 	CollisionManager entityCollisions(_entities.start_pos(), _entities.end_pos(), _player->getPosition());
-	entityCollisions.collisionHandler(_entities);
+	entityCollisions.collisionHandler();
 	
 	for(auto iterator = _entities.start_pos(); iterator != _entities.end_pos();)
 	{
