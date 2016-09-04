@@ -8,14 +8,16 @@
 #include "gameEvent.h"
 #include "vector2f.h"
 #include <list>
+#include <vector>
 
 using std::list;
+using std::vector;
 
 class Interface
 {
 public:
 	Interface();
-	void renderGame(list<CharacterEntity>& list_of_characters);
+	void renderGame(vector<CharacterEntity>& list_of_characters);
 	list<GameEvent> interfaceInstructions();
 	void closeWindow();
 	void processEvents();
@@ -26,7 +28,7 @@ public:
 	void renderSplash();
 	
 private:
-	void loadTextures(list<CharacterEntity>& list_of_characters);
+	void loadTextures(vector<CharacterEntity>& list_of_characters);
 	void drawSprite(const sf::Sprite& texture);
 	void drawText(std::string displayText, float textSize, const Vector2f& textPos);
 	
@@ -34,7 +36,6 @@ private:
 	sf::RenderWindow _window;
 	sf::View _player_lives;
 	AssetManager<sf::Texture, EntityList> _assets;
-//	sf::Sprite _ground;
 	sf::Font _text;
 	
 	bool _paused = false;

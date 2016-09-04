@@ -1,7 +1,7 @@
 #include "enemy.h"
 
 Enemy::Enemy():
-	MovingEntity{EntityList::Player, Vector2f(50,50), Vector2f(_playerSpeed, _playerSpeed)},
+	MovingEntity{EntityList::Enemy, Vector2f(50,50), Vector2f(_playerSpeed, _playerSpeed)},
 	_positionChange{0, 0}
 	{}
 

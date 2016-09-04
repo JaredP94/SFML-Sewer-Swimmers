@@ -1,4 +1,10 @@
 =======================================================
+Date: 04/09/2016 - 21:10
+Commit Tag: Collision Fix + Minor Fixes
+User: Matty-Westside
+Details: Resolved collision performance issues + play invincibility + ground rendering + minor fixes
+
+=======================================================
 Date: 02/09/2016 - 13:55
 Commit Tag: Splash Screen Addition
 User: Matty-Westside

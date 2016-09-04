@@ -28,9 +28,9 @@ int EntityContainer::amountOfEntities() const
 	return _listOfEntities.size();
 }
 
-list<CharacterEntity> EntityContainer::characterList()
+vector<CharacterEntity> EntityContainer::characterList()
 {
-	list<CharacterEntity> list_of_characters;
+	vector<CharacterEntity> list_of_characters;
 	for(auto entityPointer : _listOfEntities)
 	{
 		list_of_characters.push_back(entityPointer->character());

@@ -4,11 +4,12 @@
 #include "characterEntity.h"
 #include "entity.h"
 #include <list>
+#include <vector>
 #include <memory>
 
-using std::list;
+using std::vector;
 using std::shared_ptr;
-using entityIterator = list<shared_ptr<Entity>>::iterator;
+using entityIterator = vector<shared_ptr<Entity>>::iterator;
 
 class EntityContainer
 {
@@ -18,10 +19,10 @@ public:
 	void addEntity(shared_ptr<Entity> entityPointer);
 	entityIterator removeEntity(entityIterator entity);
 	int amountOfEntities() const;
-	list<CharacterEntity> characterList();
+	vector<CharacterEntity> characterList();
 	
 private:
-	list<shared_ptr<Entity>> _listOfEntities;
+	vector<shared_ptr<Entity>> _listOfEntities;
 };
 
 #endif

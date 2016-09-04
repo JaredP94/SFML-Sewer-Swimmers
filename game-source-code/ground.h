@@ -2,8 +2,9 @@
 #define GROUND_H
 
 #include "entityList.h"
-#include "movingEntity.h"
+#include "Entity.h"
 #include "vector2f.h"
+#include "movingEntity.h"
 #include <memory>
 #include <ctime>
 #include <cmath>
@@ -11,13 +12,10 @@
 using std::shared_ptr;
 using std::make_shared;
 
-class Ground: public MovingEntity
+class Ground: public Entity
 {
 public:
-	Ground();
-	~Ground(){};
-	void setPosition(float x, float y);
-	virtual void move(float changeInTime) override;
+	Ground(float x, float y);
 	virtual list<Vector2f> hitboxPoints() override;
 	virtual void collide(const shared_ptr<Entity>& collider) override;
 	

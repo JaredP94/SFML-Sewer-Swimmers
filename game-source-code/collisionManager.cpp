@@ -1,21 +1,27 @@
 #include "collisionManager.h"
 
-CollisionManager::CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos):
+CollisionManager::CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos, Vector2f player_pos):
 	_start_pos{start_pos},
-	_end_pos{end_pos}
+	_end_pos{end_pos},
+	_player_pos{player_pos}
 	{}
 	
 void CollisionManager::collisionHandler()
 {
-	for(auto iterator1 = _start_pos; iterator1 != prev(_end_pos); iterator1++)
+	auto enemy1 = _start_pos;
+	auto player = _start_pos + 1;
+	if(collision(*enemy1, *player))
 	{
-		for(auto iterator2 = next(iterator1); iterator2 != _end_pos; iterator2++)
+		(*player)->collide(*enemy1);
+		(*enemy1)->collide(*player);
+	}
+	
+	for(auto iterator2 = _start_pos + 2; iterator2 != _end_pos; iterator2++)
+	{
+		if(collision(*iterator2, *player))
 		{
-			if(collision(*iterator2, *iterator1))
-			{
-				(*iterator2)->collide(*iterator1);
-				(*iterator1)->collide(*iterator2);
-			}
+			(*iterator2)->collide(*player);
+			(*player)->collide(*iterator2);
 		}
 	}
 }

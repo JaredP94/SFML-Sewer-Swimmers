@@ -14,8 +14,11 @@
 #include <list>
 #include <memory>
 #include <ctime>
+#include <vector>
+#include <iostream>
 
 using std::list;
+using std::vector;
 
 class Logic
 {
@@ -37,7 +40,7 @@ private:
 	
 	Interface _interface;
 	EntityContainer _entities;
-	list<shared_ptr<MovingEntity>> _moving_entities;
+	vector<shared_ptr<MovingEntity>> _moving_entities;
 	shared_ptr<Player> _player;
 	shared_ptr<Enemy> _enemy;
 	

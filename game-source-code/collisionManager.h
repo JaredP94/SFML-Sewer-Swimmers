@@ -8,6 +8,7 @@
 #include <limits>
 #include <memory>
 #include <cmath>
+#include <vector>
 
 using std::shared_ptr;
 using std::list;
@@ -20,7 +21,7 @@ using std::numeric_limits;
 class CollisionManager
 {
 public:
-	CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos);
+	CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos, Vector2f player_pos);
 	void collisionHandler();
 	
 private:
@@ -30,6 +31,7 @@ private:
 	float minProjection(const list<Vector2f>& perimeterVals, const Vector2f& obj_normal) const;
 	entityIterator _start_pos;
 	entityIterator _end_pos;
+	Vector2f _player_pos;
 	
 };
 

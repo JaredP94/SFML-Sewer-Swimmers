@@ -1,9 +1,9 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "direction.h"
-#include "entityList.h"
-#include "entityContainer.h"
+//#include "direction.h"
+//#include "entityList.h"
+//#include "entityContainer.h"
 #include "gameEvent.h"
 #include "movingEntity.h"
 #include "vector2f.h"

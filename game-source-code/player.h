@@ -37,7 +37,7 @@ private:
 	bool _right = false;
 	static const auto _playerHeight = 32;
 	static const auto _playerWidth = 32;
-	static constexpr const auto _playerSpeed = 50.0;
+	static constexpr const auto _playerSpeed = 100.0;
 	int _lives = 5;
 	Vector2f _positionChange;
 };

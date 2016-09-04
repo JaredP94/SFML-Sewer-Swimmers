@@ -172,6 +172,7 @@ void Player::collide(const shared_ptr<Entity>& collider)
 		case EntityList::Enemy:
 			_lives--;
 			std::cout << _lives << std::endl;
+			this->setPosition(getMapBounds()._x/2 - _playerWidth/2, getMapBounds()._y/2 - _playerHeight/2);
 			if(_lives == 0)
 			{
 				destroy();

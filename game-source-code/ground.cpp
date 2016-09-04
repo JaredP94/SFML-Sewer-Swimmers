@@ -1,25 +1,15 @@
 #include "ground.h"
 
-Ground::Ground():
-	MovingEntity{EntityList::Player, Vector2f(0, 0), Vector2f(_playerSpeed, _playerSpeed)}
+Ground::Ground(float x, float y):
+	Entity{EntityList::Ground, Vector2f(x, y)}
 	{};
 	
-float Ground::positionGeneration(float positionBounds) const
+/*float Ground::positionGeneration(float positionBounds) const
 {
 	auto tmp = static_cast<int>(positionBounds - _playerHeight);
 	auto rand_num = rand()%tmp;
 	return static_cast<float>(rand_num);
-}
-
-void Ground::setPosition(float x, float y)
-{
-	Entity::setPosition(x,y);
-}
-
-void Ground::move(float changeInTime)
-{
-
-}
+}*/
 
 list<Vector2f> Ground::hitboxPoints()
 {
