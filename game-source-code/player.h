@@ -39,6 +39,7 @@ private:
 	bool _down = false;
 	bool _left = false;
 	bool _right = false;
+	bool _moving = false;
 	bool _launch_harpoon = false;
 	Direction _facing;
 	static const auto _playerHeight = 30;

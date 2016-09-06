@@ -1,4 +1,10 @@
 =======================================================
+Date: 06/09/2016 - 20:30
+Commit Tag: Implemented Linear Movement
+User: JaredP94
+Details: Player now only able to move in one direction at a time on the x-axis or y-axis
+
+=======================================================
 Date: 06/09/2016 - 12:15
 Commit Tag: Harpoon Functionality + Random Enemy Movement + Game Optimisations
 User: JaredP94

@@ -7,38 +7,57 @@ Player::Player():
 
 void Player::movement(GameEvent event)
 {
-	switch(event)
+	if(!_moving)
 	{
-		case GameEvent::Press_W:
-			_up = true;
-			directionChange(Direction::Up);
-			break;
-		case GameEvent::Press_A:
-			_left = true;
-			directionChange(Direction::Left);
-			break;
-		case GameEvent::Press_S:
-			_down = true;
-			directionChange(Direction::Down);
-			break;
-		case GameEvent::Press_D:
-			_right = true;
-			directionChange(Direction::Right);
-			break;
-		case GameEvent::Release_W:
-			_up = false;
-			break;
-		case GameEvent::Release_A:
-			_left = false;
-			break;
-		case GameEvent::Release_S:
-			_down = false;
-			break;
-		case GameEvent::Release_D:
-			_right = false;
-			break;
-		default:
-			break;
+		switch(event)
+		{
+			case GameEvent::Press_W:
+				_up = true;
+				_moving = true;
+				directionChange(Direction::Up);
+				break;
+			case GameEvent::Press_A:
+				_left = true;
+				_moving = true;
+				directionChange(Direction::Left);
+				break;
+			case GameEvent::Press_S:
+				_down = true;
+				_moving = true;
+				directionChange(Direction::Down);
+				break;
+			case GameEvent::Press_D:
+				_right = true;
+				_moving = true;
+				directionChange(Direction::Right);
+				break;
+			default:
+				break;
+		}
+	}
+	
+	if(_up && event == GameEvent::Release_W)
+	{
+		_up = false;
+		_moving = false;
+	}
+	
+	if(_down && event == GameEvent::Release_S)
+	{
+		_down = false;
+		_moving = false;
+	}
+	
+	if(_left && event == GameEvent::Release_A)
+	{
+		_left = false;
+		_moving = false;
+	}
+	
+	if(_right&& event == GameEvent::Release_D)
+	{
+		_right = false;
+		_moving = false;
 	}
 }
 
