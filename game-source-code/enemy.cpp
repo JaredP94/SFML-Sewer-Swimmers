@@ -1,15 +1,14 @@
 #include "enemy.h"
 
 Enemy::Enemy():
-	MovingEntity{EntityList::Enemy, Vector2f(50,50), Vector2f(_playerSpeed, _playerSpeed)},
-	_positionChange{0, 0}
-	{}
-
-Vector2f Enemy::positionChange()
+	MovingEntity{EntityList::Enemy, Vector2f(positionGeneration(getMapBounds()._x), positionGeneration(getMapBounds()._y)), Vector2f(_enemySpeed, _enemySpeed)}
+	{
+		_enemy_quantity++;
+	}
+	
+Enemy::~Enemy()
 {
-	Vector2f new_position = _positionChange;
-	_positionChange = Vector2f(0, 0);
-	return new_position;
+	_enemy_quantity--;
 }
 
 /*void Player::directionChange(Direction direction)
@@ -63,57 +62,13 @@ bool Enemy::faceRight() const
 
 void Enemy::move(float changeInTime)
 {
-	Vector2f past_pos = getPosition();
-	auto distance = changeInTime * getSpeed();
-	if(_up)
+	_elapsed_time_since_update += changeInTime;
+	if(_elapsed_time_since_update >= 1.0f)
 	{
-		if(getPosition()._y - distance._y > 0)
-		{
-			setPosition(0.f, -distance._y);
-		}
-		else
-		{
-			setPosition(0.f, 0.f);
-		}
-//		directionChange(Direction::Up);
+		_speed = Vector2f(positionGeneration(getMapBounds()._x) - getPosition()._x, positionGeneration(getMapBounds()._y) - getPosition()._y).unitVector();
+		_elapsed_time_since_update = 0.f;
 	}
-	if(_down)
-	{
-		if(getPosition()._y + distance._y + _playerHeight< getMapBounds()._y)
-		{
-			setPosition(0.f, distance._y);
-		}
-		else
-		{
-			setPosition(0.f, getMapBounds()._y - _playerHeight - getPosition()._y);
-		}
-//		directionChange(Direction::Down);
-	}
-	if(_left)
-	{
-		if(getPosition()._x - distance._x > 0)
-		{
-			setPosition(-distance._x, 0.f);
-		}
-		else
-		{
-			setPosition(0.f, 0.f);
-		}
-//		directionChange(Direction::Left);
-	}
-	if(_right)
-	{
-		if(getPosition()._x + distance._x + _playerWidth < getMapBounds()._x)
-		{
-			setPosition(distance._x, 0.f);
-		}
-		else
-		{
-			setPosition(getMapBounds()._x - _playerWidth - getPosition()._x, 0.f);
-		}
-//		directionChange(Direction::Right);
-	}
-	_positionChange = getPosition() - past_pos;
+	setPosition(getSpeed()._x * changeInTime * _speed._x, getSpeed()._y * changeInTime * _speed._y);
 }
 
 void Enemy::movement(GameEvent event)
@@ -154,9 +109,9 @@ list<Vector2f> Enemy::hitboxPoints()
 	list<Vector2f> hitbox_coords;
 	Vector2f top_left = getPosition();
 	hitbox_coords.push_back(Vector2f(top_left._x, top_left._y));
-	hitbox_coords.push_back(Vector2f(top_left._x + _playerWidth, top_left._y));
-	hitbox_coords.push_back(Vector2f(top_left._x + _playerWidth, top_left._y - _playerHeight));
-	hitbox_coords.push_back(Vector2f(top_left._x, top_left._y - _playerHeight));
+	hitbox_coords.push_back(Vector2f(top_left._x + _enemyWidth, top_left._y));
+	hitbox_coords.push_back(Vector2f(top_left._x + _enemyWidth, top_left._y - _enemyHeight));
+	hitbox_coords.push_back(Vector2f(top_left._x, top_left._y - _enemyHeight));
 	return hitbox_coords;
 }
 
@@ -168,7 +123,18 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 			break;
 		case EntityList::Ground:
 			break;
+		case EntityList::Harpoon:
+			destroy();
 		default:
 			break;
 	}
 }
+
+float Enemy::positionGeneration(float positionBounds) const
+{
+	auto tmp = static_cast<int>(positionBounds - _enemyHeight); //assuming height == width
+	auto rand_num = rand()%tmp;
+	return static_cast<float>(rand_num);
+}
+
+int Enemy::_enemy_quantity = 0;

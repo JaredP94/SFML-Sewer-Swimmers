@@ -3,14 +3,13 @@
 Logic::Logic():
 	_interface(),
 	_entities(),
-	_player(std::make_shared<Player>()),
-	_enemy(std::make_shared<Enemy>())
+	_player(std::make_shared<Player>())
 	{
-		Entity::setMapBounds(Vector2f(800, 600));
-		_entities.addEntity(_enemy);
-		_moving_entities.push_back(_enemy);
+		Entity::setMapBounds(Vector2f(_screen_width, _screen_height));
 		_entities.addEntity(_player);
 		_moving_entities.push_back(_player);
+		_shooting_entities.push_back(_player);
+		
 		createObjects();
 		
 		srand(time(0));
@@ -29,8 +28,10 @@ void Logic::startGame()
 	{
 		if(_splashscreen)
 		{
+			clock.resetTimer();
 			gameInput();
 			splashscreen();
+			clock.beginTimer();
 		}
 		else if(_paused)
 		{
@@ -58,7 +59,6 @@ void Logic::updateGame(float changeInTime)
 {
 	gameInput();
 	
-	
 	for(auto moving_entity : _moving_entities)
 	{
 		moving_entity->move(changeInTime);
@@ -66,9 +66,24 @@ void Logic::updateGame(float changeInTime)
 	
 	collisions();
 	
+	for(auto shooting_entity : _shooting_entities)
+	{
+		shared_ptr<MovingEntity> moving_entity_ptr = shooting_entity->shoot(changeInTime);
+		if(moving_entity_ptr)
+		{
+			_entities.addEntity(moving_entity_ptr);
+			_moving_entities.push_back(moving_entity_ptr);
+		}
+	}
+	
 	if(_player->checkIfDestroyed())
 	{
 		lose();
+	}
+	
+	if(Enemy::getEnemyQuantity() == 0)
+	{
+		win();
 	}
 }
 
@@ -80,9 +95,16 @@ void Logic::renderGame()
 
 void Logic::createObjects()
 {
-	for(auto i = 0; i < 800/32; i++)
+	for(auto i = 0; i < 5; i++)
 	{
-		for(auto j = 6; j < 600/32; j++)
+		shared_ptr<Enemy> enemy_ptr = make_shared<Enemy>();
+		_entities.addEntity(enemy_ptr);
+		_moving_entities.push_back(enemy_ptr);
+	}
+	
+	for(auto i = 0; i < _screen_width / 32; i++)
+	{
+		for(auto j = 6; j < _screen_height / 32; j++)
 		{
 			std::shared_ptr<Ground> ground_ptr = std::make_shared<Ground>(i * 32, j * 32);
 			_entities.addEntity(ground_ptr);
@@ -118,6 +140,10 @@ void Logic::gameInput()
 				break;
 			case GameEvent::Press_Space:
 				_splashscreen = false;
+			case GameEvent::Press_E:
+			case GameEvent::Release_E:
+				_player->shooting(event);
+				break;
 			default:
 				break;
 		}
@@ -126,8 +152,7 @@ void Logic::gameInput()
 
 void Logic::collisions()
 {
-	CollisionManager entityCollisions(_entities.start_pos(), _entities.end_pos(), _player->getPosition());
-	entityCollisions.collisionHandler();
+	CollisionManager entityCollisions(_entities.start_pos(), _entities.end_pos(), _moving_entities.begin(), _moving_entities.end());
 	
 	for(auto iterator = _entities.start_pos(); iterator != _entities.end_pos();)
 	{
@@ -146,6 +171,18 @@ void Logic::collisions()
 		if((*iterator)->checkIfDestroyed())
 		{
 			iterator = _moving_entities.erase(iterator);
+		}
+		else
+		{
+			iterator++;
+		}
+	}
+	
+	for(auto iterator = std::begin(_shooting_entities); iterator != std::end(_shooting_entities);)
+	{
+		if((*iterator)->checkIfDestroyed())
+		{
+			iterator = _shooting_entities.erase(iterator);
 		}
 		else
 		{

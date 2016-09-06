@@ -1,31 +1,31 @@
 #include "interface.h"
 	
 Interface::Interface():
-	_window(sf::VideoMode(800, 600), "Dig Dug"),
+	_window(sf::VideoMode(1000, 800), "Dig Dug"),
 	_assets()
 {
 	_assets.loadAsset(EntityList::Player,"img1.png");
 	_assets.loadAsset(EntityList::Enemy,"img1.png");
 	_assets.loadAsset(EntityList::Ground,"dirt.png");
+	_assets.loadAsset(EntityList::Harpoon, "harpoon.png");
 	_text.loadFromFile("sansation.ttf");
 }
 
 void Interface::renderGame(vector<CharacterEntity>& list_of_characters)
 {
 	_window.clear(sf::Color::Blue);
-	//_window.draw(_ground);
 	loadTextures(list_of_characters);
 	if(_paused)
 	{
-		drawText("Game Paused", 50.f, Vector2f(200, 150));
+		drawText("Game Paused", 50.f, Vector2f(300, 400));
 	}
 	if(_win)
 	{
-		drawText("You win!", 50.f, Vector2f(200, 150));
+		drawText("You win!", 50.f, Vector2f(400, 400));
 	}
 	if(_lose)
 	{
-		drawText("You lose!", 50.f, Vector2f(200, 150));
+		drawText("You lose!", 50.f, Vector2f(400, 400));
 	}
 	_window.display();
 }
@@ -63,6 +63,9 @@ void Interface::processEvents()
 					case sf::Keyboard::D:
 						_game_instructions.push_back(GameEvent::Press_D);
 						break;
+					case sf::Keyboard::E:
+						_game_instructions.push_back(GameEvent::Press_E);
+						break;
 					case sf::Keyboard::P:
 						_game_instructions.push_back(GameEvent::Press_P);
 						break;
@@ -90,6 +93,9 @@ void Interface::processEvents()
 						break;
 					case sf::Keyboard::D:
 						_game_instructions.push_back(GameEvent::Release_D);
+						break;
+					case sf::Keyboard::E:
+						_game_instructions.push_back(GameEvent::Release_E);
 						break;
 					default:
 						break;
@@ -155,7 +161,7 @@ void Interface::drawText(std::string displayText, float textSize, const Vector2f
 void Interface::renderSplash()
 {
 	sf::Texture _splashscreen;
-	_splashscreen.loadFromFile("start.png", sf::IntRect(0,0,800,600));
+	_splashscreen.loadFromFile("start.png", sf::IntRect(0,0,1000,800));
 	sf::Sprite _splashy;
 	_splashy.setTexture(_splashscreen);
 	_window.draw(_splashy);

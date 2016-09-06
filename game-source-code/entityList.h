@@ -7,6 +7,7 @@ enum class EntityList
 	Ground,
 	Enemy,
 	Splash,
+	Harpoon,
 	Num_Lives,
 };
 

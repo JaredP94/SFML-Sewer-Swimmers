@@ -1,7 +1,7 @@
 #include "player.h"
 
 Player::Player():
-	MovingEntity{EntityList::Player, Vector2f(getMapBounds()._x/2 - _playerWidth/2, getMapBounds()._y/2 - _playerHeight/2), Vector2f(_playerSpeed, _playerSpeed)},
+	ShootingMovingEntity{EntityList::Player, Vector2f(getMapBounds()._x/2 - _playerWidth/2, getMapBounds()._y/2 - _playerHeight/2), Vector2f(_playerSpeed, _playerSpeed)},
 	_positionChange{0, 0}
 	{}
 
@@ -11,15 +11,19 @@ void Player::movement(GameEvent event)
 	{
 		case GameEvent::Press_W:
 			_up = true;
+			directionChange(Direction::Up);
 			break;
 		case GameEvent::Press_A:
 			_left = true;
+			directionChange(Direction::Left);
 			break;
 		case GameEvent::Press_S:
 			_down = true;
+			directionChange(Direction::Down);
 			break;
 		case GameEvent::Press_D:
 			_right = true;
+			directionChange(Direction::Right);
 			break;
 		case GameEvent::Release_W:
 			_up = false;
@@ -45,34 +49,26 @@ Vector2f Player::positionChange()
 	return new_position;
 }
 
-/*void Player::directionChange(Direction direction)
+void Player::directionChange(Direction direction)
 {
 	switch(static_cast<int>(direction))
 	{
 		case 0:
-			_up = true;
-			_down = false;
-			_left = false;
-			_right = false;
+			_facing = Direction::Up;
+			break;
 		case 1:
-			_up = false;
-			_down = false;
-			_left = true;
-			_right = false;
+			_facing = Direction::Left;
+			break;
 		case 2:
-			_up = false;
-			_down = true;
-			_left = false;
-			_right = false;
+			_facing = Direction::Down;
+			break;
 		case 3:
-			_up = false;
-			_down = false;
-			_left = false;
-			_right = true;
+			_facing = Direction::Right;
+			break;
 		default:
 			break; //shouldn't get here
 	}
-}*/
+}
 
 bool Player::faceUp() const
 {
@@ -113,7 +109,6 @@ void Player::move(float changeInTime)
 		{
 			setPosition(0.f, 0.f);
 		}
-//		directionChange(Direction::Up);
 	}
 	if(_down)
 	{
@@ -125,7 +120,6 @@ void Player::move(float changeInTime)
 		{
 			setPosition(0.f, getMapBounds()._y - _playerHeight - getPosition()._y);
 		}
-//		directionChange(Direction::Down);
 	}
 	if(_left)
 	{
@@ -137,7 +131,6 @@ void Player::move(float changeInTime)
 		{
 			setPosition(0.f, 0.f);
 		}
-//		directionChange(Direction::Left);
 	}
 	if(_right)
 	{
@@ -149,7 +142,6 @@ void Player::move(float changeInTime)
 		{
 			setPosition(getMapBounds()._x - _playerWidth - getPosition()._x, 0.f);
 		}
-//		directionChange(Direction::Right);
 	}
 	_positionChange = getPosition() - past_pos;
 }
@@ -183,4 +175,46 @@ void Player::collide(const shared_ptr<Entity>& collider)
 		default:
 			break;
 	}
+}
+
+void Player::shooting(GameEvent event)
+{
+	switch(event)
+	{
+		case GameEvent::Press_E:
+			_launch_harpoon = true;
+			break;
+		case GameEvent::Release_E:
+			_launch_harpoon = false;
+			break;
+		default:
+			break;
+	}
+}
+
+shared_ptr<MovingEntity> Player::shoot(float changeInTime)
+{
+	if(_launch_harpoon)
+	{
+		_launch_harpoon = false;
+		Vector2f velocity_unit_direction;
+		if(_facing == Direction::Up)
+		{
+			velocity_unit_direction = Vector2f(0,-1);
+		}
+		else if(_facing == Direction::Down)
+		{
+			velocity_unit_direction = Vector2f(0,1);
+		}
+		else if(_facing == Direction::Left)
+		{
+			velocity_unit_direction = Vector2f(-1,0);
+		}
+		else
+		{
+			velocity_unit_direction = Vector2f(1,0);
+		}
+		return make_shared<Harpoon> (getPosition(), velocity_unit_direction);
+	}
+	return shared_ptr<MovingEntity> (nullptr);
 }

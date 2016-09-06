@@ -1,4 +1,10 @@
 =======================================================
+Date: 06/09/2016 - 12:15
+Commit Tag: Harpoon Functionality + Random Enemy Movement + Game Optimisations
+User: JaredP94
+Details: Implemented harpoon functionality (traverses two blocks / collides with ground = destroyed harpoon) + Allowed enemies to randomly move (no ground collision functionality implemented as yet) + Reduced FPS of game to 30 + Splashscreen issue where game was running in background + Modified the way in which collisions were checked
+
+=======================================================
 Date: 04/09/2016 - 21:45
 Commit Tag: Fixed Splashscreen
 User: Matty-Westside

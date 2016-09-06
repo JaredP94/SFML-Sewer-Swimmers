@@ -16,9 +16,9 @@ list<Vector2f> Ground::hitboxPoints()
 	list<Vector2f> hitbox_coords;
 	Vector2f top_left = getPosition();
 	hitbox_coords.push_back(Vector2f(top_left._x, top_left._y));
-	hitbox_coords.push_back(Vector2f(top_left._x + _playerWidth, top_left._y));
-	hitbox_coords.push_back(Vector2f(top_left._x + _playerWidth, top_left._y - _playerHeight));
-	hitbox_coords.push_back(Vector2f(top_left._x, top_left._y - _playerHeight));
+	hitbox_coords.push_back(Vector2f(top_left._x + _groundWidth, top_left._y));
+	hitbox_coords.push_back(Vector2f(top_left._x + _groundWidth, top_left._y - _groundHeight));
+	hitbox_coords.push_back(Vector2f(top_left._x, top_left._y - _groundHeight));
 	return hitbox_coords;
 }
 

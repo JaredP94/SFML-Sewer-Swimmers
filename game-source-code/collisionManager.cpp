@@ -1,31 +1,29 @@
 #include "collisionManager.h"
 
-CollisionManager::CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos, Vector2f player_pos):
+CollisionManager::CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos, const movingEntityIterator& start_pos2, const movingEntityIterator& end_pos2):
 	_start_pos{start_pos},
 	_end_pos{end_pos},
-	_player_pos{player_pos}
-	{}
-	
-void CollisionManager::collisionHandler()
-{
-	auto enemy1 = _start_pos;
-	auto player = _start_pos + 1;
-	if(collision(*enemy1, *player))
+	_start_pos2{start_pos2},
+	_end_pos2{end_pos2}
 	{
-		(*player)->collide(*enemy1);
-		(*enemy1)->collide(*player);
+		CollisionHandler();
 	}
 	
-	for(auto iterator2 = _start_pos + 2; iterator2 != _end_pos; iterator2++)
+void CollisionManager::CollisionHandler()
+{
+	for(auto iterator1 = _start_pos2; iterator1 != _end_pos2; iterator1++)
 	{
-		if(collision(*iterator2, *player))
+		for(auto iterator2 = _start_pos; iterator2 != _end_pos; iterator2++)
 		{
-			(*iterator2)->collide(*player);
-			(*player)->collide(*iterator2);
+			if(collision(*iterator2, *iterator1))
+			{
+				(*iterator2)->collide(*iterator1);
+				(*iterator1)->collide(*iterator2);
+			}
 		}
 	}
 }
-	
+
 bool CollisionManager::collision(shared_ptr<Entity> obj1, shared_ptr<Entity> obj2) const
 {
 	std::list<Vector2f> obj1_coords = obj1->hitboxPoints();

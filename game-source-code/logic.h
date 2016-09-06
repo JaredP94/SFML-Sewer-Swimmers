@@ -41,13 +41,15 @@ private:
 	Interface _interface;
 	EntityContainer _entities;
 	vector<shared_ptr<MovingEntity>> _moving_entities;
+	vector<shared_ptr<ShootingMovingEntity>> _shooting_entities;
 	shared_ptr<Player> _player;
-	shared_ptr<Enemy> _enemy;
 	
 	bool _running = true;
 	bool _paused = false;
 	bool _splashscreen = true;
-	static constexpr const auto _fps = 60.f;
+	static constexpr const auto _fps = 30.f;
+	static constexpr const auto _screen_width = 1000.f;
+	static constexpr const auto _screen_height = 800.f;
 };
 
 #endif

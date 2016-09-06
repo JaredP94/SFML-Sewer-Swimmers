@@ -23,9 +23,8 @@ protected:
 	float positionGeneration(float positionBounds) const;
 	
 private:
-	static const auto _playerHeight = 32;
-	static const auto _playerWidth = 32;
-	static constexpr const auto _playerSpeed = 50.0;
+	static const auto _groundHeight = 32;
+	static const auto _groundWidth = 32;
 };
 
 #endif

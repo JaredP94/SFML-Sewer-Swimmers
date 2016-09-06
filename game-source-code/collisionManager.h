@@ -1,8 +1,8 @@
 #ifndef COLLISION_MANAGER_H
 #define COLLISION_MANAGER_H
 
-#include "entity.h"
 #include "entityContainer.h"
+#include "movingEntity.h"
 #include "vector2f.h"
 #include <list>
 #include <limits>
@@ -17,12 +17,13 @@ using std::end;
 using std::next;
 using std::prev;
 using std::numeric_limits;
+using movingEntityIterator = vector<shared_ptr<MovingEntity>>::iterator;
 
 class CollisionManager
 {
 public:
-	CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos, Vector2f player_pos);
-	void collisionHandler();
+	CollisionManager(const entityIterator& start_pos, const entityIterator& end_pos, const movingEntityIterator& start_pos2, const movingEntityIterator& end_pos2);
+	void CollisionHandler();
 	
 private:
 	bool collision(shared_ptr<Entity> obj1, shared_ptr<Entity> obj2) const;
@@ -31,7 +32,8 @@ private:
 	float minProjection(const list<Vector2f>& perimeterVals, const Vector2f& obj_normal) const;
 	entityIterator _start_pos;
 	entityIterator _end_pos;
-	Vector2f _player_pos;
+	movingEntityIterator _start_pos2;
+	movingEntityIterator _end_pos2;
 	
 };
 
