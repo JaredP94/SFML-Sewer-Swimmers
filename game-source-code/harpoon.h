@@ -20,7 +20,7 @@ private:
 	Vector2f _elapsed_distance = Vector2f(0, 0);
 	static constexpr const auto _harpoon_width = 32.f;
 	static constexpr const auto _harpoon_height = 32.f;
-	static constexpr const auto _harpoon_speed = 500.f;
+	static constexpr const auto _harpoon_speed = 250.f;
 	
 };
 

@@ -40,6 +40,12 @@ void Entity::destroy()
 	_destroyed = true;
 }
 
+void Entity::setCentre()
+{
+	_position._x = _positionBounds._x / 2;
+	_position._y = _positionBounds._y / 2;
+}
+
 void Entity::setPosition(const Vector2f& positionChange)
 {
 	if(_position._x + positionChange._x > _positionBounds._x || _position._x + positionChange._x < 0.0 || _position._y + positionChange._y > _positionBounds._y || _position._y + positionChange._y < 0.0)
@@ -80,4 +86,4 @@ void Entity::setPosition(float x, float y)
 	setPosition(temp_position);
 }
 
-Vector2f Entity::_positionBounds = Vector2f(800, 600);
+Vector2f Entity::_positionBounds = Vector2f(1000, 800);

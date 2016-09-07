@@ -54,7 +54,7 @@ void Player::movement(GameEvent event)
 		_moving = false;
 	}
 	
-	if(_right&& event == GameEvent::Release_D)
+	if(_right && event == GameEvent::Release_D)
 	{
 		_right = false;
 		_moving = false;
@@ -182,8 +182,7 @@ void Player::collide(const shared_ptr<Entity>& collider)
 	{
 		case EntityList::Enemy:
 			_lives--;
-			std::cout << _lives << std::endl;
-			this->setPosition(getMapBounds()._x/2 - _playerWidth/2, getMapBounds()._y/2 - _playerHeight/2);
+			this->setCentre();
 			if(_lives == 0)
 			{
 				destroy();
@@ -200,10 +199,10 @@ void Player::shooting(GameEvent event)
 {
 	switch(event)
 	{
-		case GameEvent::Press_E:
+		case GameEvent::Press_Space:
 			_launch_harpoon = true;
 			break;
-		case GameEvent::Release_E:
+		case GameEvent::Release_Space:
 			_launch_harpoon = false;
 			break;
 		default:

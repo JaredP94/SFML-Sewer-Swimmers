@@ -71,39 +71,6 @@ void Enemy::move(float changeInTime)
 	setPosition(getSpeed()._x * changeInTime * _speed._x, getSpeed()._y * changeInTime * _speed._y);
 }
 
-void Enemy::movement(GameEvent event)
-{
-	switch(event)
-	{
-		case GameEvent::Press_W:
-			_up = true;
-			break;
-		case GameEvent::Press_A:
-			_left = true;
-			break;
-		case GameEvent::Press_S:
-			_down = true;
-			break;
-		case GameEvent::Press_D:
-			_right = true;
-			break;
-		case GameEvent::Release_W:
-			_up = false;
-			break;
-		case GameEvent::Release_A:
-			_left = false;
-			break;
-		case GameEvent::Release_S:
-			_down = false;
-			break;
-		case GameEvent::Release_D:
-			_right = false;
-			break;
-		default:
-			break;
-	}
-}
-
 list<Vector2f> Enemy::hitboxPoints()
 {
 	list<Vector2f> hitbox_coords;

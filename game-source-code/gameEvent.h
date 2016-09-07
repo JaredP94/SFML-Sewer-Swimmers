@@ -10,13 +10,13 @@ enum class GameEvent
 	Press_A,
 	Press_S,
 	Press_D,
-	Press_E,
+	Press_Enter,
 	Press_Space,
+	Release_Space,
 	Release_W,
 	Release_A,
 	Release_S,
 	Release_D,
-	Release_E
 };
 
 #endif

@@ -37,12 +37,14 @@ private:
 	void win();
 	void lose();
 	void endGame();
+	vector<int>& updateStats();
 	
 	Interface _interface;
 	EntityContainer _entities;
 	vector<shared_ptr<MovingEntity>> _moving_entities;
 	vector<shared_ptr<ShootingMovingEntity>> _shooting_entities;
 	shared_ptr<Player> _player;
+	vector<int> _stats;
 	
 	bool _running = true;
 	bool _paused = false;

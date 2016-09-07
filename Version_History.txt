@@ -1,4 +1,10 @@
 =======================================================
+Date: 07/09/2016 - 14:40
+Commit Tag: Audio Implementation + Visual Improvements + Code Optimisations
+User: JaredP94
+Details: Changed enemy and player images + Added game soundtrack and required dll files + Updated splashscreen + Added entity functionality + Improved control scheme + Display images representing player lives on screen during gameplay + Code clean-up for multiple classes
+
+=======================================================
 Date: 06/09/2016 - 20:30
 Commit Tag: Implemented Linear Movement
 User: JaredP94

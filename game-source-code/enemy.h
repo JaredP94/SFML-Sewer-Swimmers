@@ -19,7 +19,6 @@ public:
 	Enemy();
 	~Enemy();
 	Vector2f positionChange();
-	void movement(GameEvent event);
 	static int getEnemyQuantity() {return _enemy_quantity;};
 //	void directionChange(Direction direction);
 	bool faceUp() const;

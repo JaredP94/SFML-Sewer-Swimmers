@@ -2,6 +2,7 @@
 #define INTERFACE_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "assetManager.h"
 #include "characterEntity.h"
 #include "entityList.h"
@@ -17,7 +18,7 @@ class Interface
 {
 public:
 	Interface();
-	void renderGame(vector<CharacterEntity>& list_of_characters);
+	void renderGame(vector<CharacterEntity>& list_of_characters, vector<int>& stats);
 	list<GameEvent> interfaceInstructions();
 	void closeWindow();
 	void processEvents();
@@ -26,6 +27,9 @@ public:
 	void winGame();
 	void loseGame();
 	void renderSplash();
+	void playMusic();
+	void updateGameStats(vector<int>& stats);
+//	void renderExplosion();
 	
 private:
 	void loadTextures(vector<CharacterEntity>& list_of_characters);
@@ -34,9 +38,9 @@ private:
 	
 	list<GameEvent> _game_instructions;
 	sf::RenderWindow _window;
-	sf::View _player_lives;
 	AssetManager<sf::Texture, EntityList> _assets;
 	sf::Font _text;
+	sf::Music _music;
 	
 	bool _paused = false;
 	bool _win = false;

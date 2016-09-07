@@ -24,6 +24,7 @@ public:
 	virtual list<Vector2f> hitboxPoints() = 0;
 	virtual void collide(const shared_ptr<Entity>& collider) = 0;
 	void setPosition(float x, float y);
+	void setCentre();
 	
 protected:
 	void setPosition(const Vector2f& positionChange);

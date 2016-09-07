@@ -24,6 +24,8 @@ void Logic::startGame()
 	auto time_since_last_update = 0.f;
 	auto time_per_frame = 1.0f/_fps;
 	
+	_interface.playMusic();
+	
 	while(_running)
 	{
 		if(_splashscreen)
@@ -85,12 +87,14 @@ void Logic::updateGame(float changeInTime)
 	{
 		win();
 	}
+	
+	updateStats();
 }
 
 void Logic::renderGame()
 {
 	std::vector<CharacterEntity> characters = _entities.characterList();
-	_interface.renderGame(characters);
+	_interface.renderGame(characters, updateStats());
 }
 
 void Logic::createObjects()
@@ -138,10 +142,10 @@ void Logic::gameInput()
 			case GameEvent::Closed_Window:
 				endGame();
 				break;
-			case GameEvent::Press_Space:
+			case GameEvent::Press_Enter:
 				_splashscreen = false;
-			case GameEvent::Press_E:
-			case GameEvent::Release_E:
+			case GameEvent::Press_Space:
+			case GameEvent::Release_Space:
 				_player->shooting(event);
 				break;
 			default:
@@ -159,6 +163,7 @@ void Logic::collisions()
 		if((*iterator)->checkIfDestroyed())
 		{
 			iterator = _entities.removeEntity(iterator);
+//			_interface.renderExplosion();
 		}
 		else
 		{
@@ -217,4 +222,11 @@ void Logic::endGame()
 void Logic::splashscreen()
 {
 	_interface.renderSplash();
+}
+
+vector<int>& Logic::updateStats()
+{
+	_stats.clear();
+	_stats = {_player->getNumberOfLives()};
+	return _stats;
 }
