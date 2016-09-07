@@ -29,8 +29,8 @@ void Ground::collide(const shared_ptr<Entity>& collider)
 		case EntityList::Player:
 			destroy();
 			break;
-		case EntityList::Enemy:
-			break;
+		case EntityList::TunnelDigger:
+			destroy();
 		default:
 			break;
 	}

@@ -25,10 +25,10 @@ public:
 	virtual void collide(const shared_ptr<Entity>& collider) = 0;
 	void setPosition(float x, float y);
 	void setCentre();
+	float positionGeneration(float positionBounds, float entitySize) const;
 	
 protected:
 	void setPosition(const Vector2f& positionChange);
-	
 	
 private:
 	EntityList _entityKey;

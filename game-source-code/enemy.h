@@ -17,10 +17,13 @@ class Enemy: public MovingEntity
 {
 public:
 	Enemy();
+	Enemy(const Vector2f& position);
 	~Enemy();
 	Vector2f positionChange();
-	static int getEnemyQuantity() {return _enemy_quantity;};
-//	void directionChange(Direction direction);
+	static int getEnemyDestroyed() {return _enemy_destroyed;};
+	static int getEnemiesCreated() {return _enemies_created;};
+	void incrementEnemiesCreated() {_enemies_created++;};
+	void groundCollision();
 	bool faceUp() const;
 	bool faceDown() const;
 	bool faceLeft() const;
@@ -29,15 +32,13 @@ public:
 	virtual list<Vector2f> hitboxPoints() override;
 	virtual void collide(const shared_ptr<Entity>& collider) override;
 	
-protected:
-	float positionGeneration(float positionBounds) const;
-	
 private:
 	bool _up = false;
 	bool _down = false;
 	bool _left = false;
 	bool _right = false;
-	static int _enemy_quantity;
+	static int _enemy_destroyed;
+	static int _enemies_created;
 	float _elapsed_time_since_update = 1.0f;
 	static const auto _enemyHeight = 30;
 	static const auto _enemyWidth = 30;

@@ -10,6 +10,7 @@
 #include "Interface.h"
 #include "player.h"
 #include "timer.h"
+#include "tunnelDigger.h"
 #include "vector2f.h"
 #include <list>
 #include <memory>
@@ -28,9 +29,11 @@ public:
 private:
 	void startGame();
 	void updateGame(float changeInTime);
-	void splashscreen();
+	void splashscreen(float time);
 	void renderGame();
-	void createObjects();
+	void createEnemies();
+	void createTunnels();
+	void createGround();
 	void gameInput();
 	void collisions();
 	void pause();
@@ -45,6 +48,7 @@ private:
 	vector<shared_ptr<ShootingMovingEntity>> _shooting_entities;
 	shared_ptr<Player> _player;
 	vector<int> _stats;
+	vector<Vector2f> _coords;
 	
 	bool _running = true;
 	bool _paused = false;

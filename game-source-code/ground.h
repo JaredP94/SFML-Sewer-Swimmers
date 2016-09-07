@@ -5,6 +5,7 @@
 #include "Entity.h"
 #include "vector2f.h"
 #include "movingEntity.h"
+#include "tunnelDigger.h"
 #include <memory>
 #include <ctime>
 #include <cmath>

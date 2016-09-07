@@ -6,7 +6,7 @@ enum class EntityList
 	Player,
 	Ground,
 	Enemy,
-	Splash,
+	TunnelDigger,
 	Harpoon,
 	Num_Lives,
 };

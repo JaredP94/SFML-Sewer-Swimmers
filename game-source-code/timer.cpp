@@ -13,6 +13,11 @@ float Timer::resetTimer()
 	auto elapsedTime = getProcessTime() - _initialTime;
 	return elapsedTime;
 }
+
+float Timer::timeElapsed()
+{
+	return getProcessTime();
+}
 	
 float Timer::getProcessTime()
 {

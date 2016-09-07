@@ -86,4 +86,11 @@ void Entity::setPosition(float x, float y)
 	setPosition(temp_position);
 }
 
+float Entity::positionGeneration(float positionBounds, float entitySize) const
+{
+	auto tmp = static_cast<int>(positionBounds - entitySize); //assuming height == width
+	auto rand_num = rand()%tmp;
+	return static_cast<float>(rand_num);
+}
+
 Vector2f Entity::_positionBounds = Vector2f(1000, 800);

@@ -26,10 +26,10 @@ public:
 	void pauseGame();
 	void winGame();
 	void loseGame();
-	void renderSplash();
+	void renderSplash(int time);
 	void playMusic();
 	void updateGameStats(vector<int>& stats);
-//	void renderExplosion();
+	void renderExplosion(const Vector2f& position);
 	
 private:
 	void loadTextures(vector<CharacterEntity>& list_of_characters);

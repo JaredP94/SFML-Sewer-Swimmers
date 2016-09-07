@@ -9,6 +9,7 @@ Interface::Interface():
 	_assets.loadAsset(EntityList::Ground,"dirt.png");
 	_assets.loadAsset(EntityList::Harpoon, "harpoon.png");
 	_assets.loadAsset(EntityList::Num_Lives, "img1.png");
+	_assets.loadAsset(EntityList::TunnelDigger, "dirt.png");
 	_text.loadFromFile("sansation.ttf");
 	_music.openFromFile("Arcade.ogg");
 }
@@ -161,15 +162,16 @@ void Interface::drawText(std::string displayText, float textSize, const Vector2f
 	_window.draw(text);
 }
 
-void Interface::renderSplash()
+void Interface::renderSplash(int time)
 {
 	sf::Texture _splashscreen;
 	_splashscreen.loadFromFile("start.png", sf::IntRect(0,0,1000,800));
 	sf::Sprite _splashy;
 	_splashy.setTexture(_splashscreen);
 	_window.draw(_splashy);
-	drawText("Dig Dug Version 1.0", 30, Vector2f(50, 20));
+	drawText("Swiggity Swooty Coming for that Turtle - Version 2.0", 30, Vector2f(50, 20));
 	drawText("Press Enter to Play", 30, Vector2f(50, 55));
+	drawText("Time until game ready: " + std::to_string(time), 30, Vector2f(50, 85));
 	_window.display();
 }
 
@@ -192,16 +194,16 @@ void Interface::updateGameStats(vector<int>& stats)
 	}
 }
 
-/*void Interface::renderExplosion()
+void Interface::renderExplosion(const Vector2f& position)
 {
 	sf::Texture _explosionTexture;
 	_explosionTexture.loadFromFile("explosion.png");
 	sf::Sprite _explosion(_explosionTexture);
-	_explosion.setPosition(200,200);
+	_explosion.setPosition(position._x, position._y);
 	for(auto i = 0; i < 16; i++)
 	{
 		_explosion.setTextureRect(sf::IntRect(i * 32,0,32,32));
 		_window.draw(_explosion);
 		_window.display();
 	}
-}*/
+}

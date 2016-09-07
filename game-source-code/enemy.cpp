@@ -1,44 +1,17 @@
 #include "enemy.h"
 
 Enemy::Enemy():
-	MovingEntity{EntityList::Enemy, Vector2f(positionGeneration(getMapBounds()._x), positionGeneration(getMapBounds()._y)), Vector2f(_enemySpeed, _enemySpeed)}
-	{
-		_enemy_quantity++;
-	}
+	MovingEntity{EntityList::Enemy, Vector2f(positionGeneration(getMapBounds()._x, _enemyWidth), positionGeneration(getMapBounds()._y - 192, _enemyHeight) + 192), Vector2f(_enemySpeed, _enemySpeed)}
+	{}
+
+Enemy::Enemy(const Vector2f& position):
+	MovingEntity{EntityList::Enemy, Vector2f(position._x, position._y), Vector2f(_enemySpeed, _enemySpeed)}
+	{}
 	
 Enemy::~Enemy()
 {
-	_enemy_quantity--;
+	_enemy_destroyed++;
 }
-
-/*void Player::directionChange(Direction direction)
-{
-	switch(static_cast<int>(direction))
-	{
-		case 0:
-			_up = true;
-			_down = false;
-			_left = false;
-			_right = false;
-		case 1:
-			_up = false;
-			_down = false;
-			_left = true;
-			_right = false;
-		case 2:
-			_up = false;
-			_down = true;
-			_left = false;
-			_right = false;
-		case 3:
-			_up = false;
-			_down = false;
-			_left = false;
-			_right = true;
-		default:
-			break; //shouldn't get here
-	}
-}*/
 
 bool Enemy::faceUp() const
 {
@@ -65,7 +38,7 @@ void Enemy::move(float changeInTime)
 	_elapsed_time_since_update += changeInTime;
 	if(_elapsed_time_since_update >= 1.0f)
 	{
-		_speed = Vector2f(positionGeneration(getMapBounds()._x) - getPosition()._x, positionGeneration(getMapBounds()._y) - getPosition()._y).unitVector();
+		_speed = Vector2f(positionGeneration(getMapBounds()._x, _enemyWidth) - getPosition()._x, positionGeneration(getMapBounds()._y, _enemyHeight) - getPosition()._y).unitVector();
 		_elapsed_time_since_update = 0.f;
 	}
 	setPosition(getSpeed()._x * changeInTime * _speed._x, getSpeed()._y * changeInTime * _speed._y);
@@ -89,6 +62,7 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 		case EntityList::Player:
 			break;
 		case EntityList::Ground:
+			groundCollision();
 			break;
 		case EntityList::Harpoon:
 			destroy();
@@ -97,11 +71,11 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 	}
 }
 
-float Enemy::positionGeneration(float positionBounds) const
+void Enemy::groundCollision()
 {
-	auto tmp = static_cast<int>(positionBounds - _enemyHeight); //assuming height == width
-	auto rand_num = rand()%tmp;
-	return static_cast<float>(rand_num);
+	setPosition(0,0);
 }
 
-int Enemy::_enemy_quantity = 0;
+int Enemy::_enemy_destroyed = 0;
+
+int Enemy::_enemies_created = 0;

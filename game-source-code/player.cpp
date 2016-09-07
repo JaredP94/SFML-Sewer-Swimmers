@@ -68,27 +68,6 @@ Vector2f Player::positionChange()
 	return new_position;
 }
 
-void Player::directionChange(Direction direction)
-{
-	switch(static_cast<int>(direction))
-	{
-		case 0:
-			_facing = Direction::Up;
-			break;
-		case 1:
-			_facing = Direction::Left;
-			break;
-		case 2:
-			_facing = Direction::Down;
-			break;
-		case 3:
-			_facing = Direction::Right;
-			break;
-		default:
-			break; //shouldn't get here
-	}
-}
-
 bool Player::faceUp() const
 {
 	return _up;
@@ -120,7 +99,7 @@ void Player::move(float changeInTime)
 	auto distance = changeInTime * getSpeed();
 	if(_up)
 	{
-		if(getPosition()._y - distance._y > 0)
+		if(getPosition()._y - distance._y >= 150)
 		{
 			setPosition(0.f, -distance._y);
 		}
@@ -216,15 +195,15 @@ shared_ptr<MovingEntity> Player::shoot(float changeInTime)
 	{
 		_launch_harpoon = false;
 		Vector2f velocity_unit_direction;
-		if(_facing == Direction::Up)
+		if(getDirection() == Direction::Up)
 		{
 			velocity_unit_direction = Vector2f(0,-1);
 		}
-		else if(_facing == Direction::Down)
+		else if(getDirection() == Direction::Down)
 		{
 			velocity_unit_direction = Vector2f(0,1);
 		}
-		else if(_facing == Direction::Left)
+		else if(getDirection() == Direction::Left)
 		{
 			velocity_unit_direction = Vector2f(-1,0);
 		}

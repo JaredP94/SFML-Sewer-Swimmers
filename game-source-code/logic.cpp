@@ -10,10 +10,9 @@ Logic::Logic():
 		_moving_entities.push_back(_player);
 		_shooting_entities.push_back(_player);
 		
-		createObjects();
-		
 		srand(time(0));
-		
+		createGround();
+		createTunnels();
 		startGame();
 	}
 	
@@ -28,12 +27,18 @@ void Logic::startGame()
 	
 	while(_running)
 	{
-		if(_splashscreen)
+		if(_splashscreen || clock.timeElapsed() < 6)
 		{
 			clock.resetTimer();
 			gameInput();
-			splashscreen();
+			splashscreen(6.f - clock.timeElapsed());
+			time_since_last_update += clock.resetTimer();
 			clock.beginTimer();
+			while(time_since_last_update > time_per_frame && !_paused)
+			{
+				updateGame(time_per_frame);
+				time_since_last_update -= time_per_frame;
+			}
 		}
 		else if(_paused)
 		{
@@ -44,6 +49,7 @@ void Logic::startGame()
 		}
 		else
 		{
+			createEnemies();
 			time_since_last_update += clock.resetTimer();
 			clock.beginTimer();
 			
@@ -83,7 +89,7 @@ void Logic::updateGame(float changeInTime)
 		lose();
 	}
 	
-	if(Enemy::getEnemyQuantity() == 0)
+	if(Enemy::getEnemyDestroyed() == 5)
 	{
 		win();
 	}
@@ -97,21 +103,17 @@ void Logic::renderGame()
 	_interface.renderGame(characters, updateStats());
 }
 
-void Logic::createObjects()
+void Logic::createEnemies()
 {
-	for(auto i = 0; i < 5; i++)
+	while(Enemy::getEnemiesCreated() < 5)
 	{
-		shared_ptr<Enemy> enemy_ptr = make_shared<Enemy>();
-		_entities.addEntity(enemy_ptr);
-		_moving_entities.push_back(enemy_ptr);
-	}
-	
-	for(auto i = 0; i < _screen_width / 32; i++)
-	{
-		for(auto j = 6; j < _screen_height / 32; j++)
+		for(unsigned int i=0; i != _coords.size(); i++)
 		{
-			std::shared_ptr<Ground> ground_ptr = std::make_shared<Ground>(i * 32, j * 32);
-			_entities.addEntity(ground_ptr);
+			auto pos = _coords.at(i);
+			shared_ptr<Enemy> enemy_ptr = make_shared<Enemy>(pos);
+			_entities.addEntity(enemy_ptr);
+			_moving_entities.push_back(enemy_ptr);
+			enemy_ptr->incrementEnemiesCreated();
 		}
 	}
 }
@@ -162,8 +164,13 @@ void Logic::collisions()
 	{
 		if((*iterator)->checkIfDestroyed())
 		{
+			if((*iterator)->character().getEntityKey() == EntityList::TunnelDigger)
+			{
+				auto pos = (*iterator)->getPosition();
+				_coords.push_back(pos);
+			}
 			iterator = _entities.removeEntity(iterator);
-//			_interface.renderExplosion();
+//			_interface.renderExplosion(pos);
 		}
 		else
 		{
@@ -219,9 +226,13 @@ void Logic::endGame()
 	_running = false;
 }
 
-void Logic::splashscreen()
+void Logic::splashscreen(float time)
 {
-	_interface.renderSplash();
+	if(time <= 0)
+	{
+		time = 0;
+	}
+	_interface.renderSplash((int) time);
 }
 
 vector<int>& Logic::updateStats()
@@ -229,4 +240,31 @@ vector<int>& Logic::updateStats()
 	_stats.clear();
 	_stats = {_player->getNumberOfLives()};
 	return _stats;
+}
+
+void Logic::createTunnels()
+{
+	auto pos_counter = 1;
+	while(TunnelDigger::getDiggerQuantity() < 4)
+	{
+		shared_ptr<TunnelDigger> digger_ptr = make_shared<TunnelDigger>(Vector2f(pos_counter * 200, (pos_counter * 100) + 150));
+		_entities.addEntity(digger_ptr);
+		_moving_entities.push_back(digger_ptr);
+		pos_counter++;
+	}
+	shared_ptr<TunnelDigger> digger_ptr = make_shared<TunnelDigger>(_player->getPosition());
+	_entities.addEntity(digger_ptr);
+	_moving_entities.push_back(digger_ptr);
+}
+
+void Logic::createGround()
+{
+	for(auto i = 0; i < _screen_width / 32; i++)
+	{
+		for(auto j = 6; j < _screen_height / 32; j++)
+		{
+			std::shared_ptr<Ground> ground_ptr = std::make_shared<Ground>(i * 32, j * 32);
+			_entities.addEntity(ground_ptr);
+		}
+	}
 }

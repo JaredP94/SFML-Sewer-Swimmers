@@ -9,6 +9,7 @@ public:
 	Timer();
 	void beginTimer();
 	float resetTimer();
+	float timeElapsed();
 	
 private:
 	float getProcessTime();

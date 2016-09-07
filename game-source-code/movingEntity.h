@@ -1,6 +1,7 @@
 #ifndef MOVING_ENTITY_H
 #define MOVING_ENTITY_H
 
+#include "direction.h"
 #include "entity.h"
 #include "entityList.h"
 #include "vector2f.h"
@@ -16,9 +17,12 @@ public:
 	virtual list<Vector2f> hitboxPoints() override = 0;
 	virtual void collide(const shared_ptr<Entity>& collider) override = 0;
 	Vector2f getSpeed() const;
+	void directionChange(Direction direction);
+	Direction getDirection();
 	
 private:
 	Vector2f _speed;
+	Direction _facing;
 	
 };
 

@@ -1,4 +1,10 @@
 =======================================================
+Date: 08/09/2016 - 01:35
+Commit Tag: Tunnel Digging + Countdown Timer + Position Generation + Refactoring + Direction Changing + Game Optimisations
+User: JaredP94
+Details: Added explosion animations (currently not set to not render) + Created random position generation for entities + Added tunnel digger class which destroys ground  object in random direction to create tunnels before game starts and then spawns enemies in tunnel using returned location on destruction + Countdown timer on splashscreen whilst map is being rendered + Code Refactoring across multiple classes + Implemented ability to change direction + Improved timer capabilities + Updated some game images
+
+=======================================================
 Date: 07/09/2016 - 14:40
 Commit Tag: Audio Implementation + Visual Improvements + Code Optimisations
 User: JaredP94
