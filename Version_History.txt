@@ -1,4 +1,10 @@
 =======================================================
+Date: 08/09/2016 - 13:50
+Commit Tag: Inheritance Improvements + Limited Harpoon Quantity + Autonomous Enemy Movement + Refactoring
+User: JaredP94
+Details: Improved inheritance structure and functionality for moving entities + Limited harpoon quantity on screen to 1 + Constrained enemies to stay in tunnels where they initially spawn (enemies now consider collisions with ground in their movement) + Implemented more linear movement of enemies with an autonomous movement system + Code Refactoring
+
+=======================================================
 Date: 08/09/2016 - 01:35
 Commit Tag: Tunnel Digging + Countdown Timer + Position Generation + Refactoring + Direction Changing + Game Optimisations
 User: JaredP94

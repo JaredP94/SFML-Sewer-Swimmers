@@ -23,7 +23,7 @@ public:
 	static int getEnemyDestroyed() {return _enemy_destroyed;};
 	static int getEnemiesCreated() {return _enemies_created;};
 	void incrementEnemiesCreated() {_enemies_created++;};
-	void groundCollision();
+	void Collision();
 	bool faceUp() const;
 	bool faceDown() const;
 	bool faceLeft() const;
@@ -33,15 +33,11 @@ public:
 	virtual void collide(const shared_ptr<Entity>& collider) override;
 	
 private:
-	bool _up = false;
-	bool _down = false;
-	bool _left = false;
-	bool _right = false;
 	static int _enemy_destroyed;
 	static int _enemies_created;
 	float _elapsed_time_since_update = 1.0f;
-	static const auto _enemyHeight = 30;
-	static const auto _enemyWidth = 30;
+	static const auto _enemyHeight = 28;
+	static const auto _enemyWidth = 28;
 	static constexpr const auto _enemySpeed = 50.0;
 	Vector2f _speed;
 };

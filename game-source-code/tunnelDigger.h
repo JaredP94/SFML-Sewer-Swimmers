@@ -6,9 +6,6 @@
 #include "vector2f.h"
 #include <list>
 #include <memory>
-#include <iostream>
-#include <ctime>
-#include <cmath>
 
 using std::list;
 using std::shared_ptr;
@@ -21,7 +18,6 @@ public:
 	~TunnelDigger();
 	Vector2f positionChange();
 	static int getDiggerQuantity() {return _digger_quantity;};
-	void directionAssignment();
 	virtual void move(float changeInTime) override;
 	virtual list<Vector2f> hitboxPoints() override;
 	virtual void collide(const shared_ptr<Entity>& collider) override;

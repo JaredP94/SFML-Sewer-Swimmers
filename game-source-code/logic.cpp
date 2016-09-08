@@ -166,8 +166,7 @@ void Logic::collisions()
 		{
 			if((*iterator)->character().getEntityKey() == EntityList::TunnelDigger)
 			{
-				auto pos = (*iterator)->getPosition();
-				_coords.push_back(pos);
+				_coords.push_back((*iterator)->getPosition());
 			}
 			iterator = _entities.removeEntity(iterator);
 //			_interface.renderExplosion(pos);

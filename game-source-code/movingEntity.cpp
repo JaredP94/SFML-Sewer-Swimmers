@@ -35,3 +35,26 @@ Direction MovingEntity::getDirection()
 {
 	return _facing;
 }
+
+void MovingEntity::directionAssignment()
+{
+	srand(time(0));
+	unsigned int random = std::rand() % 5;
+	switch(random)
+	{
+		case 1:
+			directionChange(Direction::Up);
+			break;
+		case 2:
+			directionChange(Direction::Left);
+			break;
+		case 3:
+			directionChange(Direction::Down);
+			break;
+		case 4:
+			directionChange(Direction::Right);
+			break;
+		default:
+			break;
+	}
+}

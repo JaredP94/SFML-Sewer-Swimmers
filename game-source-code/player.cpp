@@ -12,22 +12,18 @@ void Player::movement(GameEvent event)
 		switch(event)
 		{
 			case GameEvent::Press_W:
-				_up = true;
 				_moving = true;
 				directionChange(Direction::Up);
 				break;
 			case GameEvent::Press_A:
-				_left = true;
 				_moving = true;
 				directionChange(Direction::Left);
 				break;
 			case GameEvent::Press_S:
-				_down = true;
 				_moving = true;
 				directionChange(Direction::Down);
 				break;
 			case GameEvent::Press_D:
-				_right = true;
 				_moving = true;
 				directionChange(Direction::Right);
 				break;
@@ -36,27 +32,23 @@ void Player::movement(GameEvent event)
 		}
 	}
 	
-	if(_up && event == GameEvent::Release_W)
+	if(getDirection() == Direction::Up && event == GameEvent::Release_W)
 	{
-		_up = false;
 		_moving = false;
 	}
 	
-	if(_down && event == GameEvent::Release_S)
+	if(getDirection() == Direction::Down && event == GameEvent::Release_S)
 	{
-		_down = false;
 		_moving = false;
 	}
 	
-	if(_left && event == GameEvent::Release_A)
+	if(getDirection() == Direction::Left && event == GameEvent::Release_A)
 	{
-		_left = false;
 		_moving = false;
 	}
 	
-	if(_right && event == GameEvent::Release_D)
+	if(getDirection() == Direction::Right && event == GameEvent::Release_D)
 	{
-		_right = false;
 		_moving = false;
 	}
 }
@@ -68,26 +60,6 @@ Vector2f Player::positionChange()
 	return new_position;
 }
 
-bool Player::faceUp() const
-{
-	return _up;
-}
-
-bool Player::faceDown() const
-{
-	return _down;
-}
-
-bool Player::faceLeft() const
-{
-	return _left;
-}
-
-bool Player::faceRight() const
-{
-	return _right;
-}
-
 int Player::getNumberOfLives()
 {
 	return _lives;
@@ -97,7 +69,7 @@ void Player::move(float changeInTime)
 {
 	Vector2f past_pos = getPosition();
 	auto distance = changeInTime * getSpeed();
-	if(_up)
+	if(getDirection() == Direction::Up && _moving)
 	{
 		if(getPosition()._y - distance._y >= 150)
 		{
@@ -108,7 +80,7 @@ void Player::move(float changeInTime)
 			setPosition(0.f, 0.f);
 		}
 	}
-	if(_down)
+	if(getDirection() == Direction::Down && _moving)
 	{
 		if(getPosition()._y + distance._y + _playerHeight< getMapBounds()._y)
 		{
@@ -119,7 +91,7 @@ void Player::move(float changeInTime)
 			setPosition(0.f, getMapBounds()._y - _playerHeight - getPosition()._y);
 		}
 	}
-	if(_left)
+	if(getDirection() == Direction::Left && _moving)
 	{
 		if(getPosition()._x - distance._x > 0)
 		{
@@ -130,7 +102,7 @@ void Player::move(float changeInTime)
 			setPosition(0.f, 0.f);
 		}
 	}
-	if(_right)
+	if(getDirection() == Direction::Right && _moving)
 	{
 		if(getPosition()._x + distance._x + _playerWidth < getMapBounds()._x)
 		{
@@ -179,10 +151,10 @@ void Player::shooting(GameEvent event)
 	switch(event)
 	{
 		case GameEvent::Press_Space:
-			_launch_harpoon = true;
+			_shooting = true;
 			break;
 		case GameEvent::Release_Space:
-			_launch_harpoon = false;
+			_shooting = false;
 			break;
 		default:
 			break;
@@ -191,9 +163,8 @@ void Player::shooting(GameEvent event)
 
 shared_ptr<MovingEntity> Player::shoot(float changeInTime)
 {
-	if(_launch_harpoon)
+	while(Harpoon::getHarpoonStatus() < 1 && _shooting)
 	{
-		_launch_harpoon = false;
 		Vector2f velocity_unit_direction;
 		if(getDirection() == Direction::Up)
 		{

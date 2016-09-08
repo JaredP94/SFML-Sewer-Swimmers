@@ -6,6 +6,7 @@
 #include "entityList.h"
 #include "vector2f.h"
 #include <list>
+#include <ctime>
 
 using std::list;
 
@@ -18,6 +19,7 @@ public:
 	virtual void collide(const shared_ptr<Entity>& collider) override = 0;
 	Vector2f getSpeed() const;
 	void directionChange(Direction direction);
+	void directionAssignment();
 	Direction getDirection();
 	
 private:

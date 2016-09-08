@@ -9,7 +9,6 @@
 #include "vector2f.h"
 #include <list>
 #include <memory>
-#include <iostream>
 
 using std::list;
 using std::shared_ptr;
@@ -22,10 +21,6 @@ public:
 	void movement(GameEvent event);
 	void shooting(GameEvent event);
 	Vector2f positionChange();
-	bool faceUp() const;
-	bool faceDown() const;
-	bool faceLeft() const;
-	bool faceRight() const;
 	int getNumberOfLives();
 	virtual void move(float changeInTime) override;
 	virtual list<Vector2f> hitboxPoints() override;
@@ -33,12 +28,8 @@ public:
 	virtual shared_ptr<MovingEntity> shoot(float changeInTime) override;
 	
 private:
-	bool _up = false;
-	bool _down = false;
-	bool _left = false;
-	bool _right = false;
 	bool _moving = false;
-	bool _launch_harpoon = false;
+	bool _shooting = false;
 	static const auto _playerHeight = 30;
 	static const auto _playerWidth = 30;
 	static constexpr const auto _playerSpeed = 100.0f;

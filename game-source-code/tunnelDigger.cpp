@@ -60,27 +60,4 @@ list<Vector2f> TunnelDigger::hitboxPoints()
 void TunnelDigger::collide(const shared_ptr<Entity>& collider)
 {}
 
-void TunnelDigger::directionAssignment()
-{
-	srand(time(0));
-	unsigned int random = std::rand() % 5;
-	switch(random)
-	{
-		case 1:
-			directionChange(Direction::Up);
-			break;
-		case 2:
-			directionChange(Direction::Left);
-			break;
-		case 3:
-			directionChange(Direction::Down);
-			break;
-		case 4:
-			directionChange(Direction::Right);
-			break;
-		default:
-			break;
-	}
-}
-
 int TunnelDigger::_digger_quantity = 0;
