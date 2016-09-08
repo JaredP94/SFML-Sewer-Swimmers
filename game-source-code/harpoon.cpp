@@ -41,7 +41,7 @@ void Harpoon::move(float changeInTime)
 {
 	setPosition(getSpeed()._x * changeInTime, getSpeed()._y * changeInTime);
 	_elapsed_distance += Vector2f(getSpeed()._x * changeInTime, getSpeed()._y * changeInTime);
-	if(getPosition()._x == getMapBounds()._x || getPosition()._x == 0.f || getPosition()._y == getMapBounds()._y || getPosition()._y == 0.f || _elapsed_distance._x <= -92 || _elapsed_distance._x >= 92 || _elapsed_distance._y <= -92 || _elapsed_distance._y >= 92)
+	if(getPosition()._x == getMapBounds()._x || getPosition()._x == 0.f || getPosition()._y == getMapBounds()._y || getPosition()._y == 0.f || _elapsed_distance._x <= -90 || _elapsed_distance._x >= 90 || _elapsed_distance._y <= -90 || _elapsed_distance._y >= 90)
 	{
 		destroy();
 	}

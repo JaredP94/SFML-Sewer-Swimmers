@@ -9,6 +9,7 @@ Logic::Logic():
 		_entities.addEntity(_player);
 		_moving_entities.push_back(_player);
 		_shooting_entities.push_back(_player);
+		Enemy::setEnemyTarget(_player);
 		
 		srand(time(0));
 		createGround();

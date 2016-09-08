@@ -19,6 +19,12 @@ Enemy::~Enemy()
 
 void Enemy::move(float changeInTime)
 {
+	if(abs(getPosition()._x - _enemy_target->getPosition()._x) <= _targetRange._x && abs(getPosition()._y - _enemy_target->getPosition()._y) <= _targetRange._y)
+	{
+		followTarget(changeInTime);
+		return;
+	}
+	
 	Vector2f velocity_unit_direction;
 	if(getDirection() == Direction::Up)
 	{
@@ -39,7 +45,7 @@ void Enemy::move(float changeInTime)
 	setPosition(getSpeed()._x * changeInTime * velocity_unit_direction._x, getSpeed()._y * changeInTime * velocity_unit_direction._y);
 	if(getPosition()._x >= getMapBounds()._x - _enemyWidth|| getPosition()._x == 0.f || getPosition()._y >= getMapBounds()._y - _enemyHeight || getPosition()._y <= 150.f)
 	{
-		Collision();
+		collision();
 	}
 }
 
@@ -59,7 +65,7 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 	switch(collider->getEntityKey())
 	{
 		case EntityList::Ground:
-			Collision();
+			collision();
 			break;
 		case EntityList::Harpoon:
 			destroy();
@@ -68,7 +74,7 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 	}
 }
 
-void Enemy::Collision()
+void Enemy::collision()
 {
 	if(getDirection() == Direction::Up)
 	{
@@ -92,6 +98,30 @@ void Enemy::Collision()
 	}
 }
 
+void Enemy::setEnemyTarget(const shared_ptr<Entity>& enemy_target)
+{
+	_enemy_target = enemy_target;
+}
+
+void Enemy::followTarget(float changeInTime)
+{
+	if(_enemy_target->checkIfDestroyed())
+	{
+		_enemy_target.reset();
+	}
+	else
+	{
+		Vector2f velocity_unit_direction = Vector2f(_enemy_target->getPosition() - getPosition()).unitVector();
+		setPosition(getSpeed()._x * changeInTime * velocity_unit_direction._x, getSpeed()._y * changeInTime * velocity_unit_direction._y);
+		if(getPosition()._x >= getMapBounds()._x - _enemyWidth|| getPosition()._x == 0.f || getPosition()._y >= getMapBounds()._y - _enemyHeight || getPosition()._y <= 150.f)
+		{
+			collision();
+		}
+	}
+}
+
 int Enemy::_enemy_destroyed = 0;
 
 int Enemy::_enemies_created = 0;
+
+shared_ptr<Entity> Enemy::_enemy_target;

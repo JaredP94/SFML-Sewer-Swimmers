@@ -1,4 +1,10 @@
 =======================================================
+Date: 08/09/2016 - 21:40
+Commit Tag: Enemy Chases Player + Harpoon Modification
+User: JaredP94
+Details: Implemented ability to track player within a certain radius + Modified harpoon fire distance to match enemy tracking radius
+
+=======================================================
 Date: 08/09/2016 - 13:50
 Commit Tag: Inheritance Improvements + Limited Harpoon Quantity + Autonomous Enemy Movement + Refactoring
 User: JaredP94

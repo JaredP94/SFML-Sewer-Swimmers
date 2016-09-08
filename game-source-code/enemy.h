@@ -22,12 +22,10 @@ public:
 	Vector2f positionChange();
 	static int getEnemyDestroyed() {return _enemy_destroyed;};
 	static int getEnemiesCreated() {return _enemies_created;};
+	static void setEnemyTarget(const shared_ptr<Entity>& enemy_target);
 	void incrementEnemiesCreated() {_enemies_created++;};
-	void Collision();
-	bool faceUp() const;
-	bool faceDown() const;
-	bool faceLeft() const;
-	bool faceRight() const;
+	void collision();
+	void followTarget(float changeInTime);
 	virtual void move(float changeInTime) override;
 	virtual list<Vector2f> hitboxPoints() override;
 	virtual void collide(const shared_ptr<Entity>& collider) override;
@@ -39,7 +37,9 @@ private:
 	static const auto _enemyHeight = 28;
 	static const auto _enemyWidth = 28;
 	static constexpr const auto _enemySpeed = 50.0;
+	Vector2f _targetRange = Vector2f(90.f, 90.f);
 	Vector2f _speed;
+	static shared_ptr<Entity> _enemy_target;
 };
 
 #endif
