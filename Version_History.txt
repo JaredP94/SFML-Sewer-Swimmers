@@ -1,4 +1,10 @@
 =======================================================
+Date: 09/09/2016 - 07:15
+Commit Tag: Entity Testing + Entity Container Testing + Vector2f
+User: Matty-Westside
+Details: Performed relevant testing on Entity, EntityContainer and Vector2f classes
+
+=======================================================
 Date: 08/09/2016 - 21:40
 Commit Tag: Enemy Chases Player + Harpoon Modification
 User: JaredP94
