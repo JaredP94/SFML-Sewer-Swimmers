@@ -4,6 +4,7 @@
 #include "gameEvent.h"
 #include "movingEntity.h"
 #include "vector2f.h"
+#include "player.h"
 #include <list>
 #include <memory>
 #include <iostream>
@@ -25,6 +26,7 @@ public:
 	static void setEnemyTarget(const shared_ptr<Entity>& enemy_target);
 	void incrementEnemiesCreated() {_enemies_created++;};
 	void collision();
+	void harpoonHit();
 	void followTarget(float changeInTime);
 	virtual void move(float changeInTime) override;
 	virtual list<Vector2f> hitboxPoints() override;

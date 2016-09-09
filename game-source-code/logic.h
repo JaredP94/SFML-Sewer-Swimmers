@@ -7,9 +7,10 @@
 #include "entityList.h"
 #include "gameEvent.h"
 #include "ground.h"
-#include "Interface.h"
+#include "interface.h"
 #include "player.h"
 #include "timer.h"
+#include "rock.h"
 #include "tunnelDigger.h"
 #include "vector2f.h"
 #include <list>
@@ -34,6 +35,7 @@ private:
 	void createEnemies();
 	void createTunnels();
 	void createGround();
+	void createRocks();
 	void gameInput();
 	void collisions();
 	void pause();

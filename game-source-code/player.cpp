@@ -12,20 +12,32 @@ void Player::movement(GameEvent event)
 		switch(event)
 		{
 			case GameEvent::Press_W:
-				_moving = true;
-				directionChange(Direction::Up);
+				if(!_shooting) 
+				{
+					_moving = true;
+					directionChange(Direction::Up);
+				}
 				break;
 			case GameEvent::Press_A:
-				_moving = true;
-				directionChange(Direction::Left);
+				if(!_shooting)
+				{
+					_moving = true;
+					directionChange(Direction::Left);
+				}
 				break;
 			case GameEvent::Press_S:
-				_moving = true;
-				directionChange(Direction::Down);
+				if(!_shooting)
+				{ 
+					_moving = true;
+					directionChange(Direction::Down);
+				}
 				break;
 			case GameEvent::Press_D:
-				_moving = true;
-				directionChange(Direction::Right);
+				if(!_shooting) 
+				{
+					_moving = true;
+					directionChange(Direction::Right);
+				}
 				break;
 			default:
 				break;
@@ -152,6 +164,7 @@ void Player::shooting(GameEvent event)
 	{
 		case GameEvent::Press_Space:
 			_shooting = true;
+			_moving = false;
 			break;
 		case GameEvent::Release_Space:
 			_shooting = false;
@@ -186,3 +199,5 @@ shared_ptr<MovingEntity> Player::shoot(float changeInTime)
 	}
 	return shared_ptr<MovingEntity> (nullptr);
 }
+
+bool Player::_shooting = false;

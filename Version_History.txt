@@ -1,4 +1,11 @@
 =======================================================
+Date: 09/09/2016 - 22:40
+Commit Tag: Added Major feature (inflation/deflation) + Basic Rock functionality (WIP) + Code Refactoring
+User: JaredP94
+Details: Added major feature whereby enemy is inflated for 2 seconds whilst constantly before being blown up (if time not reached, enemy deflates and eventually moves again) + Added rock functionality (note most functionality commented out due to unwanted results) + Code refactoring
+Issues: Inflation/Deflation animations are a bit buggy (may need to restart to remedy) + Rock is WIP
+
+=======================================================
 Date: 09/09/2016 - 07:15
 Commit Tag: Entity Testing + Entity Container Testing + Vector2f
 User: Matty-Westside

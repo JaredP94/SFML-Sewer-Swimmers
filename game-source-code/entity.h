@@ -6,6 +6,7 @@
 #include "vector2f.h"
 #include <list>
 #include <memory>
+#include <iostream>
 
 using std::list;
 using std::shared_ptr;
@@ -21,6 +22,15 @@ public:
 	EntityList getEntityKey() const;
 	bool checkIfDestroyed() const;
 	void destroy();
+	bool getInflateStatus();
+	void setInflateStatus(bool status);
+	bool getDeflateStatus();
+	void setDeflateStatus(bool status);
+	float getTimeElapsed();
+	void resetTimeElapsed();
+	void addTimeElapsed(float time);
+	bool getFrozenStatus();
+	void setFrozenStatus(bool status);
 	virtual list<Vector2f> hitboxPoints() = 0;
 	virtual void collide(const shared_ptr<Entity>& collider) = 0;
 	void setPosition(float x, float y);
@@ -34,6 +44,10 @@ private:
 	EntityList _entityKey;
 	Vector2f _position;
 	bool _destroyed = false;
+	bool _inflate = false;
+	bool _deflate = false;
+	bool _frozen = false;
+	float _time_elapsed = 0.f;
 	static Vector2f _positionBounds;
 };
 

@@ -8,6 +8,7 @@ enum class EntityList
 	Enemy,
 	TunnelDigger,
 	Harpoon,
+	Rock,
 	Num_Lives,
 };
 

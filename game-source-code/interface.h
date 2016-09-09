@@ -27,6 +27,8 @@ public:
 	void winGame();
 	void loseGame();
 	void renderSplash(int time);
+	void inflateAnimation(float time, const Vector2f& position);
+	void deflateAnimation(float time, const Vector2f& position);
 	void playMusic();
 	void updateGameStats(vector<int>& stats);
 	void renderExplosion(const Vector2f& position);

@@ -7,6 +7,7 @@
 #include "harpoon.h"
 #include "shootingMovingEntity.h"
 #include "vector2f.h"
+#include "player.h"
 #include <list>
 #include <memory>
 
@@ -22,6 +23,7 @@ public:
 	void shooting(GameEvent event);
 	Vector2f positionChange();
 	int getNumberOfLives();
+	static bool isShooting() {return _shooting;};
 	virtual void move(float changeInTime) override;
 	virtual list<Vector2f> hitboxPoints() override;
 	virtual void collide(const shared_ptr<Entity>& collider) override;
@@ -29,7 +31,7 @@ public:
 	
 private:
 	bool _moving = false;
-	bool _shooting = false;
+	static bool _shooting;
 	static const auto _playerHeight = 30;
 	static const auto _playerWidth = 30;
 	static constexpr const auto _playerSpeed = 100.0f;

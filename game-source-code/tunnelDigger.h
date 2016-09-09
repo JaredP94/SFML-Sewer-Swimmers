@@ -1,7 +1,6 @@
 #ifndef TUNNELDIGGER_H
 #define TUNNELDIGGER_H
 
-#include "gameEvent.h"
 #include "movingEntity.h"
 #include "vector2f.h"
 #include <list>

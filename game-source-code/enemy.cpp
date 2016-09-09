@@ -19,33 +19,47 @@ Enemy::~Enemy()
 
 void Enemy::move(float changeInTime)
 {
-	if(abs(getPosition()._x - _enemy_target->getPosition()._x) <= _targetRange._x && abs(getPosition()._y - _enemy_target->getPosition()._y) <= _targetRange._y)
+	if(getInflateStatus()) addTimeElapsed(changeInTime);
+	if(getDeflateStatus())
 	{
-		followTarget(changeInTime);
-		return;
+		addTimeElapsed(-0.025f);
+		if(getTimeElapsed() <= 0.f)
+		{
+			setDeflateStatus(false);
+			setFrozenStatus(false);
+			resetTimeElapsed();
+		}
 	}
-	
-	Vector2f velocity_unit_direction;
-	if(getDirection() == Direction::Up)
+	if(!getFrozenStatus())
 	{
-		velocity_unit_direction = Vector2f(0,-1);
-	}
-	else if(getDirection() == Direction::Down)
-	{
-		velocity_unit_direction = Vector2f(0,1);
-	}
-	else if(getDirection() == Direction::Left)
-	{
-		velocity_unit_direction = Vector2f(-1,0);
-	}
-	else
-	{
-		velocity_unit_direction = Vector2f(1,0);
-	}
-	setPosition(getSpeed()._x * changeInTime * velocity_unit_direction._x, getSpeed()._y * changeInTime * velocity_unit_direction._y);
-	if(getPosition()._x >= getMapBounds()._x - _enemyWidth|| getPosition()._x == 0.f || getPosition()._y >= getMapBounds()._y - _enemyHeight || getPosition()._y <= 150.f)
-	{
-		collision();
+		if(abs(getPosition()._x - _enemy_target->getPosition()._x) <= _targetRange._x && abs(getPosition()._y - _enemy_target->getPosition()._y) <= _targetRange._y)
+		{
+			followTarget(changeInTime);
+			return;
+		}
+		
+		Vector2f velocity_unit_direction;
+		if(getDirection() == Direction::Up)
+		{
+			velocity_unit_direction = Vector2f(0,-1);
+		}
+		else if(getDirection() == Direction::Down)
+		{
+			velocity_unit_direction = Vector2f(0,1);
+		}
+		else if(getDirection() == Direction::Left)
+		{
+			velocity_unit_direction = Vector2f(-1,0);
+		}
+		else
+		{
+			velocity_unit_direction = Vector2f(1,0);
+		}
+		setPosition(getSpeed()._x * changeInTime * velocity_unit_direction._x, getSpeed()._y * changeInTime * velocity_unit_direction._y);
+		if(getPosition()._x >= getMapBounds()._x - _enemyWidth|| getPosition()._x == 0.f || getPosition()._y >= getMapBounds()._y - _enemyHeight || getPosition()._y <= 150.f)
+		{
+			collision();
+		}
 	}
 }
 
@@ -67,8 +81,11 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 		case EntityList::Ground:
 			collision();
 			break;
+		case EntityList::Rock:
+			collision();
+			break;
 		case EntityList::Harpoon:
-			destroy();
+			harpoonHit();
 		default:
 			break;
 	}
@@ -95,6 +112,21 @@ void Enemy::collision()
 	{
 		setPosition(-2,0);
 		directionChange(Direction::Up);
+	}
+}
+
+void Enemy::harpoonHit()
+{
+	setFrozenStatus(true);
+	setInflateStatus(true);
+	if(getTimeElapsed() > 2 && Player::isShooting())
+	{ 
+		destroy();
+	}
+	if(!Player::isShooting())
+	{
+		setInflateStatus(false);
+		setDeflateStatus(true);
 	}
 }
 

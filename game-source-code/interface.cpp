@@ -10,6 +10,7 @@ Interface::Interface():
 	_assets.loadAsset(EntityList::Harpoon, "harpoon.png");
 	_assets.loadAsset(EntityList::Num_Lives, "img1.png");
 	_assets.loadAsset(EntityList::TunnelDigger, "dirt.png");
+	_assets.loadAsset(EntityList::Rock, "rock.png");
 	_text.loadFromFile("sansation.ttf");
 	_music.openFromFile("Arcade.ogg");
 }
@@ -205,5 +206,93 @@ void Interface::renderExplosion(const Vector2f& position)
 		_explosion.setTextureRect(sf::IntRect(i * 32,0,32,32));
 		_window.draw(_explosion);
 		_window.display();
+	}
+}
+
+void Interface::inflateAnimation(float time, const Vector2f& position)
+{
+	sf::Texture _img;
+	_img.loadFromFile("untitled.png");
+	sf::Sprite _render(_img);
+	_render.setPosition(createSFMLVector(position));
+	if(time <= 0.5f)
+	{
+		_render.setTextureRect(sf::IntRect(0,0,32,32));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+	if(time <= 1.f)
+	{
+		_render.setTextureRect(sf::IntRect(32,0,36,36));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+	if(time <= 1.5f)
+	{
+		_render.setTextureRect(sf::IntRect(66,0,40,40));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+	if(time <= 2.f)
+	{
+		_render.setTextureRect(sf::IntRect(106,0,44,44));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+}
+
+void Interface::deflateAnimation(float time, const Vector2f& position)
+{
+	sf::Texture _img;
+	_img.loadFromFile("untitled.png");
+	sf::Sprite _render(_img);
+	_render.setPosition(createSFMLVector(position));
+	if(time >= 2.f)
+	{
+		_render.setTextureRect(sf::IntRect(106,0,44,44));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+	if(time >= 1.5f)
+	{
+		_render.setTextureRect(sf::IntRect(66,0,40,40));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+	if(time >= 1.f)
+	{
+		_render.setTextureRect(sf::IntRect(32,0,36,36));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
+	}
+	if(time >= 0.5f)
+	{
+		_render.setTextureRect(sf::IntRect(0,0,32,32));
+		for(auto i = 0; i < 4; i++)
+		{
+			_window.draw(_render);
+			_window.display();
+		}
 	}
 }

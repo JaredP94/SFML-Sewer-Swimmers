@@ -93,4 +93,51 @@ float Entity::positionGeneration(float positionBounds, float entitySize) const
 	return static_cast<float>(rand_num);
 }
 
+bool Entity::getInflateStatus()
+{
+	return _inflate;
+}
+
+void Entity::setInflateStatus(bool status)
+{
+	_inflate = status;
+}
+
+bool Entity::getDeflateStatus()
+{
+	return _deflate;
+}
+
+void Entity::setDeflateStatus(bool status)
+{
+	_deflate = status;
+}
+
+float Entity::getTimeElapsed()
+{
+	return _time_elapsed;
+}
+
+void Entity::addTimeElapsed(float time)
+{
+	_time_elapsed += time;
+	if(_time_elapsed < 0.f) _time_elapsed = 0.f;
+	std::cout << _time_elapsed << std::endl;
+}
+
+bool Entity::getFrozenStatus()
+{
+	return _frozen;
+}
+
+void Entity::setFrozenStatus(bool status)
+{
+	_frozen = status;
+}
+
+void Entity::resetTimeElapsed()
+{
+	_time_elapsed = 0.f;
+}
+
 Vector2f Entity::_positionBounds = Vector2f(1000, 800);

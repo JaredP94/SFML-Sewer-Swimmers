@@ -31,6 +31,14 @@ void Ground::collide(const shared_ptr<Entity>& collider)
 			break;
 		case EntityList::TunnelDigger:
 			destroy();
+			break;
+		case EntityList::Rock:
+			if(Rock::getGroundDestroyed() <= 2)
+			{
+				destroy();
+				Rock::setGroundDestroyed();
+			}
+			break;
 		default:
 			break;
 	}
