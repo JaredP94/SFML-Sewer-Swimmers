@@ -5,6 +5,7 @@
 #include <SFML/Audio.hpp>
 #include "assetManager.h"
 #include "characterEntity.h"
+#include "EntityContainer.h"
 #include "entityList.h"
 #include "gameEvent.h"
 #include "vector2f.h"
@@ -18,7 +19,7 @@ class Interface
 {
 public:
 	Interface();
-	void renderGame(vector<CharacterEntity>& list_of_characters, vector<int>& stats);
+	void renderGame(vector<CharacterEntity>& list_of_characters, EntityContainer list_of_entities, vector<int>& stats);
 	list<GameEvent> interfaceInstructions();
 	void closeWindow();
 	void processEvents();
@@ -43,6 +44,8 @@ private:
 	AssetManager<sf::Texture, EntityList> _assets;
 	sf::Font _text;
 	sf::Music _music;
+	sf::Texture _animation;
+	sf::Sprite _render_animation;
 	
 	bool _paused = false;
 	bool _win = false;

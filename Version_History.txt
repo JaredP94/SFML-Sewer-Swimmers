@@ -1,4 +1,11 @@
 =======================================================
+Date: 11/09/2016 - 00:10
+Commit Tag: Correct Inflation/Deflation Animation + Changes to Entity Inheritance Hierarchy for Animations + Minor Updates
+User: JaredP94
+Details: Inflation and Deflation now animate as required without glitching or possibly freezing game elements + Added functionality to Entity class for inherited animation functions (to be implemented by special enemy class) + Updated animation image + Changed how animation rendering is called + Minor code refactoring/adjustments
+Issues: Rock is WIP + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 09/09/2016 - 22:40
 Commit Tag: Added Major feature (inflation/deflation) + Basic Rock functionality (WIP) + Code Refactoring
 User: JaredP94

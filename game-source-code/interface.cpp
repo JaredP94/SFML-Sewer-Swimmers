@@ -11,14 +11,28 @@ Interface::Interface():
 	_assets.loadAsset(EntityList::Num_Lives, "img1.png");
 	_assets.loadAsset(EntityList::TunnelDigger, "dirt.png");
 	_assets.loadAsset(EntityList::Rock, "rock.png");
+	_animation.loadFromFile("animation.png");
 	_text.loadFromFile("sansation.ttf");
 	_music.openFromFile("Arcade.ogg");
+	_render_animation.setTexture(_animation);
 }
 
-void Interface::renderGame(vector<CharacterEntity>& list_of_characters, vector<int>& stats)
+void Interface::renderGame(vector<CharacterEntity>& list_of_characters, EntityContainer list_of_entities, vector<int>& stats)
 {
 	_window.clear(sf::Color::Blue);
 	loadTextures(list_of_characters);
+	for(auto iterator = list_of_entities.start_pos(); iterator != list_of_entities.end_pos();)
+	{
+		if((*iterator)->getInflateStatus())
+		{
+			inflateAnimation((*iterator)->getTimeElapsed(), (*iterator)->getPosition());
+		}
+		if((*iterator)->getDeflateStatus())
+		{
+			deflateAnimation((*iterator)->getTimeElapsed(), (*iterator)->getPosition());
+		}
+			iterator++;
+	}
 	updateGameStats(stats);
 	if(_paused)
 	{
@@ -211,88 +225,50 @@ void Interface::renderExplosion(const Vector2f& position)
 
 void Interface::inflateAnimation(float time, const Vector2f& position)
 {
-	sf::Texture _img;
-	_img.loadFromFile("untitled.png");
-	sf::Sprite _render(_img);
-	_render.setPosition(createSFMLVector(position));
+	_render_animation.setPosition(createSFMLVector(position));
 	if(time <= 0.5f)
 	{
-		_render.setTextureRect(sf::IntRect(0,0,32,32));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(0,0,32,32));
+		_window.draw(_render_animation);
 	}
-	if(time <= 1.f)
+	else if(time <= 1.f)
 	{
-		_render.setTextureRect(sf::IntRect(32,0,36,36));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(32,0,34,36));
+		_window.draw(_render_animation);
 	}
-	if(time <= 1.5f)
+	else if(time <= 1.5f)
 	{
-		_render.setTextureRect(sf::IntRect(66,0,40,40));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(66,0,40,40));
+		_window.draw(_render_animation);
 	}
-	if(time <= 2.f)
+	else
 	{
-		_render.setTextureRect(sf::IntRect(106,0,44,44));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(106,0,44,44));
+		_window.draw(_render_animation);
 	}
 }
 
 void Interface::deflateAnimation(float time, const Vector2f& position)
 {
-	sf::Texture _img;
-	_img.loadFromFile("untitled.png");
-	sf::Sprite _render(_img);
-	_render.setPosition(createSFMLVector(position));
+	_render_animation.setPosition(createSFMLVector(position));
 	if(time >= 2.f)
 	{
-		_render.setTextureRect(sf::IntRect(106,0,44,44));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(106,0,44,44));
+		_window.draw(_render_animation);
 	}
-	if(time >= 1.5f)
+	else if(time >= 1.5f)
 	{
-		_render.setTextureRect(sf::IntRect(66,0,40,40));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(66,0,40,40));
+		_window.draw(_render_animation);
 	}
-	if(time >= 1.f)
+	else if(time >= 1.f)
 	{
-		_render.setTextureRect(sf::IntRect(32,0,36,36));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(32,0,34,36));
+		_window.draw(_render_animation);
 	}
-	if(time >= 0.5f)
+	else
 	{
-		_render.setTextureRect(sf::IntRect(0,0,32,32));
-		for(auto i = 0; i < 4; i++)
-		{
-			_window.draw(_render);
-			_window.display();
-		}
+		_render_animation.setTextureRect(sf::IntRect(0,0,32,32));
+		_window.draw(_render_animation);
 	}
 }

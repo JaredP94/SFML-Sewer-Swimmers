@@ -102,7 +102,7 @@ void Logic::updateGame(float changeInTime)
 void Logic::renderGame()
 {
 	std::vector<CharacterEntity> characters = _entities.characterList();
-	_interface.renderGame(characters, updateStats());
+	_interface.renderGame(characters, _entities, updateStats());
 }
 
 void Logic::createEnemies()
@@ -164,14 +164,14 @@ void Logic::collisions()
 	
 	for(auto iterator = _entities.start_pos(); iterator != _entities.end_pos();)
 	{
-		if((*iterator)->getInflateStatus())
+		/*if((*iterator)->getInflateStatus())
 		{
 			_interface.inflateAnimation((*iterator)->getTimeElapsed(), (*iterator)->getPosition());
 		}
 		if((*iterator)->getDeflateStatus())
 		{
 			_interface.deflateAnimation((*iterator)->getTimeElapsed(), (*iterator)->getPosition());
-		}
+		}*/
 		if((*iterator)->checkIfDestroyed())
 		{
 			if((*iterator)->character().getEntityKey() == EntityList::TunnelDigger)

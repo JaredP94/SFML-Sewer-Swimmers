@@ -122,7 +122,6 @@ void Entity::addTimeElapsed(float time)
 {
 	_time_elapsed += time;
 	if(_time_elapsed < 0.f) _time_elapsed = 0.f;
-	std::cout << _time_elapsed << std::endl;
 }
 
 bool Entity::getFrozenStatus()
