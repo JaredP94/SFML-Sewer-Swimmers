@@ -1,4 +1,11 @@
 =======================================================
+Date: 11/09/2016 - 16:40
+Commit Tag: Changed Ground Image + Updated Game Details + Added Rock Picture + Code Clean up
+User: JaredP94
+Details: Replaced ground image to render sewer water + Changed name of game on splash screen + Updated render image for rocks + Removed aged code which was no longer in use.
+Issues: Rock is WIP + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 11/09/2016 - 00:10
 Commit Tag: Correct Inflation/Deflation Animation + Changes to Entity Inheritance Hierarchy for Animations + Minor Updates
 User: JaredP94

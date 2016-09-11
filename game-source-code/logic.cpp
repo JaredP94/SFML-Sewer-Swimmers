@@ -164,14 +164,6 @@ void Logic::collisions()
 	
 	for(auto iterator = _entities.start_pos(); iterator != _entities.end_pos();)
 	{
-		/*if((*iterator)->getInflateStatus())
-		{
-			_interface.inflateAnimation((*iterator)->getTimeElapsed(), (*iterator)->getPosition());
-		}
-		if((*iterator)->getDeflateStatus())
-		{
-			_interface.deflateAnimation((*iterator)->getTimeElapsed(), (*iterator)->getPosition());
-		}*/
 		if((*iterator)->checkIfDestroyed())
 		{
 			if((*iterator)->character().getEntityKey() == EntityList::TunnelDigger)
@@ -280,10 +272,10 @@ void Logic::createGround()
 
 void Logic::createRocks()
 {
-	std::shared_ptr<Rock> rock_ptr = std::make_shared<Rock> (129.f, 479.f);
+	std::shared_ptr<Rock> rock_ptr = std::make_shared<Rock> (129.f, 476.f);
 	_entities.addEntity(rock_ptr);
 	_moving_entities.push_back(rock_ptr);
-	std::shared_ptr<Rock> rock_ptr2 = std::make_shared<Rock> (801.f, 479.f);
+	std::shared_ptr<Rock> rock_ptr2 = std::make_shared<Rock> (801.f, 480.f);
 	_entities.addEntity(rock_ptr2);
 	_moving_entities.push_back(rock_ptr2);
 }

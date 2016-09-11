@@ -184,9 +184,9 @@ void Interface::renderSplash(int time)
 	sf::Sprite _splashy;
 	_splashy.setTexture(_splashscreen);
 	_window.draw(_splashy);
-	drawText("Swiggity Swooty Coming for that Turtle - Version 2.0", 30, Vector2f(50, 20));
+	drawText("Sewer Swimmer - Version 2.0", 30, Vector2f(50, 20));
 	drawText("Press Enter to Play", 30, Vector2f(50, 55));
-	drawText("Time until game ready: " + std::to_string(time), 30, Vector2f(50, 85));
+	drawText("Time until game ready: " + std::to_string(time), 30, Vector2f(50, 90));
 	_window.display();
 }
 
