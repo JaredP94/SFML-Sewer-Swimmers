@@ -19,6 +19,11 @@ Enemy::~Enemy()
 
 void Enemy::move(float changeInTime)
 {
+	if(!Player::isShooting() or _enemy_target->checkIfDestroyed())
+	{
+		setInflateStatus(false);
+		setDeflateStatus(true);
+	}
 	if(getInflateStatus()) addTimeElapsed(changeInTime);
 	if(getDeflateStatus())
 	{

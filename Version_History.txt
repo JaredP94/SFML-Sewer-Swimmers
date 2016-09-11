@@ -1,4 +1,11 @@
 =======================================================
+Date: 11/09/2016 - 20:05
+Commit Tag: Fixed Deflate Issue When Player Died
+User: JaredP94
+Details: Fixed an issue where current enemy would not deflate correctly if the player was killed by another enemy whilst inflating the current enemy
+Issues: Rock is WIP + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 11/09/2016 - 16:40
 Commit Tag: Changed Ground Image + Updated Game Details + Added Rock Picture + Code Clean up
 User: JaredP94
