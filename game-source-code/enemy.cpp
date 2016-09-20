@@ -87,7 +87,8 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 			collision();
 			break;
 		case EntityList::Rock:
-			collision();
+			if(collider->getTimeElapsed() > 0) destroy();
+			else collision();
 			break;
 		case EntityList::Harpoon:
 			harpoonHit();
@@ -100,22 +101,22 @@ void Enemy::collision()
 {
 	if(getDirection() == Direction::Up)
 	{
-		setPosition(0,2);
+		setPosition(0,2.5);
 		directionChange(Direction::Left);
 	}
 	else if(getDirection() == Direction::Down)
 	{
-		setPosition(0,-2);
+		setPosition(0,-2.5);
 		directionChange(Direction::Right);
 	}
 	else if(getDirection() == Direction::Left)
 	{
-		setPosition(2,0);
+		setPosition(2.5,0);
 		directionChange(Direction::Down);
 	}
 	else
 	{
-		setPosition(-2,0);
+		setPosition(-2.5,0);
 		directionChange(Direction::Up);
 	}
 }

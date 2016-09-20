@@ -5,6 +5,7 @@
 #include "movingEntity.h"
 #include "vector2f.h"
 #include "player.h"
+#include "rock.h"
 #include <list>
 #include <memory>
 #include <iostream>

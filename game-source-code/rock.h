@@ -21,13 +21,13 @@ public:
 	virtual void collide(const shared_ptr<Entity>& collider) override;
 	
 private:
-	bool _moving = true;
+	bool _timer = false;
 	float _elapsed_time_since_update = 1.0f;
 	Vector2f _elapsed_distance = Vector2f(0, 0);
 	static int _groundDestroyed;
 	static const auto _rockHeight = 28;
 	static const auto _rockWidth = 28;
-	static constexpr const auto _rockSpeed = 10.0;
+	static constexpr const auto _rockSpeed = 50.0;
 	Vector2f _speed;
 };
 

@@ -1,4 +1,11 @@
 =======================================================
+Date: 20/09/2016 - 16:25
+Commit Tag: Implemented Major Feature (Rock Functionality) + Code Refactoring
+User: JaredP94
+Details: Rock falls when 1.5 seconds after player has cleared ground under it + Rock kills enemies if it is falling + Rock kills player if it is moving + Improved inheritance structure of entities to allow information exhange between derived classes
+Issues: Rock timer can be intiated when play touches rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 11/09/2016 - 20:05
 Commit Tag: Fixed Deflate Issue When Player Died
 User: JaredP94

@@ -3,39 +3,41 @@
 Player::Player():
 	ShootingMovingEntity{EntityList::Player, Vector2f(getMapBounds()._x/2 - _playerWidth/2, getMapBounds()._y/2 - _playerHeight/2), Vector2f(_playerSpeed, _playerSpeed)},
 	_positionChange{0, 0}
-	{}
+	{
+		setMovingStatus(false);
+	}
 
 void Player::movement(GameEvent event)
 {
-	if(!_moving)
+	if(!getMovingStatus())
 	{
 		switch(event)
 		{
 			case GameEvent::Press_W:
 				if(!_shooting) 
 				{
-					_moving = true;
+					setMovingStatus(true);
 					directionChange(Direction::Up);
 				}
 				break;
 			case GameEvent::Press_A:
 				if(!_shooting)
 				{
-					_moving = true;
+					setMovingStatus(true);
 					directionChange(Direction::Left);
 				}
 				break;
 			case GameEvent::Press_S:
 				if(!_shooting)
 				{ 
-					_moving = true;
+					setMovingStatus(true);
 					directionChange(Direction::Down);
 				}
 				break;
 			case GameEvent::Press_D:
 				if(!_shooting) 
 				{
-					_moving = true;
+					setMovingStatus(true);
 					directionChange(Direction::Right);
 				}
 				break;
@@ -46,22 +48,22 @@ void Player::movement(GameEvent event)
 	
 	if(getDirection() == Direction::Up && event == GameEvent::Release_W)
 	{
-		_moving = false;
+		setMovingStatus(false);
 	}
 	
 	if(getDirection() == Direction::Down && event == GameEvent::Release_S)
 	{
-		_moving = false;
+		setMovingStatus(false);
 	}
 	
 	if(getDirection() == Direction::Left && event == GameEvent::Release_A)
 	{
-		_moving = false;
+		setMovingStatus(false);
 	}
 	
 	if(getDirection() == Direction::Right && event == GameEvent::Release_D)
 	{
-		_moving = false;
+		setMovingStatus(false);
 	}
 }
 
@@ -81,7 +83,7 @@ void Player::move(float changeInTime)
 {
 	Vector2f past_pos = getPosition();
 	auto distance = changeInTime * getSpeed();
-	if(getDirection() == Direction::Up && _moving)
+	if(getDirection() == Direction::Up && getMovingStatus())
 	{
 		if(getPosition()._y - distance._y >= 150)
 		{
@@ -92,7 +94,7 @@ void Player::move(float changeInTime)
 			setPosition(0.f, 0.f);
 		}
 	}
-	if(getDirection() == Direction::Down && _moving)
+	if(getDirection() == Direction::Down && getMovingStatus())
 	{
 		if(getPosition()._y + distance._y + _playerHeight< getMapBounds()._y)
 		{
@@ -103,7 +105,7 @@ void Player::move(float changeInTime)
 			setPosition(0.f, getMapBounds()._y - _playerHeight - getPosition()._y);
 		}
 	}
-	if(getDirection() == Direction::Left && _moving)
+	if(getDirection() == Direction::Left && getMovingStatus())
 	{
 		if(getPosition()._x - distance._x > 0)
 		{
@@ -114,7 +116,7 @@ void Player::move(float changeInTime)
 			setPosition(0.f, 0.f);
 		}
 	}
-	if(getDirection() == Direction::Right && _moving)
+	if(getDirection() == Direction::Right && getMovingStatus())
 	{
 		if(getPosition()._x + distance._x + _playerWidth < getMapBounds()._x)
 		{
@@ -144,17 +146,55 @@ void Player::collide(const shared_ptr<Entity>& collider)
 	switch(collider->getEntityKey())
 	{
 		case EntityList::Enemy:
-			_lives--;
-			this->setCentre();
-			if(_lives == 0)
-			{
-				destroy();
-			}
+			collision();
+			loseLife();
 			break;
-		case EntityList::Ground:
+		case EntityList::Rock:
+			if(collider->getTimeElapsed() >= 1.5) 
+			{
+					collision();
+					loseLife();
+			}
+			else rockCollision();
 			break;
 		default:
 			break;
+	}
+}
+
+void Player::collision()
+{
+	setMovingStatus(false);
+}
+
+void Player::rockCollision()
+{
+	setMovingStatus(false);
+	if(getDirection() == Direction::Up)
+	{
+		setPosition(0,2);
+	}
+	if(getDirection() == Direction::Down)
+	{
+		setPosition(0,-2);
+	}
+	if(getDirection() == Direction::Left)
+	{
+		setPosition(2,0);
+	}
+	if(getDirection() == Direction::Right)
+	{
+		setPosition(-2,0);
+	}
+}
+
+void Player::loseLife()
+{
+	_lives--;
+	this->setCentre();
+	if(_lives == 0)
+	{
+		destroy();
 	}
 }
 
@@ -164,7 +204,7 @@ void Player::shooting(GameEvent event)
 	{
 		case GameEvent::Press_Space:
 			_shooting = true;
-			_moving = false;
+			setMovingStatus(false);
 			break;
 		case GameEvent::Release_Space:
 			_shooting = false;

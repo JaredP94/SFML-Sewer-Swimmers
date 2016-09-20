@@ -30,6 +30,8 @@ public:
 	void addTimeElapsed(float time);
 	bool getFrozenStatus();
 	void setFrozenStatus(bool status);
+	bool getMovingStatus();
+	void setMovingStatus(bool status);
 	virtual list<Vector2f> hitboxPoints() = 0;
 	virtual void collide(const shared_ptr<Entity>& collider) = 0;
 	void setPosition(float x, float y);
@@ -46,6 +48,7 @@ private:
 	bool _inflate = false;
 	bool _deflate = false;
 	bool _frozen = false;
+	bool _moving = false;
 	float _time_elapsed = 0.f;
 	static Vector2f _positionBounds;
 };

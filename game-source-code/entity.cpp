@@ -134,6 +134,16 @@ void Entity::setFrozenStatus(bool status)
 	_frozen = status;
 }
 
+bool Entity::getMovingStatus()
+{
+	return _moving;
+}
+
+void Entity::setMovingStatus(bool status)
+{
+	_moving = status;
+}
+
 void Entity::resetTimeElapsed()
 {
 	_time_elapsed = 0.f;

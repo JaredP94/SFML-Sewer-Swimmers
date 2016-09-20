@@ -7,7 +7,9 @@ Rock::Rock(float x, float y):
 void Rock::move(float changeInTime)
 {
 	Vector2f velocity_unit_direction;
-	if(_moving)
+	if(_timer) this->addTimeElapsed(changeInTime);
+	if(!_timer) this->resetTimeElapsed();
+	if(getMovingStatus())
 	{
 		velocity_unit_direction = Vector2f(0,1);
 	}
@@ -19,7 +21,7 @@ void Rock::move(float changeInTime)
 	_elapsed_distance += Vector2f(getSpeed()._x * changeInTime, getSpeed()._y * changeInTime);
 	if(getPosition()._y >= getMapBounds()._y - _rockHeight)
 	{
-		setPosition(0.f, getMapBounds()._y - _rockHeight - getPosition()._y);
+		destroy();
 	}
 }
 
@@ -39,10 +41,21 @@ void Rock::collide(const shared_ptr<Entity>& collider)
 	switch(collider->getEntityKey())
 	{
 		case EntityList::Ground:
-			if(_groundDestroyed >= 2) _moving = false;
+			if(_groundDestroyed >= 2) 
+			{
+				setMovingStatus(false);
+				if(this->getTimeElapsed() >= 1.5) destroy();
+				_timer = false;
+				setPosition(0,-1.75);
+			}
+			break;
+		case EntityList::Player:
+			setMovingStatus(false);
+			_timer = true;
 			break;
 		default:
-			//_moving = true;
+				if(!_timer || getTimeElapsed() >= 1.5) setMovingStatus(true);
+				else setMovingStatus(false);
 			break;
 	}
 }
