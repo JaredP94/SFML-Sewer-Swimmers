@@ -79,6 +79,11 @@ int Player::getNumberOfLives()
 	return _lives;
 }
 
+void Player::addScore(int score)
+{
+	_score += score;
+}
+
 void Player::move(float changeInTime)
 {
 	Vector2f past_pos = getPosition();
@@ -241,3 +246,5 @@ shared_ptr<MovingEntity> Player::shoot(float changeInTime)
 }
 
 bool Player::_shooting = false;
+
+int Player::_score = 0;

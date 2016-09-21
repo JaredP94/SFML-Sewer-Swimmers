@@ -23,6 +23,8 @@ public:
 	void shooting(GameEvent event);
 	Vector2f positionChange();
 	int getNumberOfLives();
+	static int getScore() {return _score;};
+	static void addScore(int score);
 	void collision();
 	void rockCollision();
 	void loseLife();
@@ -38,6 +40,7 @@ private:
 	static const auto _playerWidth = 30;
 	static constexpr const auto _playerSpeed = 100.0f;
 	int _lives = 5;
+	static int _score;
 	Vector2f _positionChange;
 };
 

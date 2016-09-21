@@ -28,6 +28,7 @@ void Ground::collide(const shared_ptr<Entity>& collider)
 	{
 		case EntityList::Player:
 			destroy();
+			Player::addScore(25);
 			break;
 		case EntityList::TunnelDigger:
 			destroy();

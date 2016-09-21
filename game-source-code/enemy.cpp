@@ -87,7 +87,11 @@ void Enemy::collide(const shared_ptr<Entity>& collider)
 			collision();
 			break;
 		case EntityList::Rock:
-			if(collider->getTimeElapsed() > 0) destroy();
+			if(collider->getTimeElapsed() > 0) 
+			{
+				destroy();
+				Player::addScore(250);
+			}
 			else collision();
 			break;
 		case EntityList::Harpoon:
@@ -128,6 +132,7 @@ void Enemy::harpoonHit()
 	if(getTimeElapsed() > 2 && Player::isShooting())
 	{ 
 		destroy();
+		Player::addScore(125);
 	}
 	if(!Player::isShooting())
 	{

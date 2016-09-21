@@ -1,4 +1,11 @@
 =======================================================
+Date: 21/09/2016 - 11:15
+Commit Tag: Implemented Minor Feature (Rock Functionality) + File Reader
+User: JaredP94
+Details: Scoring feature now implemented (50 pts for destroying block of ground, 250 pts for destroying enemy with harpoon, 500 pts for destroying enemy with falling rock) + Implemented file reader class to read in high score from previous game and save current high score (if new one is achieved)
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 20/09/2016 - 16:25
 Commit Tag: Implemented Major Feature (Rock Functionality) + Code Refactoring
 User: JaredP94

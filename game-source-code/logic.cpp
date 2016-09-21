@@ -3,6 +3,7 @@
 Logic::Logic():
 	_interface(),
 	_entities(),
+	_score_history("score.txt"),
 	_player(std::make_shared<Player>())
 	{
 		Entity::setMapBounds(Vector2f(_screen_width, _screen_height));
@@ -224,6 +225,7 @@ void Logic::lose()
 void Logic::endGame()
 {
 	_interface.closeWindow();
+	_score_history.closeFile();
 	_running = false;
 }
 
@@ -239,7 +241,12 @@ void Logic::splashscreen(float time)
 vector<int>& Logic::updateStats()
 {
 	_stats.clear();
-	_stats = {_player->getNumberOfLives()};
+	if(Player::getScore() > _score_history.getHighScore())
+	{
+		_stats = {_player->getNumberOfLives(), Player::getScore(), Player::getScore()};
+		_score_history.setHighScore(Player::getScore());
+	}
+	else _stats = {_player->getNumberOfLives(), Player::getScore(), _score_history.getHighScore()};
 	return _stats;
 }
 

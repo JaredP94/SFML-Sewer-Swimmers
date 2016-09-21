@@ -207,6 +207,8 @@ void Interface::updateGameStats(vector<int>& stats)
 		sprite_location += Vector2f(32,0);
 		_window.draw(_stat_sprite);
 	}
+	drawText("Score: " + std::to_string(stats.at(1)), 30, Vector2f(450,5));
+	drawText("High Score: " + std::to_string(stats.at(2)), 30, Vector2f(750,5));
 }
 
 void Interface::renderExplosion(const Vector2f& position)

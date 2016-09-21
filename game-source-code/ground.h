@@ -6,6 +6,7 @@
 #include "vector2f.h"
 #include "movingEntity.h"
 #include "rock.h"
+#include "player.h"
 #include "tunnelDigger.h"
 #include <memory>
 #include <ctime>

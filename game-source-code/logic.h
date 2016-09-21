@@ -5,6 +5,7 @@
 #include "enemy.h"
 #include "entityContainer.h"
 #include "entityList.h"
+#include "FileReader.h"
 #include "gameEvent.h"
 #include "ground.h"
 #include "interface.h"
@@ -46,6 +47,7 @@ private:
 	
 	Interface _interface;
 	EntityContainer _entities;
+	FileReader _score_history;
 	vector<shared_ptr<MovingEntity>> _moving_entities;
 	vector<shared_ptr<ShootingMovingEntity>> _shooting_entities;
 	shared_ptr<Player> _player;
