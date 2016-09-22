@@ -81,7 +81,7 @@ public:
 	* Resets timer to zero.
 	*/
 	void resetTimeElapsed();
-	/*
+	/**
 	* Adds entered time to current time elapsed.
 	* @param time is a float containing amount of time to be added to current elapsed time.
 	*/

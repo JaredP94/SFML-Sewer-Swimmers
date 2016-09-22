@@ -1,4 +1,11 @@
 =======================================================
+Date: 22/09/2016 - 22:40
+Commit Tag: Technical Reference Manual Correction
+User: JaredP94
+Details: Corrected missing parameters missing from some function descriptions.
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 22/09/2016 - 21:50
 Commit Tag: Technical Reference Manual + Code Optimisations
 User: JaredP94
