@@ -1,0 +1,4 @@
+<map id="TunnelDigger" name="TunnelDigger">
+<area shape="rect" id="node2" href="$class_moving_entity.html" title="MovingEntity class &#45; creates extension of Entity class to add moving functionality to Entity objects..." alt="" coords="5,439,165,633"/>
+<area shape="rect" id="node3" href="$class_entity.html" title="Entity class &#45; manages properties of all game Entity objects. " alt="" coords="14,5,157,391"/>
+</map>

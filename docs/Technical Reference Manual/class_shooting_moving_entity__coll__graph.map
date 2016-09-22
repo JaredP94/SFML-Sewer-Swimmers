@@ -1,0 +1,5 @@
+<map id="ShootingMovingEntity" name="ShootingMovingEntity">
+<area shape="rect" id="node2" href="$class_moving_entity.html" title="MovingEntity class &#45; creates extension of Entity class to add moving functionality to Entity objects..." alt="" coords="9,624,169,804"/>
+<area shape="rect" id="node3" href="$class_entity.html" title="Entity class &#45; manages properties of all game Entity objects. " alt="" coords="120,219,263,575"/>
+<area shape="rect" id="node4" href="$class_vector2f.html" title="Vector2f class &#45; manages all vector related operations of game. " alt="" coords="28,5,155,141"/>
+</map>

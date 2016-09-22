@@ -4,12 +4,14 @@ Enemy::Enemy():
 	MovingEntity{EntityList::Enemy, Vector2f(positionGeneration(getMapBounds()._x, _enemyWidth), positionGeneration(getMapBounds()._y - 192, _enemyHeight) + 192), Vector2f(_enemySpeed, _enemySpeed)}
 	{
 		directionAssignment();
+		_enemies_created++;
 	}
 
 Enemy::Enemy(const Vector2f& position):
 	MovingEntity{EntityList::Enemy, Vector2f(position._x, position._y), Vector2f(_enemySpeed, _enemySpeed)}
 	{
 		directionAssignment();
+		_enemies_created++;
 	}
 	
 Enemy::~Enemy()
@@ -81,7 +83,7 @@ list<Vector2f> Enemy::hitboxPoints()
 
 void Enemy::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->getEntityKey())
+	switch(collider->character().getEntityKey())
 	{
 		case EntityList::Ground:
 			collision();

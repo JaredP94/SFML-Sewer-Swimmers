@@ -1,4 +1,11 @@
 =======================================================
+Date: 22/09/2016 - 21:50
+Commit Tag: Technical Reference Manual + Code Optimisations
+User: JaredP94
+Details: Created technical reference manual for game using Doxygen + Optimised code with minor refactoring.
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 21/09/2016 - 11:15
 Commit Tag: Implemented Minor Feature (Rock Functionality) + File Reader
 User: JaredP94

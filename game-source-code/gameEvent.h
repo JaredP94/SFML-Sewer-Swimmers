@@ -1,6 +1,10 @@
 #ifndef GAME_EVENT_H
 #define GAME_EVENT_H
 
+/**
+* GameEvent strongly typed enum class - used to enumerate list of game events.
+* Used to separate Logic and Interface classes by passing polled Interface events to game events in the game's logic.
+*/
 enum class GameEvent
 {
 	Press_Esc,

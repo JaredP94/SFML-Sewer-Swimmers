@@ -38,7 +38,7 @@ list<Vector2f> Rock::hitboxPoints()
 
 void Rock::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->getEntityKey())
+	switch(collider->character().getEntityKey())
 	{
 		case EntityList::Ground:
 			if(_groundDestroyed >= 2) 

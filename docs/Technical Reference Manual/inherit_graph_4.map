@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_entity.html" title="Entity class &#45; manages properties of all game Entity objects. " alt="" coords="5,81,61,108"/>
+<area shape="rect" id="node2" href="$class_ground.html" title="Ground class &#45; represents the Ground tiles. " alt="" coords="125,56,189,83"/>
+<area shape="rect" id="node3" href="$class_moving_entity.html" title="MovingEntity class &#45; creates extension of Entity class to add moving functionality to Entity objects..." alt="" coords="109,107,205,133"/>
+<area shape="rect" id="node4" href="$class_enemy.html" title="Enemy class &#45; represents the enemy ghosts. " alt="" coords="295,5,358,32"/>
+<area shape="rect" id="node5" href="$class_harpoon.html" title="Harpoon class &#45; represents the Player object&#39;s weapon. " alt="" coords="291,56,362,83"/>
+<area shape="rect" id="node6" href="$class_rock.html" title="Rock class &#45; represents the Rock objects in the game. " alt="" coords="301,107,353,133"/>
+<area shape="rect" id="node7" href="$class_shooting_moving_entity.html" title="ShootingMovingEntity class &#45; creates extension of MovingEntity class to add shooting functionality to..." alt="" coords="253,157,400,184"/>
+<area shape="rect" id="node9" href="$class_tunnel_digger.html" title="TunnelDigger class &#45; represents the TunnelDigger objects in the game. " alt="" coords="278,208,375,235"/>
+<area shape="rect" id="node8" href="$class_player.html" title="Player class &#45; represents the Player turtle. " alt="" coords="448,157,507,184"/>
+</map>

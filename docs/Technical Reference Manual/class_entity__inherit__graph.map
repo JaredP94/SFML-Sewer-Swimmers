@@ -1,0 +1,10 @@
+<map id="Entity" name="Entity">
+<area shape="rect" id="node2" href="$class_ground.html" title="Ground class &#45; represents the Ground tiles. " alt="" coords="228,475,343,597"/>
+<area shape="rect" id="node3" href="$class_moving_entity.html" title="MovingEntity class &#45; creates extension of Entity class to add moving functionality to Entity objects..." alt="" coords="367,439,527,633"/>
+<area shape="rect" id="node4" href="$class_enemy.html" title="Enemy class &#45; represents the enemy ghosts. " alt="" coords="5,681,165,1037"/>
+<area shape="rect" id="node5" href="$class_harpoon.html" title="Harpoon class &#45; represents the Player object&#39;s weapon. " alt="" coords="189,740,341,979"/>
+<area shape="rect" id="node6" href="$class_rock.html" title="Rock class &#45; represents the Rock objects in the game. " alt="" coords="366,733,527,986"/>
+<area shape="rect" id="node7" href="$class_shooting_moving_entity.html" title="ShootingMovingEntity class &#45; creates extension of MovingEntity class to add shooting functionality to..." alt="" coords="551,791,718,927"/>
+<area shape="rect" id="node9" href="$class_tunnel_digger.html" title="TunnelDigger class &#45; represents the TunnelDigger objects in the game. " alt="" coords="743,733,895,986"/>
+<area shape="rect" id="node8" href="$class_player.html" title="Player class &#45; represents the Player turtle. " alt="" coords="561,1085,708,1456"/>
+</map>

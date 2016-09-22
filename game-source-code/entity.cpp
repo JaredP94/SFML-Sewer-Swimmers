@@ -25,11 +25,6 @@ Vector2f Entity::getPosition() const
 	return _position;
 }
 	
-EntityList Entity::getEntityKey() const
-{
-	return _entityKey;
-}
-	
 bool Entity::checkIfDestroyed() const
 {
 	return _destroyed;
@@ -88,7 +83,7 @@ void Entity::setPosition(float x, float y)
 
 float Entity::positionGeneration(float positionBounds, float entitySize) const
 {
-	auto tmp = static_cast<int>(positionBounds - entitySize); //assuming height == width
+	auto tmp = static_cast<int>(positionBounds - entitySize);
 	auto rand_num = rand()%tmp;
 	return static_cast<float>(rand_num);
 }

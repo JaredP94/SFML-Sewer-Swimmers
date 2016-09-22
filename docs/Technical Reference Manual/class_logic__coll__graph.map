@@ -1,0 +1,6 @@
+<map id="Logic" name="Logic">
+<area shape="rect" id="node2" href="$class_entity_container.html" title="EntityContainer class &#45; handles all Entity objects which are active in the game. " alt="" coords="5,476,148,627"/>
+<area shape="rect" id="node5" href="$class_file_reader.html" title="FileReader class &#45; manages the input and output of game high scores to and from a data file..." alt="" coords="379,476,499,627"/>
+<area shape="rect" id="node10" href="$class_interface.html" title="Interface class &#45; manages how game is rendered. " alt="" coords="1121,344,1280,759"/>
+<area shape="rect" id="node11" href="$class_asset_manager.html" title="{AssetManager\&lt; sf::Texture,\l EntityList \&gt;\n||+ loadAsset()\l+ getAsset()\l&#45; addAsset()\l}" alt="" coords="995,160,1177,281"/>
+</map>

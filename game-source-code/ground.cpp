@@ -3,13 +3,6 @@
 Ground::Ground(float x, float y):
 	Entity{EntityList::Ground, Vector2f(x, y)}
 	{};
-	
-/*float Ground::positionGeneration(float positionBounds) const
-{
-	auto tmp = static_cast<int>(positionBounds - _playerHeight);
-	auto rand_num = rand()%tmp;
-	return static_cast<float>(rand_num);
-}*/
 
 list<Vector2f> Ground::hitboxPoints()
 {
@@ -24,7 +17,7 @@ list<Vector2f> Ground::hitboxPoints()
 
 void Ground::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->getEntityKey())
+	switch(collider->character().getEntityKey())
 	{
 		case EntityList::Player:
 			destroy();

@@ -211,20 +211,6 @@ void Interface::updateGameStats(vector<int>& stats)
 	drawText("High Score: " + std::to_string(stats.at(2)), 30, Vector2f(750,5));
 }
 
-void Interface::renderExplosion(const Vector2f& position)
-{
-	sf::Texture _explosionTexture;
-	_explosionTexture.loadFromFile("explosion.png");
-	sf::Sprite _explosion(_explosionTexture);
-	_explosion.setPosition(position._x, position._y);
-	for(auto i = 0; i < 16; i++)
-	{
-		_explosion.setTextureRect(sf::IntRect(i * 32,0,32,32));
-		_window.draw(_explosion);
-		_window.display();
-	}
-}
-
 void Interface::inflateAnimation(float time, const Vector2f& position)
 {
 	_render_animation.setPosition(createSFMLVector(position));

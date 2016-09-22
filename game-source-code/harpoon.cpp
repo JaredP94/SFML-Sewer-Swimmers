@@ -13,7 +13,7 @@ Harpoon::~Harpoon()
 	
 void Harpoon::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->getEntityKey())
+	switch(collider->character().getEntityKey())
 	{
 		case EntityList::Ground:
 			destroy();

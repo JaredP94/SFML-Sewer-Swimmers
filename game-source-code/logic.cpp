@@ -116,7 +116,6 @@ void Logic::createEnemies()
 			shared_ptr<Enemy> enemy_ptr = make_shared<Enemy>(pos);
 			_entities.addEntity(enemy_ptr);
 			_moving_entities.push_back(enemy_ptr);
-			enemy_ptr->incrementEnemiesCreated();
 		}
 	}
 }
@@ -172,7 +171,6 @@ void Logic::collisions()
 				_coords.push_back((*iterator)->getPosition());
 			}
 			iterator = _entities.removeEntity(iterator);
-//			_interface.renderExplosion(pos);
 		}
 		else
 		{
