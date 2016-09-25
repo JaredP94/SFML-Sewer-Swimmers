@@ -21,6 +21,8 @@ void Harpoon::collide(const shared_ptr<Entity>& collider)
 		case EntityList::Enemy:
 			destroy();
 			break;
+		case EntityList::Rock:
+			destroy();
 		default:
 			break;
 	}

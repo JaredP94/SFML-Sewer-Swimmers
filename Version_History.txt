@@ -1,4 +1,11 @@
 =======================================================
+Date: 25/09/2016 - 05:05
+Commit Tag: Corrected Harpoon Collision with Rocks
+User: JaredP94
+Details: Harpoon now destroys upon colliding with a rock object.
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 22/09/2016 - 22:40
 Commit Tag: Technical Reference Manual Correction
 User: JaredP94
