@@ -48,7 +48,7 @@ public:
 	/**
 	* Converts game Vector2f to sf::Vector2f for Interface functions.
 	* @param orig_vec is a Vector2f which is required to be converted to sf::Vector2f.
-	* @returns sf::Vector2f containing converted vector.
+	* @return sf::Vector2f containing converted vector.
 	*/
 	sf::Vector2f createSFMLVector(Vector2f orig_vec);
 	/**
