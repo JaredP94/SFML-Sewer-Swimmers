@@ -1,4 +1,10 @@
 =======================================================
+Date 12/10/2016 - 13:35
+Commit Tag: Addition of Further Test Cases + Correction to File Reader
+User: Matty-Westside
+Details: Test cases added for several classes + Addition of error checking in the File Reader
+
+=======================================================
 Date: 22/09/2016 - 22:40
 Commit Tag: Technical Reference Manual Correction
 User: JaredP94
