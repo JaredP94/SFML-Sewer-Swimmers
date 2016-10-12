@@ -1,5 +1,9 @@
 =======================================================
-<<<<<<< HEAD
+Date 12/10/2016 - 14:05
+Commit Tag: Correction of Harpoon Class
+User: Matty-Westside
+Details: Correction of harpoon creation functionality
+=======================================================
 Date 12/10/2016 - 13:35
 Commit Tag: Addition of Further Test Cases + Correction to File Reader
 User: Matty-Westside

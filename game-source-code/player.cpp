@@ -148,7 +148,7 @@ list<Vector2f> Player::hitboxPoints()
 
 void Player::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->character().getEntityKey())
+	switch(collider->getEntityKey())
 	{
 		case EntityList::Enemy:
 			collision();
@@ -221,7 +221,7 @@ void Player::shooting(GameEvent event)
 
 shared_ptr<MovingEntity> Player::shoot(float changeInTime)
 {
-	while(Harpoon::getHarpoonStatus() < 1 && _shooting)
+	while(Harpoon::getHarpoonStatus() == false && _shooting)
 	{
 		Vector2f velocity_unit_direction;
 		if(getDirection() == Direction::Up)
