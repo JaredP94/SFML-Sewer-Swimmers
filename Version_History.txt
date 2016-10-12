@@ -1,4 +1,5 @@
 =======================================================
+<<<<<<< HEAD
 Date: 12/10/2016 - 19:55
 Commit Tag: Corrected Errors in Previous Commits
 User: JaredP94
@@ -6,11 +7,24 @@ Details: Corrected Errors in Previous Commits
 Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
 
 =======================================================
+=======
+Date 12/10/2016 - 14:05
+Commit Tag: Correction of Harpoon Class
+User: Matty-Westside
+Details: Correction of harpoon creation functionality
+=======================================================
+Date 12/10/2016 - 13:35
+Commit Tag: Addition of Further Test Cases + Correction to File Reader
+User: Matty-Westside
+Details: Test cases added for several classes + Addition of error checking in the File Reader
+=======
+>>>>>>> fcd6a3483fd9f6dacc96914098044527d96d14d9
 Date: 25/09/2016 - 05:05
 Commit Tag: Corrected Harpoon Collision with Rocks
 User: JaredP94
 Details: Harpoon now destroys upon colliding with a rock object.
 Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+>>>>>>> 178ada7ed0bad18ebd87bd7f650d46380a039d0b
 
 =======================================================
 Date: 22/09/2016 - 22:40

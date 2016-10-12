@@ -3,17 +3,17 @@
 Harpoon::Harpoon(const Vector2f& position, const Vector2f& velocity_unit_direction):
 	MovingEntity(EntityList::Harpoon, position, velocity_unit_direction * _harpoon_speed)
 	{
-		_harpoon_launched++;
+		_harpoon_launched = true;
 	}
 	
 Harpoon::~Harpoon()
 {
-	_harpoon_launched--;
+	_harpoon_launched = false;
 }
 	
 void Harpoon::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->character().getEntityKey())
+	switch(collider->getEntityKey())
 	{
 		case EntityList::Ground:
 			destroy();
@@ -21,8 +21,6 @@ void Harpoon::collide(const shared_ptr<Entity>& collider)
 		case EntityList::Enemy:
 			destroy();
 			break;
-		case EntityList::Rock:
-			destroy();
 		default:
 			break;
 	}
@@ -49,4 +47,4 @@ void Harpoon::move(float changeInTime)
 	}
 }
 
-int Harpoon::_harpoon_launched = 0;
+bool Harpoon::_harpoon_launched = false;

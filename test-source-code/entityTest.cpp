@@ -7,18 +7,6 @@
 
 #include <iostream>
 
-TEST (entity, CharacterFunctionCorrectlyReturnsId)
-{	
-	Player test_entity;
-	EXPECT_EQ(EntityList::Player, test_entity.character().getEntityKey());
-}
-
-TEST (entity, CharacterFunctionCorrectlyReturnsDefaultPosition)
-{	
-	Player test_entity;
-	EXPECT_EQ(Vector2f(485.f,385.f), test_entity.character().getPosition());
-}
-
 TEST (entity, SetCenterFunctionCorrectlyCentersEntity)
 {	
 	Player test_entity;
