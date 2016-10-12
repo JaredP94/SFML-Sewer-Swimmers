@@ -1,0 +1,6 @@
+<map id="Enemy::Enemy" name="Enemy::Enemy">
+<area shape="rect" id="node2" href="$class_entity.html#abeef2844379ecebdcdd3e6d95dcee341" title="Generates a random float for an Entity object based on the map bounds and the Entity object size..." alt="" coords="191,5,363,32"/>
+<area shape="rect" id="node3" href="$class_entity.html#a76ab80b2e4aae6052a73a535c65d1a5c" title="Static function. " alt="" coords="201,56,352,83"/>
+<area shape="rect" id="node4" href="$class_moving_entity.html#a50af7dd3dbae52c226a71c7fdffdf0ce" title="Assigns randomised direction to MovingEntity object. " alt="" coords="165,107,388,133"/>
+<area shape="rect" id="node5" href="$class_moving_entity.html#a76aae5509f75701c4d73e4be1942253b" title="Assigns specific direction to MovingEntity object based on entered direction. " alt="" coords="436,107,633,133"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Player::movement" name="Player::movement">
+<area shape="rect" id="node2" href="$class_entity.html#ac026b3a6d3c13e5165921e99f8662e77" title="Sets moving status of Entity object to required state. " alt="" coords="199,5,359,32"/>
+<area shape="rect" id="node3" href="$class_entity.html#a5288312369d4fa97f7bf60d39910a7bc" title="Sets frozen status of Entity object to required state. " alt="" coords="199,56,359,83"/>
+<area shape="rect" id="node4" href="$class_moving_entity.html#a76aae5509f75701c4d73e4be1942253b" title="Assigns specific direction to MovingEntity object based on entered direction. " alt="" coords="180,107,377,133"/>
+<area shape="rect" id="node5" href="$class_moving_entity.html#aa022cad4db671fe6b7e34908b49402e8" title="Returns current direction of MovingEntity object. " alt="" coords="192,157,365,184"/>
+</map>

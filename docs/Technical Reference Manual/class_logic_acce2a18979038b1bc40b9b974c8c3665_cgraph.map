@@ -1,0 +1,9 @@
+<map id="Logic::gameInput" name="Logic::gameInput">
+<area shape="rect" id="node2" href="$class_interface.html#a7686d6ddffd4bd0639031dc1cdc82acd" title="Manages polling for user input since last processEvents() call was made. " alt="" coords="190,5,354,32"/>
+<area shape="rect" id="node3" href="$class_interface.html#a048ff0369b548d748cc4c2db342e54f5" title="Converts polled events from the Interface to GameEvent events for the Logic class. " alt="" coords="175,56,369,83"/>
+<area shape="rect" id="node4" href="$class_logic.html#a9f1b423733b93fc06a20b41650373469" title="Pauses current game state so that no activity takes place. " alt="" coords="224,107,320,133"/>
+<area shape="rect" id="node5" href="$class_interface.html#aab4e34de30e97d0b15ac40e89968ad49" title="Manages rendering of game based on it&#39;s paused status. " alt="" coords="197,157,347,184"/>
+<area shape="rect" id="node6" href="$class_logic.html#a7014fe765a4b93df0927a74f79a5e108" title="Stops all game activity and closes the game window. " alt="" coords="213,208,331,235"/>
+<area shape="rect" id="node7" href="$class_interface.html#a0c0223ada4741fadea6e16e79f646c4c" title="Closes the game window. " alt="" coords="417,183,573,209"/>
+<area shape="rect" id="node8" href="$class_file_reader.html#a5ce9e3a0623c5b091f828f90e03a1050" title="Closes data file when game ends to ensure data in file is correctly preserved. " alt="" coords="423,233,567,260"/>
+</map>

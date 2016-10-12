@@ -1,0 +1,11 @@
+<map id="Entity::getTimeElapsed" name="Entity::getTimeElapsed">
+<area shape="rect" id="node2" href="$class_enemy.html#a05b55ecd5413202e9557a741136b452e" title="Inherited from MovingEntity. " alt="" coords="429,5,531,32"/>
+<area shape="rect" id="node7" href="$class_enemy.html#a8dce6325c08a4f98a1f8230f1a7f214a" title="Function which handles collision between Enemy object and Harpoon object. " alt="" coords="211,69,344,96"/>
+<area shape="rect" id="node9" href="$class_rock.html#aeeaaa43d0deda1eb6b652cc58b7b14b0" title="Inherited from MovingEntity. " alt="" coords="229,132,326,159"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a99b4c7b69d4decab55c397f4a635bff4" title="Static function. " alt="" coords="616,56,801,83"/>
+<area shape="rect" id="node4" href="$class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="849,56,997,83"/>
+<area shape="rect" id="node5" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="1045,56,1168,83"/>
+<area shape="rect" id="node6" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="1216,56,1308,83"/>
+<area shape="rect" id="node8" href="$class_enemy.html#a21464dc9265522c59595aa910fe21599" title="Inherited from MovingEntity. " alt="" coords="426,107,534,133"/>
+<area shape="rect" id="node10" href="$class_rock.html#af7ca1b185d519d8843e7b876687e74aa" title="Returns elapsed distance traversed from position of creation. " alt="" coords="392,157,568,184"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="EntityContainer::addEntity" name="EntityContainer::addEntity">
+<area shape="rect" id="node2" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="615,130,707,157"/>
+<area shape="rect" id="node3" href="$class_logic.html#a42ffe059eac6cc8ef0b413b40a69e9f9" title="Updates all relevant objects after a time interval. " alt="" coords="235,29,369,56"/>
+<area shape="rect" id="node5" href="$class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="228,80,376,106"/>
+<area shape="rect" id="node6" href="$class_logic.html#aedeb13f7b00ce7ac420777b52b5f95d5" title="Creates TunnelDigger objects for the game. " alt="" coords="424,130,567,157"/>
+<area shape="rect" id="node7" href="$class_logic.html#a3c386c8f9ffdf931b43505a7210340ec" title="Creates Ground objects for the game. " alt="" coords="426,181,565,208"/>
+<area shape="rect" id="node8" href="$class_logic.html#a6dd595a87ec0ecb6aaedbf7ff3420c52" title="Creates Rock objects for the game. " alt="" coords="235,232,369,258"/>
+<area shape="rect" id="node4" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="434,80,557,106"/>
+</map>

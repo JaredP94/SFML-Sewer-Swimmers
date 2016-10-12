@@ -208,8 +208,8 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a9ff6e3c0820fbf28aab6d3f2d1f781f0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpoon.html#a9ff6e3c0820fbf28aab6d3f2d1f781f0">_harpoon_launched</a> = 0</td></tr>
-<tr class="separator:a9ff6e3c0820fbf28aab6d3f2d1f781f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228d72785e327a7fbabeaad67fea6822"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpoon.html#a228d72785e327a7fbabeaad67fea6822">_harpoon_launched</a> = false</td></tr>
+<tr class="separator:a228d72785e327a7fbabeaad67fea6822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21ca023ae884264a0e87da0e4669a390"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpoon.html#a21ca023ae884264a0e87da0e4669a390">_harpoon_width</a> = 32.f</td></tr>
 <tr class="separator:a21ca023ae884264a0e87da0e4669a390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a254525c9bcd5a0c5dbbaef749845b0"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpoon.html#a3a254525c9bcd5a0c5dbbaef749845b0">_harpoon_height</a> = 32.f</td></tr>
@@ -319,6 +319,14 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_moving_entity.html#a709ce3bf617b46954ca520dd92de72b1">MovingEntity</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harpoon_a984c60124ba95b1e089b7d7fdca626a2_cgraph.png" border="0" usemap="#class_harpoon_a984c60124ba95b1e089b7d7fdca626a2_cgraph" alt=""/></div>
+<map name="class_harpoon_a984c60124ba95b1e089b7d7fdca626a2_cgraph" id="class_harpoon_a984c60124ba95b1e089b7d7fdca626a2_cgraph">
+<area shape="rect" id="node2" href="class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="168,5,275,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -347,6 +355,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Static function. </p>
 <p>Returns status of whether harpoon currently exists in the game. </p><dl class="section return"><dt>Returns</dt><dd>bool containing status of whether harpoon currently exists in game. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harpoon_afbd2fdb14546a39cf14d50622e449379_icgraph.png" border="0" usemap="#class_harpoon_afbd2fdb14546a39cf14d50622e449379_icgraph" alt=""/></div>
+<map name="class_harpoon_afbd2fdb14546a39cf14d50622e449379_icgraph" id="class_harpoon_afbd2fdb14546a39cf14d50622e449379_icgraph">
+<area shape="rect" id="node2" href="class_player.html#a487a125eb1512e7727719040adef823e" title="Inherited from ShootingMovingEntity. " alt="" coords="236,31,335,57"/>
+<area shape="rect" id="node3" href="class_player.html#a61978dda2da0abb265a2f2ad0faca6ac" title="Static function. " alt="" coords="383,31,511,57"/>
+<area shape="rect" id="node4" href="class_enemy.html#a05b55ecd5413202e9557a741136b452e" title="Inherited from MovingEntity. " alt="" coords="743,5,845,32"/>
+<area shape="rect" id="node9" href="class_enemy.html#a8dce6325c08a4f98a1f8230f1a7f214a" title="Function which handles collision between Enemy object and Harpoon object. " alt="" coords="559,56,692,83"/>
+<area shape="rect" id="node5" href="class_enemy.html#a99b4c7b69d4decab55c397f4a635bff4" title="Static function. " alt="" coords="896,56,1081,83"/>
+<area shape="rect" id="node6" href="class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="1129,56,1277,83"/>
+<area shape="rect" id="node7" href="class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="1325,56,1448,83"/>
+<area shape="rect" id="node8" href="class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="1496,56,1588,83"/>
+<area shape="rect" id="node10" href="class_enemy.html#a21464dc9265522c59595aa910fe21599" title="Inherited from MovingEntity. " alt="" coords="740,107,848,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -377,6 +401,14 @@ Additional Inherited Members</h2></td></tr>
 <p>Creates square hitbox around <a class="el" href="class_harpoon.html" title="Harpoon class - represents the Player object&#39;s weapon. ">Harpoon</a> object through point assignments. </p><dl class="section return"><dt>Returns</dt><dd>list of <a class="el" href="class_vector2f.html" title="Vector2f class - manages all vector related operations of game. ">Vector2f</a> containing hitbox points of <a class="el" href="class_harpoon.html" title="Harpoon class - represents the Player object&#39;s weapon. ">Harpoon</a> object. </dd></dl>
 
 <p>Implements <a class="el" href="class_moving_entity.html#abb19ae2dec3e6a30e75d5d7a44cbc4e9">MovingEntity</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harpoon_a399162260c9965f4fd1fb13593fcee4c_cgraph.png" border="0" usemap="#class_harpoon_a399162260c9965f4fd1fb13593fcee4c_cgraph" alt=""/></div>
+<map name="class_harpoon_a399162260c9965f4fd1fb13593fcee4c_cgraph" id="class_harpoon_a399162260c9965f4fd1fb13593fcee4c_cgraph">
+<area shape="rect" id="node2" href="class_entity.html#afdda0263db3d2e465a6ae6bad91eb990" title="Returns coordinates of Entity object. " alt="" coords="204,5,333,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -413,6 +445,18 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_moving_entity.html#a3e726c9dec62ee2d1a07eaabaf3a1a23">MovingEntity</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harpoon_a0045f1f859f48416de0740fa2cd81936_cgraph.png" border="0" usemap="#class_harpoon_a0045f1f859f48416de0740fa2cd81936_cgraph" alt=""/></div>
+<map name="class_harpoon_a0045f1f859f48416de0740fa2cd81936_cgraph" id="class_harpoon_a0045f1f859f48416de0740fa2cd81936_cgraph">
+<area shape="rect" id="node2" href="class_entity.html#a93306ecdce9446da37560f5f2b5307c0" title="Displaces the Entity object by entered distance. " alt="" coords="176,5,305,32"/>
+<area shape="rect" id="node3" href="class_moving_entity.html#a0ab7dea37dcb2c4a13009f2a91058965" title="Returns speed of the MovingEntity object. " alt="" coords="161,56,320,83"/>
+<area shape="rect" id="node4" href="class_entity.html#afdda0263db3d2e465a6ae6bad91eb990" title="Returns coordinates of Entity object. " alt="" coords="176,107,305,133"/>
+<area shape="rect" id="node5" href="class_entity.html#a76ab80b2e4aae6052a73a535c65d1a5c" title="Static function. " alt="" coords="165,157,316,184"/>
+<area shape="rect" id="node6" href="class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="187,208,294,235"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -483,8 +527,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ff6e3c0820fbf28aab6d3f2d1f781f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ff6e3c0820fbf28aab6d3f2d1f781f0">&sect;&nbsp;</a></span>_harpoon_launched</h2>
+<a id="a228d72785e327a7fbabeaad67fea6822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228d72785e327a7fbabeaad67fea6822">&sect;&nbsp;</a></span>_harpoon_launched</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -493,7 +537,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Harpoon::_harpoon_launched = 0</td>
+          <td class="memname">bool Harpoon::_harpoon_launched = false</td>
         </tr>
       </table>
   </td>

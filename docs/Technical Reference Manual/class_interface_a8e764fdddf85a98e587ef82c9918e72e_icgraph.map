@@ -1,0 +1,9 @@
+<map id="Interface::drawText" name="Interface::drawText">
+<area shape="rect" id="node2" href="$class_interface.html#a643a4015532ba59d7ed75c1258622cca" title="Renders all game objects and information to game window. " alt="" coords="418,24,569,51"/>
+<area shape="rect" id="node6" href="$class_interface.html#afbcf6d161efb55b87008374e39f9ad97" title="Renders the splash screen and displays a timer of countdown until game is ready to play..." alt="" coords="416,75,571,101"/>
+<area shape="rect" id="node8" href="$class_interface.html#aca13f4601aa502295e70c0ffa6681096" title="Renders game information to game window. " alt="" coords="184,24,368,51"/>
+<area shape="rect" id="node3" href="$class_logic.html#ab04552bec753dc0d0bec7456db42d967" title="Calls Interface to render all objects of the game. " alt="" coords="622,24,754,51"/>
+<area shape="rect" id="node4" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="805,49,928,76"/>
+<area shape="rect" id="node5" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="976,49,1068,76"/>
+<area shape="rect" id="node7" href="$class_logic.html#ae020dc542f716f1f4e3e0c9b59bfbc26" title="Calls to Interface to display the splash screen whilst showing a countdown timer. ..." alt="" coords="619,75,757,101"/>
+</map>

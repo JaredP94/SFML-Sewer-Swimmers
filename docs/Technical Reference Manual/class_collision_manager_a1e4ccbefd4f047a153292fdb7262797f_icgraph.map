@@ -1,0 +1,5 @@
+<map id="CollisionManager::normalCoords" name="CollisionManager::normalCoords">
+<area shape="rect" id="node2" href="$class_collision_manager.html#a4169a844cf0d573d64655662dbd205d2" title="Implementation of collision checking between two Entity objects. " alt="" coords="221,13,397,39"/>
+<area shape="rect" id="node3" href="$class_collision_manager.html#abc362a31bd324b267253a6a767001576" title="Runs protocol to check all collisions of required objects. " alt="" coords="445,5,624,47"/>
+<area shape="rect" id="node4" href="$class_collision_manager.html#abed378aab9017afbed4e5b30e515b52b" title="Constructor. " alt="" coords="672,5,851,47"/>
+</map>

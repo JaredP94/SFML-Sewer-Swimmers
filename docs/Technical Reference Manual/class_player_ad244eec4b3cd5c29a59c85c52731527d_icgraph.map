@@ -1,0 +1,7 @@
+<map id="Player::getScore" name="Player::getScore">
+<area shape="rect" id="node2" href="$class_logic.html#a457856387c27e3f4cd3f3796afe38fa4" title="Returns a vector of integers containing relavent game information to be displayed. " alt="" coords="172,31,303,57"/>
+<area shape="rect" id="node3" href="$class_logic.html#a42ffe059eac6cc8ef0b413b40a69e9f9" title="Updates all relevant objects after a time interval. " alt="" coords="351,5,485,32"/>
+<area shape="rect" id="node6" href="$class_logic.html#ab04552bec753dc0d0bec7456db42d967" title="Calls Interface to render all objects of the game. " alt="" coords="352,56,484,83"/>
+<area shape="rect" id="node4" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="533,31,656,57"/>
+<area shape="rect" id="node5" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="704,31,796,57"/>
+</map>

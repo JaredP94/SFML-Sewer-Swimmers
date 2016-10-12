@@ -1,0 +1,5 @@
+<map id="Logic::lose" name="Logic::lose">
+<area shape="rect" id="node2" href="$class_logic.html#a42ffe059eac6cc8ef0b413b40a69e9f9" title="Updates all relevant objects after a time interval. " alt="" coords="139,5,273,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="321,5,444,32"/>
+<area shape="rect" id="node4" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="492,5,584,32"/>
+</map>

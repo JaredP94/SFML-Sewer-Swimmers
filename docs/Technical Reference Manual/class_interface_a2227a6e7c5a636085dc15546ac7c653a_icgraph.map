@@ -1,0 +1,6 @@
+<map id="Interface::loseGame" name="Interface::loseGame">
+<area shape="rect" id="node2" href="$class_logic.html#a2cf3770e4398b06737572d4913c2ea2a" title="Sets losing status to true. " alt="" coords="192,5,277,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#a42ffe059eac6cc8ef0b413b40a69e9f9" title="Updates all relevant objects after a time interval. " alt="" coords="325,5,460,32"/>
+<area shape="rect" id="node4" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="508,5,631,32"/>
+<area shape="rect" id="node5" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="679,5,771,32"/>
+</map>

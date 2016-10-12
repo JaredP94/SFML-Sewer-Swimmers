@@ -1,0 +1,6 @@
+<map id="Vector2f::unitVector" name="Vector2f::unitVector">
+<area shape="rect" id="node2" href="$class_collision_manager.html#a1e4ccbefd4f047a153292fdb7262797f" title="Creates the normals of the vector connecting between the entered points. " alt="" coords="191,5,359,47"/>
+<area shape="rect" id="node3" href="$class_collision_manager.html#a4169a844cf0d573d64655662dbd205d2" title="Implementation of collision checking between two Entity objects. " alt="" coords="407,13,583,39"/>
+<area shape="rect" id="node4" href="$class_collision_manager.html#abc362a31bd324b267253a6a767001576" title="Runs protocol to check all collisions of required objects. " alt="" coords="631,5,809,47"/>
+<area shape="rect" id="node5" href="$class_collision_manager.html#abed378aab9017afbed4e5b30e515b52b" title="Constructor. " alt="" coords="857,5,1036,47"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Rock::getElapsedDistance" name="Rock::getElapsedDistance">
+<area shape="rect" id="node2" href="$class_rock.html#a9b71751e4a275634c28c4df8f9d75803" title="Inherited from MovingEntity. " alt="" coords="250,208,341,235"/>
+<area shape="rect" id="node11" href="$class_rock.html#a029d651993f1bd8fe4b5ddcfb1b5ca07" title="Inherited from MovingEntity. " alt="" coords="229,259,361,285"/>
+<area shape="rect" id="node12" href="$class_rock.html#aeeaaa43d0deda1eb6b652cc58b7b14b0" title="Inherited from MovingEntity. " alt="" coords="247,360,344,387"/>
+<area shape="rect" id="node3" href="$class_entity.html#a06c70ac0221ac7d0e8db9213457f4cbd" title="Adds entered time to current time elapsed. " alt="" coords="413,5,573,32"/>
+<area shape="rect" id="node4" href="$class_entity.html#ad22cfb62a7a0e704d188e31191c07537" title="Resets timer to zero. " alt="" coords="409,56,577,83"/>
+<area shape="rect" id="node5" href="$class_entity.html#ac026b3a6d3c13e5165921e99f8662e77" title="Sets moving status of Entity object to required state. " alt="" coords="413,107,573,133"/>
+<area shape="rect" id="node6" href="$class_entity.html#a93306ecdce9446da37560f5f2b5307c0" title="Displaces the Entity object by entered distance. " alt="" coords="429,309,558,336"/>
+<area shape="rect" id="node7" href="$class_moving_entity.html#a0ab7dea37dcb2c4a13009f2a91058965" title="Returns speed of the MovingEntity object. " alt="" coords="414,157,573,184"/>
+<area shape="rect" id="node8" href="$class_entity.html#afdda0263db3d2e465a6ae6bad91eb990" title="Returns coordinates of Entity object. " alt="" coords="429,259,558,285"/>
+<area shape="rect" id="node9" href="$class_entity.html#a76ab80b2e4aae6052a73a535c65d1a5c" title="Static function. " alt="" coords="418,208,569,235"/>
+<area shape="rect" id="node10" href="$class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="440,360,547,387"/>
+<area shape="rect" id="node13" href="$class_entity.html#a5288312369d4fa97f7bf60d39910a7bc" title="Sets frozen status of Entity object to required state. " alt="" coords="413,411,573,437"/>
+<area shape="rect" id="node14" href="$class_entity.html#a8e2d21d80bd9ffcea89ef5be6ef57840" title="Returns time elapsed since timer was initialised. " alt="" coords="415,461,572,488"/>
+</map>

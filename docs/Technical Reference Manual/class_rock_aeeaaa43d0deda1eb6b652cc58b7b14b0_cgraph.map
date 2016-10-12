@@ -1,0 +1,6 @@
+<map id="Rock::collide" name="Rock::collide">
+<area shape="rect" id="node2" href="$class_entity.html#a5288312369d4fa97f7bf60d39910a7bc" title="Sets frozen status of Entity object to required state. " alt="" coords="151,5,311,32"/>
+<area shape="rect" id="node3" href="$class_entity.html#a8e2d21d80bd9ffcea89ef5be6ef57840" title="Returns time elapsed since timer was initialised. " alt="" coords="152,56,309,83"/>
+<area shape="rect" id="node4" href="$class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="177,107,284,133"/>
+<area shape="rect" id="node5" href="$class_entity.html#a93306ecdce9446da37560f5f2b5307c0" title="Displaces the Entity object by entered distance. " alt="" coords="166,157,295,184"/>
+</map>

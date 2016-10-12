@@ -1,0 +1,7 @@
+<map id="Timer::getProcessTime" name="Timer::getProcessTime">
+<area shape="rect" id="node2" href="$class_timer.html#ae838c1ec28b34485bd84cc007060de41" title="Begins counting of the Timer object. " alt="" coords="214,5,339,32"/>
+<area shape="rect" id="node5" href="$class_timer.html#ab7a467cded9ec06943f310ce5009dbaa" title="Sets the timer to zero and returns the time elapsed. " alt="" coords="215,56,338,83"/>
+<area shape="rect" id="node6" href="$class_timer.html#a12c2687ad3f001bc6f8d2d16cb923011" title="Returns time elapsed since timer bagan without resetting timer. " alt="" coords="209,107,344,133"/>
+<area shape="rect" id="node3" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="392,56,515,83"/>
+<area shape="rect" id="node4" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="563,56,655,83"/>
+</map>

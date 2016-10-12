@@ -1,0 +1,5 @@
+<map id="Enemy::getEnemiesCreated" name="Enemy::getEnemiesCreated">
+<area shape="rect" id="node2" href="$class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="239,5,387,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="435,5,557,32"/>
+<area shape="rect" id="node4" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="605,5,697,32"/>
+</map>

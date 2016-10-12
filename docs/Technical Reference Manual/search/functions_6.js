@@ -5,6 +5,7 @@ var searchData=
   ['getdeflatestatus',['getDeflateStatus',['../class_entity.html#a8ed0989b99672763210af29f9f2db51e',1,'Entity']]],
   ['getdiggerquantity',['getDiggerQuantity',['../class_tunnel_digger.html#a2183a06ff9ce7ae150d15b5422a04823',1,'TunnelDigger']]],
   ['getdirection',['getDirection',['../class_moving_entity.html#aa022cad4db671fe6b7e34908b49402e8',1,'MovingEntity']]],
+  ['getelapseddistance',['getElapsedDistance',['../class_rock.html#af7ca1b185d519d8843e7b876687e74aa',1,'Rock']]],
   ['getenemiescreated',['getEnemiesCreated',['../class_enemy.html#a99b4c7b69d4decab55c397f4a635bff4',1,'Enemy']]],
   ['getenemydestroyed',['getEnemyDestroyed',['../class_enemy.html#ad2b5d6dcaf114d3335078703e663db6f',1,'Enemy']]],
   ['getentitykey',['getEntityKey',['../class_character_entity.html#a54d7323d3d145b058cf317c65d729498',1,'CharacterEntity']]],

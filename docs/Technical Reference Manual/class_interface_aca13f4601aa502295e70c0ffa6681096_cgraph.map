@@ -1,0 +1,5 @@
+<map id="Interface::updateGameStats" name="Interface::updateGameStats">
+<area shape="rect" id="node2" href="$class_asset_manager.html#af245a35ec704e4188d1423de83d76702" title="Retrives required asset related to the entered EntityList key. " alt="" coords="237,5,404,32"/>
+<area shape="rect" id="node3" href="$class_interface.html#aa016c51c3de84e285abe95b883f4945c" title="Converts game Vector2f to sf::Vector2f for Interface functions. " alt="" coords="452,81,640,108"/>
+<area shape="rect" id="node4" href="$class_interface.html#a8e764fdddf85a98e587ef82c9918e72e" title="Renders text to be displayed on the game window. " alt="" coords="255,107,386,133"/>
+</map>

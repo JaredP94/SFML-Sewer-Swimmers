@@ -1,4 +1,11 @@
 =======================================================
+Date: 12/10/2016 - 20:45
+Commit Tag: Updated Technical Reference Manual
+User: JaredP94
+Details: Updated Technical Reference Manual to incorporate new changes to code.
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 12/10/2016 - 20:40
 Commit Tag: Addition of Further Testing + Edits made to Rock.cpp
 User: Matty-Westside

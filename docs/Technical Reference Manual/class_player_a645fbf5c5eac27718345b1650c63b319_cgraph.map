@@ -1,0 +1,5 @@
+<map id="Player::rockCollision" name="Player::rockCollision">
+<area shape="rect" id="node2" href="$class_entity.html#a5288312369d4fa97f7bf60d39910a7bc" title="Sets frozen status of Entity object to required state. " alt="" coords="201,5,361,32"/>
+<area shape="rect" id="node3" href="$class_moving_entity.html#aa022cad4db671fe6b7e34908b49402e8" title="Returns current direction of MovingEntity object. " alt="" coords="195,56,368,83"/>
+<area shape="rect" id="node4" href="$class_entity.html#a93306ecdce9446da37560f5f2b5307c0" title="Displaces the Entity object by entered distance. " alt="" coords="217,107,346,133"/>
+</map>

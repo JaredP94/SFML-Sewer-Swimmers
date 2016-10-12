@@ -1,0 +1,8 @@
+<map id="Logic::pause" name="Logic::pause">
+<area shape="rect" id="node2" href="$class_logic.html#acce2a18979038b1bc40b9b974c8c3665" title="Notifies Interface to poll for user input and pass them to the Logic class. " alt="" coords="149,5,271,32"/>
+<area shape="rect" id="node6" href="$class_logic.html#ab4c32eb4f69b64ece086b5bac5ac28f1" title="Sets winning status to true. " alt="" coords="170,56,250,83"/>
+<area shape="rect" id="node7" href="$class_logic.html#a2cf3770e4398b06737572d4913c2ea2a" title="Sets losing status to true. " alt="" coords="167,107,253,133"/>
+<area shape="rect" id="node3" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="501,31,624,57"/>
+<area shape="rect" id="node5" href="$class_logic.html#a42ffe059eac6cc8ef0b413b40a69e9f9" title="Updates all relevant objects after a time interval. " alt="" coords="319,56,453,83"/>
+<area shape="rect" id="node4" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="672,31,764,57"/>
+</map>

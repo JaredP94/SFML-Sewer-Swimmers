@@ -1,0 +1,9 @@
+<map id="Entity::setInflateStatus" name="Entity::setInflateStatus">
+<area shape="rect" id="node2" href="$class_enemy.html#a05b55ecd5413202e9557a741136b452e" title="Inherited from MovingEntity. " alt="" coords="393,5,494,32"/>
+<area shape="rect" id="node7" href="$class_enemy.html#a8dce6325c08a4f98a1f8230f1a7f214a" title="Function which handles collision between Enemy object and Harpoon object. " alt="" coords="208,56,341,83"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a99b4c7b69d4decab55c397f4a635bff4" title="Static function. " alt="" coords="545,56,731,83"/>
+<area shape="rect" id="node4" href="$class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="779,56,927,83"/>
+<area shape="rect" id="node5" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="975,56,1097,83"/>
+<area shape="rect" id="node6" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="1145,56,1237,83"/>
+<area shape="rect" id="node8" href="$class_enemy.html#a21464dc9265522c59595aa910fe21599" title="Inherited from MovingEntity. " alt="" coords="389,107,497,133"/>
+</map>

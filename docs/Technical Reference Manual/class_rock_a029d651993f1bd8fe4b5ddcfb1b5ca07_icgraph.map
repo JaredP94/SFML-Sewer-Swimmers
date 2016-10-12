@@ -1,0 +1,3 @@
+<map id="Rock::hitboxPoints" name="Rock::hitboxPoints">
+<area shape="rect" id="node2" href="$class_rock.html#af7ca1b185d519d8843e7b876687e74aa" title="Returns elapsed distance traversed from position of creation. " alt="" coords="185,5,361,32"/>
+</map>

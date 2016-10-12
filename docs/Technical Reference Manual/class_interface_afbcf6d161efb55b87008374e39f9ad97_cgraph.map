@@ -1,0 +1,4 @@
+<map id="Interface::renderSplash" name="Interface::renderSplash">
+<area shape="rect" id="node2" href="$class_interface.html#a8e764fdddf85a98e587ef82c9918e72e" title="Renders text to be displayed on the game window. " alt="" coords="208,5,339,32"/>
+<area shape="rect" id="node3" href="$class_interface.html#aa016c51c3de84e285abe95b883f4945c" title="Converts game Vector2f to sf::Vector2f for Interface functions. " alt="" coords="387,5,575,32"/>
+</map>

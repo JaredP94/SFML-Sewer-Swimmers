@@ -1,0 +1,9 @@
+<map id="CollisionManager::CollisionManager" name="CollisionManager::CollisionManager">
+<area shape="rect" id="node2" href="$class_collision_manager.html#abc362a31bd324b267253a6a767001576" title="Runs protocol to check all collisions of required objects. " alt="" coords="232,64,411,105"/>
+<area shape="rect" id="node3" href="$class_collision_manager.html#a4169a844cf0d573d64655662dbd205d2" title="Implementation of collision checking between two Entity objects. " alt="" coords="459,71,635,98"/>
+<area shape="rect" id="node4" href="$class_collision_manager.html#a1e4ccbefd4f047a153292fdb7262797f" title="Creates the normals of the vector connecting between the entered points. " alt="" coords="705,5,873,47"/>
+<area shape="rect" id="node7" href="$class_collision_manager.html#a01062841bd487eeebcf10230cab4c6f5" title="Calculation of maximum projection of set of vectors onto that of a normal vector. ..." alt="" coords="683,71,895,98"/>
+<area shape="rect" id="node8" href="$class_collision_manager.html#ae5c5d574d1a990c46b88458c4e08cb07" title="Calculation of minimum projection of set of vectors onto that of a normal vector. ..." alt="" coords="685,122,893,149"/>
+<area shape="rect" id="node5" href="$class_vector2f.html#a01f56b56ad7b33b8f6017fc2c9dba548" title="Calculates and returns the unit vector of a vector. " alt="" coords="943,13,1080,39"/>
+<area shape="rect" id="node6" href="$class_vector2f.html#a3db9a868c58bc809e5e09a88d65a77ec" title="Constructor. " alt="" coords="1128,13,1255,39"/>
+</map>

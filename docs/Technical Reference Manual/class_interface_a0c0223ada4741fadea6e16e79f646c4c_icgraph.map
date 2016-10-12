@@ -1,0 +1,7 @@
+<map id="Interface::closeWindow" name="Interface::closeWindow">
+<area shape="rect" id="node2" href="$class_logic.html#a7014fe765a4b93df0927a74f79a5e108" title="Stops all game activity and closes the game window. " alt="" coords="209,5,327,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#acce2a18979038b1bc40b9b974c8c3665" title="Notifies Interface to poll for user input and pass them to the Logic class. " alt="" coords="375,5,496,32"/>
+<area shape="rect" id="node4" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="727,5,849,32"/>
+<area shape="rect" id="node6" href="$class_logic.html#a42ffe059eac6cc8ef0b413b40a69e9f9" title="Updates all relevant objects after a time interval. " alt="" coords="544,31,679,57"/>
+<area shape="rect" id="node5" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="897,5,989,32"/>
+</map>

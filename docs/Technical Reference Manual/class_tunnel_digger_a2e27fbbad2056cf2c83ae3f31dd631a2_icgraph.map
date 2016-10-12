@@ -1,0 +1,5 @@
+<map id="TunnelDigger::move" name="TunnelDigger::move">
+<area shape="rect" id="node2" href="$class_tunnel_digger.html#a2183a06ff9ce7ae150d15b5422a04823" title="TunnelDigger::getDiggerQuantity" alt="" coords="188,5,397,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#aedeb13f7b00ce7ac420777b52b5f95d5" title="Creates TunnelDigger objects for the game. " alt="" coords="445,5,588,32"/>
+<area shape="rect" id="node4" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="636,5,728,32"/>
+</map>

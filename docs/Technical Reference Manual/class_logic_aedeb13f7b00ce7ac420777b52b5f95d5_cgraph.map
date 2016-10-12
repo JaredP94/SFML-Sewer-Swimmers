@@ -1,0 +1,13 @@
+<map id="Logic::createTunnels" name="Logic::createTunnels">
+<area shape="rect" id="node2" href="$class_tunnel_digger.html#a2183a06ff9ce7ae150d15b5422a04823" title="TunnelDigger::getDiggerQuantity" alt="" coords="196,233,405,260"/>
+<area shape="rect" id="node12" href="$class_entity_container.html#a617fe0c66f76175fafdb9427e3f66d64" title="Adds an addtional shared pointer to an Entity object to the vector of Entity objects. " alt="" coords="213,284,388,311"/>
+<area shape="rect" id="node3" href="$class_tunnel_digger.html#a2e27fbbad2056cf2c83ae3f31dd631a2" title="Inherited from MovingEntity. " alt="" coords="475,157,609,184"/>
+<area shape="rect" id="node10" href="$class_tunnel_digger.html#a54fe02bd6ba7ff69ddba0d27d3dd4877" title="Inherited from MovingEntity. " alt="" coords="453,233,631,260"/>
+<area shape="rect" id="node11" href="$class_tunnel_digger.html#ad8c2eb30bc18a67d2bf48bacfdb0ef8e" title="Inherited from MovingEntity. " alt="" coords="471,284,613,311"/>
+<area shape="rect" id="node4" href="$class_moving_entity.html#aa022cad4db671fe6b7e34908b49402e8" title="Returns current direction of MovingEntity object. " alt="" coords="679,5,852,32"/>
+<area shape="rect" id="node5" href="$class_entity.html#a93306ecdce9446da37560f5f2b5307c0" title="Displaces the Entity object by entered distance. " alt="" coords="701,56,830,83"/>
+<area shape="rect" id="node6" href="$class_moving_entity.html#a0ab7dea37dcb2c4a13009f2a91058965" title="Returns speed of the MovingEntity object. " alt="" coords="686,107,845,133"/>
+<area shape="rect" id="node7" href="$class_entity.html#afdda0263db3d2e465a6ae6bad91eb990" title="Returns coordinates of Entity object. " alt="" coords="701,259,830,285"/>
+<area shape="rect" id="node8" href="$class_entity.html#a76ab80b2e4aae6052a73a535c65d1a5c" title="Static function. " alt="" coords="690,157,841,184"/>
+<area shape="rect" id="node9" href="$class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="712,208,819,235"/>
+</map>

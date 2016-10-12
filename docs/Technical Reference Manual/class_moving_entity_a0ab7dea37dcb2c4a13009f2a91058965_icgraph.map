@@ -1,0 +1,18 @@
+<map id="MovingEntity::getSpeed" name="MovingEntity::getSpeed">
+<area shape="rect" id="node2" href="$class_enemy.html#a05b55ecd5413202e9557a741136b452e" title="Inherited from MovingEntity. " alt="" coords="646,56,747,83"/>
+<area shape="rect" id="node7" href="$class_enemy.html#ab5a40a6c8d2a3fda4ec21a4a960a3444" title="Function which makes Enemy object chase target when it is within range. " alt="" coords="387,5,525,32"/>
+<area shape="rect" id="node8" href="$class_harpoon.html#a0045f1f859f48416de0740fa2cd81936" title="Inherited from MovingEntity. " alt="" coords="212,208,320,235"/>
+<area shape="rect" id="node9" href="$class_player.html#a49d1d3da829fad67c4136aed2b1cebcc" title="Inherited from ShootingMovingEntity. " alt="" coords="217,107,315,133"/>
+<area shape="rect" id="node13" href="$class_rock.html#a9b71751e4a275634c28c4df8f9d75803" title="Inherited from MovingEntity. " alt="" coords="221,259,311,285"/>
+<area shape="rect" id="node15" href="$class_tunnel_digger.html#a2e27fbbad2056cf2c83ae3f31dd631a2" title="Inherited from MovingEntity. " alt="" coords="389,183,523,209"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a99b4c7b69d4decab55c397f4a635bff4" title="Static function. " alt="" coords="1040,107,1225,133"/>
+<area shape="rect" id="node4" href="$class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="1273,113,1421,140"/>
+<area shape="rect" id="node5" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="1469,139,1592,165"/>
+<area shape="rect" id="node6" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="1640,171,1732,197"/>
+<area shape="rect" id="node10" href="$class_player.html#a61978dda2da0abb265a2f2ad0faca6ac" title="Static function. " alt="" coords="392,107,520,133"/>
+<area shape="rect" id="node11" href="$class_enemy.html#a8dce6325c08a4f98a1f8230f1a7f214a" title="Function which handles collision between Enemy object and Harpoon object. " alt="" coords="630,107,763,133"/>
+<area shape="rect" id="node12" href="$class_enemy.html#a21464dc9265522c59595aa910fe21599" title="Inherited from MovingEntity. " alt="" coords="867,107,975,133"/>
+<area shape="rect" id="node14" href="$class_rock.html#af7ca1b185d519d8843e7b876687e74aa" title="Returns elapsed distance traversed from position of creation. " alt="" coords="368,259,544,285"/>
+<area shape="rect" id="node16" href="$class_tunnel_digger.html#a2183a06ff9ce7ae150d15b5422a04823" title="TunnelDigger::getDiggerQuantity" alt="" coords="592,196,801,223"/>
+<area shape="rect" id="node17" href="$class_logic.html#aedeb13f7b00ce7ac420777b52b5f95d5" title="Creates TunnelDigger objects for the game. " alt="" coords="849,208,992,235"/>
+</map>

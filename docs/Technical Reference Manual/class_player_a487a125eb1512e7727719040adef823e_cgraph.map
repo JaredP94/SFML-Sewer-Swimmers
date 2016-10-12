@@ -1,0 +1,5 @@
+<map id="Player::shoot" name="Player::shoot">
+<area shape="rect" id="node2" href="$class_harpoon.html#afbd2fdb14546a39cf14d50622e449379" title="Static function. " alt="" coords="152,5,335,32"/>
+<area shape="rect" id="node3" href="$class_moving_entity.html#aa022cad4db671fe6b7e34908b49402e8" title="Returns current direction of MovingEntity object. " alt="" coords="157,56,330,83"/>
+<area shape="rect" id="node4" href="$class_entity.html#afdda0263db3d2e465a6ae6bad91eb990" title="Returns coordinates of Entity object. " alt="" coords="179,107,308,133"/>
+</map>

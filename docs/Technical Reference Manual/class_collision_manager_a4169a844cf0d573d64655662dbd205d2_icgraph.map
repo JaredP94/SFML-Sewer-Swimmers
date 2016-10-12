@@ -1,0 +1,4 @@
+<map id="CollisionManager::collision" name="CollisionManager::collision">
+<area shape="rect" id="node2" href="$class_collision_manager.html#abc362a31bd324b267253a6a767001576" title="Runs protocol to check all collisions of required objects. " alt="" coords="229,5,408,47"/>
+<area shape="rect" id="node3" href="$class_collision_manager.html#abed378aab9017afbed4e5b30e515b52b" title="Constructor. " alt="" coords="456,5,635,47"/>
+</map>

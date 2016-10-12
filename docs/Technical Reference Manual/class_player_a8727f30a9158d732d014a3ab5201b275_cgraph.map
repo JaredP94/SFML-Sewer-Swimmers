@@ -1,0 +1,4 @@
+<map id="Player::loseLife" name="Player::loseLife">
+<area shape="rect" id="node2" href="$class_entity.html#aae7ff72ca277f1bc580cba571eed34fa" title="Positions Entity object in the centre of the map. " alt="" coords="164,5,284,32"/>
+<area shape="rect" id="node3" href="$class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="171,56,277,83"/>
+</map>

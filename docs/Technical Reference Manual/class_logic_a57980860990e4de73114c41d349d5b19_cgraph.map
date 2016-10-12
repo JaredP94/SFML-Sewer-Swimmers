@@ -1,0 +1,5 @@
+<map id="Logic::collisions" name="Logic::collisions">
+<area shape="rect" id="node2" href="$class_entity_container.html#aaad28fecc5cfb4505a97841fcceed308" title="Returns start position of vector of Entity objects. " alt="" coords="179,5,352,32"/>
+<area shape="rect" id="node3" href="$class_entity_container.html#af0d367fcebfcdc88cd3ad00286884bb1" title="Returns end position of vector of Entity objects. " alt="" coords="181,56,349,83"/>
+<area shape="rect" id="node4" href="$class_entity_container.html#ad69f4b07884eb30fc40d2f30caac6645" title="Removes shared pointer of a specific Entity object from the vector of Entity objects. " alt="" coords="168,107,363,133"/>
+</map>

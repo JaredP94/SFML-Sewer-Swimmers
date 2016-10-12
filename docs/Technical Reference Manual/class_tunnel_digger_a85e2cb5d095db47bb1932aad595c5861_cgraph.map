@@ -1,0 +1,4 @@
+<map id="TunnelDigger::TunnelDigger" name="TunnelDigger::TunnelDigger">
+<area shape="rect" id="node2" href="$class_moving_entity.html#a50af7dd3dbae52c226a71c7fdffdf0ce" title="Assigns randomised direction to MovingEntity object. " alt="" coords="233,5,456,32"/>
+<area shape="rect" id="node3" href="$class_moving_entity.html#a76aae5509f75701c4d73e4be1942253b" title="Assigns specific direction to MovingEntity object based on entered direction. " alt="" coords="504,5,701,32"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="Interface::renderGame" name="Interface::renderGame">
+<area shape="rect" id="node2" href="$class_interface.html#ae11f3f7ba587c9d4dd77a57deeafcd11" title="Creates and draws an sf::Sprite for each Entity that is required to be rendered. " alt="" coords="219,157,373,184"/>
+<area shape="rect" id="node6" href="$class_entity_container.html#aaad28fecc5cfb4505a97841fcceed308" title="Returns start position of vector of Entity objects. " alt="" coords="209,309,383,336"/>
+<area shape="rect" id="node7" href="$class_entity_container.html#af0d367fcebfcdc88cd3ad00286884bb1" title="Returns end position of vector of Entity objects. " alt="" coords="212,360,380,387"/>
+<area shape="rect" id="node8" href="$class_interface.html#a5b66cbe83add9ebc16a9c2042ed8cd43" title="Renders the inflating animation of an Entity object. " alt="" coords="438,259,609,285"/>
+<area shape="rect" id="node9" href="$class_interface.html#a591ef51c33d01f8299b8f93138f048f6" title="Renders the deflating animation of an Entity object. " alt="" coords="436,309,611,336"/>
+<area shape="rect" id="node10" href="$class_interface.html#aca13f4601aa502295e70c0ffa6681096" title="Renders game information to game window. " alt="" coords="204,81,388,108"/>
+<area shape="rect" id="node11" href="$class_interface.html#a8e764fdddf85a98e587ef82c9918e72e" title="Renders text to be displayed on the game window. " alt="" coords="458,5,589,32"/>
+<area shape="rect" id="node3" href="$class_asset_manager.html#af245a35ec704e4188d1423de83d76702" title="Retrives required asset related to the entered EntityList key. " alt="" coords="440,107,607,133"/>
+<area shape="rect" id="node4" href="$class_interface.html#aa016c51c3de84e285abe95b883f4945c" title="Converts game Vector2f to sf::Vector2f for Interface functions. " alt="" coords="659,208,847,235"/>
+<area shape="rect" id="node5" href="$class_interface.html#a91234a1b046aac7b6a31f90f61ea352b" title="Draws sprites to be displayed on the game window. " alt="" coords="453,157,593,184"/>
+</map>

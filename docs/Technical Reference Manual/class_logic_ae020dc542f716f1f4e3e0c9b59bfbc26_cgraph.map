@@ -1,0 +1,5 @@
+<map id="Logic::splashscreen" name="Logic::splashscreen">
+<area shape="rect" id="node2" href="$class_interface.html#afbcf6d161efb55b87008374e39f9ad97" title="Renders the splash screen and displays a timer of countdown until game is ready to play..." alt="" coords="192,5,347,32"/>
+<area shape="rect" id="node3" href="$class_interface.html#a8e764fdddf85a98e587ef82c9918e72e" title="Renders text to be displayed on the game window. " alt="" coords="395,5,525,32"/>
+<area shape="rect" id="node4" href="$class_interface.html#aa016c51c3de84e285abe95b883f4945c" title="Converts game Vector2f to sf::Vector2f for Interface functions. " alt="" coords="573,5,761,32"/>
+</map>

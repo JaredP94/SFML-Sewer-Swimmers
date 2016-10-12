@@ -1,0 +1,9 @@
+<map id="Enemy::collision" name="Enemy::collision">
+<area shape="rect" id="node2" href="$class_enemy.html#a05b55ecd5413202e9557a741136b452e" title="Inherited from MovingEntity. " alt="" coords="362,25,463,51"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a99b4c7b69d4decab55c397f4a635bff4" title="Static function. " alt="" coords="515,50,700,77"/>
+<area shape="rect" id="node7" href="$class_enemy.html#a21464dc9265522c59595aa910fe21599" title="Inherited from MovingEntity. " alt="" coords="359,126,467,153"/>
+<area shape="rect" id="node8" href="$class_enemy.html#ab5a40a6c8d2a3fda4ec21a4a960a3444" title="Function which makes Enemy object chase target when it is within range. " alt="" coords="172,75,311,102"/>
+<area shape="rect" id="node4" href="$class_logic.html#a6e5d63923e03955e11a7794cf370543a" title="Creates Enemy objects for the game. " alt="" coords="748,50,896,77"/>
+<area shape="rect" id="node5" href="$class_logic.html#accbcd11002381450b32887132c1de622" title="Initiates game loop which runs game. " alt="" coords="944,50,1067,77"/>
+<area shape="rect" id="node6" href="$class_logic.html#a65e13b69a0b4ae0c31be94bcfe11898a" title="Constructor. " alt="" coords="1115,50,1207,77"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Logic::win" name="Logic::win">
+<area shape="rect" id="node2" href="$class_interface.html#acfb3c1b60b920dbdb28cd9ce6e1d87ad" title="Manages rendering of game based on it&#39;s win status. " alt="" coords="133,5,267,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#a9f1b423733b93fc06a20b41650373469" title="Pauses current game state so that no activity takes place. " alt="" coords="152,56,248,83"/>
+</map>

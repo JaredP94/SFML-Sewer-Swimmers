@@ -1,0 +1,7 @@
+<map id="Harpoon::move" name="Harpoon::move">
+<area shape="rect" id="node2" href="$class_entity.html#a93306ecdce9446da37560f5f2b5307c0" title="Displaces the Entity object by entered distance. " alt="" coords="176,5,305,32"/>
+<area shape="rect" id="node3" href="$class_moving_entity.html#a0ab7dea37dcb2c4a13009f2a91058965" title="Returns speed of the MovingEntity object. " alt="" coords="161,56,320,83"/>
+<area shape="rect" id="node4" href="$class_entity.html#afdda0263db3d2e465a6ae6bad91eb990" title="Returns coordinates of Entity object. " alt="" coords="176,107,305,133"/>
+<area shape="rect" id="node5" href="$class_entity.html#a76ab80b2e4aae6052a73a535c65d1a5c" title="Static function. " alt="" coords="165,157,316,184"/>
+<area shape="rect" id="node6" href="$class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e" title="Sets destroy status of Entity object to be true. " alt="" coords="187,208,294,235"/>
+</map>

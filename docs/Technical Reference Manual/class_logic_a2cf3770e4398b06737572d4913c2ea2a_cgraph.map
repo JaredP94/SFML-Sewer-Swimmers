@@ -1,0 +1,4 @@
+<map id="Logic::lose" name="Logic::lose">
+<area shape="rect" id="node2" href="$class_interface.html#a2227a6e7c5a636085dc15546ac7c653a" title="Manages rendering of game based on it&#39;s lose status. " alt="" coords="139,5,277,32"/>
+<area shape="rect" id="node3" href="$class_logic.html#a9f1b423733b93fc06a20b41650373469" title="Pauses current game state so that no activity takes place. " alt="" coords="160,56,256,83"/>
+</map>
