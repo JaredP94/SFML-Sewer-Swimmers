@@ -47,13 +47,22 @@ TEST (Player, canMoveLeftUsingUserInput)
 	EXPECT_EQ(Vector2f(485 - 10, 385), test_entity.getPosition());
 }
 
+TEST (Player, playerContainsShootingStatus)
+{
+	Player test_entity;
+	float time_elapsed = 0.1f;
+	test_entity.shooting(GameEvent::Press_Space);
+	shared_ptr<Entity> harpoon_ptr = test_entity.shoot(time_elapsed);
+	EXPECT_TRUE(test_entity.isShooting());
+}
+
 TEST (Player, playerHasBombShootingCapabilities)
 {
 	Player test_entity;
 	float time_elapsed = 0.1f;
 	test_entity.shooting(GameEvent::Press_Space);
 	shared_ptr<Entity> harpoon_ptr = test_entity.shoot(time_elapsed);
-	EXPECT_EQ(harpoon_ptr->getEntityKey(),EntityList::Harpoon);
+	EXPECT_EQ(harpoon_ptr->character().getEntityKey(),EntityList::Harpoon);
 }
 
 TEST (Player, bombInitializesAtPlayerPosition)
@@ -166,6 +175,6 @@ TEST (Player, playerBoundedByLowerMapBorder)
 TEST (Player, canAddPointsToScore)
 {
 	Player test_entity;
-	test_entity.addScore(0);
-	EXPECT_EQ(150,test_entity.getScore());
+	test_entity.addScore(100);
+	EXPECT_EQ(900,test_entity.getScore());
 }

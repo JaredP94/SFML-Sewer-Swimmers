@@ -2,7 +2,9 @@
 
 Rock::Rock(float x, float y):
 	MovingEntity{EntityList::Rock, Vector2f(x, y), Vector2f(_rockSpeed, _rockSpeed)}
-	{}
+	{
+		setMovingStatus(true);
+	}
 
 void Rock::move(float changeInTime)
 {

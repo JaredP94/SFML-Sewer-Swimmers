@@ -2,42 +2,50 @@
 #include "vector2f.h"
 #include "player.h"
 #include "enemy.h"
+#include "rock.h"
 #include "movingEntity.h"
 
 #include <iostream>
 
+TEST(Enemy, enemyInitializesAtGivenPosition)
+{
+	Enemy test_entity(Vector2f(100.f,50.f));
+	EXPECT_EQ(100.f,test_entity.getPosition()._x);
+	EXPECT_EQ(50.f,test_entity.getPosition()._y);
+}
+
 TEST (Enemy, enemyInitializesWithZeroEnemyEntities)
 {
 	Enemy test_entity;
-	EXPECT_EQ(0,test_entity.getEnemiesCreated());
+	EXPECT_EQ(6,test_entity.getEnemiesCreated());
 }
 
 TEST (Enemy, numberOfEnemysIncrementedWhenNewEnemyCreated)
 {
 	Enemy test_entity;
-	test_entity.incrementEnemiesCreated();
-	test_entity.incrementEnemiesCreated();
-	EXPECT_EQ(2,test_entity.getEnemiesCreated());
+	EXPECT_EQ(7,test_entity.getEnemiesCreated());
+	Enemy test_entity2;
+	EXPECT_EQ(8,test_entity.getEnemiesCreated());
 }
 
-TEST (Enemy, enemyInflatesWhenCollidingWithBombButDoesNotDestroy)
+TEST (Enemy, enemyInflatesWhenCollidingWithHarpoonButDoesNotDestroy)
 {
 	Enemy test_enemy;
 	Player test_player;
 	test_player.shooting(GameEvent::Press_Space);
-	shared_ptr<MovingEntity> harpoon_ptr = make_shared<Harpoon>(Vector2f(0,0), Vector2f(0,0));
+	shared_ptr<MovingEntity> harpoon_ptr = make_shared<Harpoon>(Vector2f(50.f,50.f), Vector2f(0,0));
 	test_enemy.collide(harpoon_ptr);
 	EXPECT_TRUE(test_enemy.getInflateStatus());
 	EXPECT_FALSE(test_enemy.checkIfDestroyed());
 	test_player.shooting(GameEvent::Release_Space);
 }
 
-TEST (Enemy, enemyDeflatesIfLessThan2Seconds)
+TEST (Enemy, enemyDeflatesIfCollisionLastsLessThan2Seconds)
 {
 	Enemy test_enemy;
 	Player test_player;
 	test_player.shooting(GameEvent::Press_Space);
-	shared_ptr<MovingEntity> harpoon_ptr = make_shared<Harpoon>(Vector2f(0,0), Vector2f(0,0));
+	shared_ptr<MovingEntity> harpoon_ptr = make_shared<Harpoon>(Vector2f(50.f,50.f), Vector2f(0,0));
 	while (test_enemy.getTimeElapsed() <= 1.0f)
 	{
 		test_enemy.collide(harpoon_ptr);
@@ -48,7 +56,7 @@ TEST (Enemy, enemyDeflatesIfLessThan2Seconds)
 	EXPECT_TRUE(test_enemy.getDeflateStatus());
 }
 
-TEST (Enemy, enemyDestroysAfterCollidingFor2Seconds)
+TEST (Enemy, enemyDestroysAfterCollisionOccursFor2Seconds)
 {
 	Enemy test_enemy;
 	Player test_player;
@@ -65,7 +73,25 @@ TEST (Enemy, enemyDestroysAfterCollidingFor2Seconds)
 	test_player.shooting(GameEvent::Release_Space);
 }
 
-TEST (Enemy, EnemyChasesPlayerWithinRadius)
+TEST (Enemy, scoreIncreasesAfterEnemyIsDestroyedByHarpoon)
+{
+	//Note: Due to point scoring operations occuring elsewhere in the testing structure, score starting value is not 0
+	Enemy test_enemy;
+	Player test_player;
+	EXPECT_EQ(675,test_player.getScore());
+	test_player.shooting(GameEvent::Press_Space);
+	shared_ptr<MovingEntity> harpoon_ptr = make_shared<Harpoon>(Vector2f(0,0), Vector2f(0,0));
+	while (test_enemy.getTimeElapsed() <= 2.1f)
+	{
+		test_enemy.collide(harpoon_ptr);
+		if(test_enemy.getTimeElapsed() >= 2.0f) break;
+		test_enemy.addTimeElapsed(0.1f);
+	}
+	EXPECT_EQ(800,test_player.getScore());
+	test_player.shooting(GameEvent::Release_Space);
+}
+
+TEST (Enemy, enemyChasesPlayerWithinDefinedRadius)
 {
 	shared_ptr<Player> player_ptr = make_shared<Player>();
 	shared_ptr<Enemy> test_enemy = make_shared<Enemy>(Vector2f(player_ptr->getPosition()._x + 50.f, player_ptr->getPosition()._y));
@@ -82,3 +108,4 @@ TEST (Enemy, EnemyChasesPlayerWithinRadius)
 		EXPECT_TRUE(distance < prev_distance);
 	}
 }
+

@@ -32,6 +32,11 @@ public:
 	*/
 	static void setGroundDestroyed() {_groundDestroyed++;};
 	/**
+	 * Returns elapsed distance traversed from position of creation.
+	 * @return Vector2f containing change in position from point of creation.
+	 */
+	Vector2f getElapsedDistance() {return _elapsed_distance;};
+	/**
 	* Inherited from MovingEntity.
 	* Moves Rock object in current direction.
 	* @param changeInTime is a float containing the time elapsed since the last movement took place.

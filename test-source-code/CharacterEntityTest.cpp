@@ -1,7 +1,5 @@
-#include "entity.h"
 #include "player.h"
 #include "entityList.h"
-#include "vector2f.h"
 #include "gtest/gtest.h"
 #include "characterEntity.h"
 

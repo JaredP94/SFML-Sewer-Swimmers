@@ -1,4 +1,10 @@
 =======================================================
+Date: 12/10/2016 - 20:40
+Commit Tag: Addition of Further Testing + Edits made to Rock.cpp
+User: Matty-Westside
+Details: Addition of further test cases + additional functionality added to rock class
+
+=======================================================
 Date: 12/10/2016 - 20:15
 Commit Tag: Fixed EntityKey Retrieval
 User: JaredP94

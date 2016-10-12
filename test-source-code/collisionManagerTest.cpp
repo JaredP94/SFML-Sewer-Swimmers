@@ -3,7 +3,6 @@
 #include "player.h"
 #include "collisionManager.h"
 #include "enemy.h"
-#include "ground.h"
 
 #include <iostream>
 

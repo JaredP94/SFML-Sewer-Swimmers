@@ -24,7 +24,7 @@ TEST (entity, SetPositionFunctionCorrectlyMovesEntity)
 TEST (entity, getEntityKeyFunctionCorrectlyReturnsEntityKey)
 {
 	Player test_entity;
-	EXPECT_EQ(EntityList::Player, test_entity.getEntityKey());
+	EXPECT_EQ(EntityList::Player, test_entity.character().getEntityKey());
 }
 
 TEST (entity, getMapBoundsReturnsCorrectDefaultValue)
