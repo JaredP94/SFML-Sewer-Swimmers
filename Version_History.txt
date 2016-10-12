@@ -1,5 +1,11 @@
 =======================================================
-<<<<<<< HEAD
+Date: 12/10/2016 - 20:15
+Commit Tag: Fixed EntityKey Retrieval
+User: JaredP94
+Details: Corrected issue whereby EntityKey was not successfully returned to handle collisions.
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 12/10/2016 - 19:55
 Commit Tag: Corrected Errors in Previous Commits
 User: JaredP94
@@ -7,7 +13,6 @@ Details: Corrected Errors in Previous Commits
 Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
 
 =======================================================
-=======
 Date 12/10/2016 - 14:05
 Commit Tag: Correction of Harpoon Class
 User: Matty-Westside

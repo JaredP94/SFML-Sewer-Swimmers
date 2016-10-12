@@ -148,7 +148,7 @@ list<Vector2f> Player::hitboxPoints()
 
 void Player::collide(const shared_ptr<Entity>& collider)
 {
-	switch(collider->getEntityKey())
+	switch(collider->character().getEntityKey())
 	{
 		case EntityList::Enemy:
 			collision();
