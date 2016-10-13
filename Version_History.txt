@@ -1,4 +1,11 @@
 =======================================================
+Date: 13/10/2016 - 12:40
+Commit Tag: Added Technical Report
+User: JaredP94
+Details: Added technical report to project directory
+Issues: Rock timer can be intiated if player continuously tries to touch rock from another side other than under + Enemy can glitch in ground when chasing player
+
+=======================================================
 Date: 13/10/2016 - 10:25
 Commit Tag: Final corrections made to various test cases
 User: Matty-Westside
