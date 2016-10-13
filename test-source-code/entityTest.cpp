@@ -7,14 +7,14 @@
 
 #include <iostream>
 
-TEST (entity, SetCenterFunctionCorrectlyCentersEntity)
+TEST (entity, setCenterFunctionCorrectlyCentersEntity)
 {	
 	Player test_entity;
 	test_entity.setCentre();
 	EXPECT_EQ(Vector2f(500.f,400.f), test_entity.character().getPosition());
 }
 
-TEST (entity, SetPositionFunctionCorrectlyMovesEntity)
+TEST (entity, setPositionFunctionCorrectlyMovesEntity)
 {	
 	Player test_entity;
 	test_entity.setPosition(100.f,100.f);
@@ -40,7 +40,7 @@ TEST (entity, setMapBoundsFunctionCorrectlySetsMapBounds)
 	EXPECT_EQ(Vector2f(500.f,400.f),test_entity.getMapBounds());
 }
 
-TEST (entity, EntityInitializedWithDestroyedStatusEqualToFalse)
+TEST (entity, entityDestroyedStatusReturnsTrueAfterEntityIsDestroyed)
 {
 	Player test_entity;
 	EXPECT_FALSE(test_entity.checkIfDestroyed());

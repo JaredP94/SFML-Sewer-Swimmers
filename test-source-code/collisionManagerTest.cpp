@@ -16,7 +16,6 @@ TEST (CollisionManager, detectsCollisionBetweenTwoEntities)
 	shared_ptr<Player> player_ptr = make_shared<Player>();
 	player_ptr->setPosition(-85, -85);
 	shared_ptr<Enemy> enemy_ptr = make_shared<Enemy>(Vector2f(400.f,300.f));
-	
 	test_entity.addEntity(player_ptr);
 	test_entity.addEntity(enemy_ptr);
 	test_moving_entity.push_back(player_ptr);

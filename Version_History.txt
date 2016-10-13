@@ -1,4 +1,10 @@
 =======================================================
+Date: 13/10/2016 - 10:25
+Commit Tag: Final corrections made to various test cases
+User: Matty-Westside
+Details: Corrections made to EnemeyTest + CollisionManagerTest + EntityTest + Vector2fTest
+
+=======================================================
 Date: 12/10/2016 - 20:45
 Commit Tag: Updated Technical Reference Manual
 User: JaredP94

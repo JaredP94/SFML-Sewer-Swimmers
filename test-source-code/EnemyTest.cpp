@@ -16,12 +16,14 @@ TEST(Enemy, enemyInitializesAtGivenPosition)
 
 TEST (Enemy, enemyInitializesWithZeroEnemyEntities)
 {
+	//Note: Due to enemy creation elsewhere in the testing structure, getEnemiesCreated does not return 0
 	Enemy test_entity;
 	EXPECT_EQ(6,test_entity.getEnemiesCreated());
 }
 
 TEST (Enemy, numberOfEnemysIncrementedWhenNewEnemyCreated)
 {
+	//Note: Due to enemy creation elsewhere in the testing structure, getEnemiesCreated does not return 1 and 2
 	Enemy test_entity;
 	EXPECT_EQ(7,test_entity.getEnemiesCreated());
 	Enemy test_entity2;
