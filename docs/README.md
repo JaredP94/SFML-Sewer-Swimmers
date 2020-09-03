@@ -1,2 +1,2 @@
 # Sewer Swimmers
-A 2D arcade game made in C++ with the use of SFML for rendering purposes
+A 2D arcade game made in C++11 with the use of SFML as a GUI render layer.
